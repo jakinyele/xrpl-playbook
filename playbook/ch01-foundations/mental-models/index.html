@@ -1,0 +1,3459 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jakinyele.github.io/xrpl-playbook/playbook/ch01-foundations/mental-models/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../getting-started/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Mental Models - XRPL Playbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mental-models" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="XRPL Playbook" class="md-header__button md-logo" aria-label="XRPL Playbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            XRPL Playbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mental Models
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jakinyele/awesome-xrpl-playbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jakinyele/awesome-xrpl-playbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About this Playbook
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../ch00-coming-from-other-chains/" class="md-tabs__link">
+          
+  
+  
+  Road to Mastery
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../GLOSSARY/" class="md-tabs__link">
+          
+  
+  
+  Appendices
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../examples/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Examples
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="XRPL Playbook" class="md-nav__button md-logo" aria-label="XRPL Playbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    XRPL Playbook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jakinyele/awesome-xrpl-playbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jakinyele/awesome-xrpl-playbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About this Playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Road to Mastery
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Road to Mastery
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coming from Other Chains
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Coming from Other Chains
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/concept-mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/rpc-method-mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RPC Method Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/indexing-and-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indexing & History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/subscriptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subscriptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mental Models
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mental Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-this-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why does this matter?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mental model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blockchain-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blockchain concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ledger-close-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The ledger close cycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-state-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The state tree
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cryptographic-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cryptographic foundations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-memory-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account memory model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reserve-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reserve math
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-engine-internals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction engine internals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed-precision-amounts-stamount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed-precision amounts (STAmount)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consensus-internals-unl-validator-lists-and-the-negative-unl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consensus internals: UNL, Validator Lists, and the Negative UNL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common mistakes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-i-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What I learned
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../payments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issuing Value
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Issuing Value
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02-issuing-value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02-issuing-value/issuer-controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issuer Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02-issuing-value/stablecoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stablecoins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02-issuing-value/tokenization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tokenization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markets & Liquidity
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Markets & Liquidity
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/defi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DeFi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/dex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DEX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/amm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/oracles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oracles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardening
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardening
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04-hardening/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04-hardening/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04-hardening/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04-hardening/custody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custody
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Architectures
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference Architectures
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch05-reference-architectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch05-reference-architectures/reference-architectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Architectures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features & Amendments
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features & Amendments
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch06-features-and-amendments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch06-features-and-amendments/features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CHEATSHEET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Sheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ROADMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-this-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why does this matter?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mental model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blockchain-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blockchain concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ledger-close-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The ledger close cycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-state-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The state tree
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storage model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cryptographic-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cryptographic foundations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-memory-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account memory model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reserve-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reserve math
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transaction-engine-internals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transaction engine internals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed-precision-amounts-stamount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed-precision amounts (STAmount)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consensus-internals-unl-validator-lists-and-the-negative-unl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consensus internals: UNL, Validator Lists, and the Negative UNL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common mistakes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-i-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What I learned
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="mental-models">Mental Models</h1>
+<h2 id="why-does-this-matter">Why does this matter?</h2>
+<p>Every expensive mistake on the XRPL traces back to a flawed mental model —
+treating trust lines like bank accounts, ignoring reserves until an account
+stops working, or assuming "success" means "settled." Getting these models
+right before writing application code saves enormous debugging time and
+prevents funds-at-risk incidents in production.</p>
+<h2 id="mental-model">Mental model</h2>
+<p>The XRP Ledger is a <strong>replicated state machine</strong>. Each ledger version is a
+complete snapshot of all account state. Transactions are the only mechanism
+that changes state, and every transaction either applies atomically or fails
+entirely — there is no partial application.</p>
+<p>Key primitives to internalize:</p>
+<ul>
+<li><strong>Accounts</strong> — identified by a public key-derived address; must fund the
+  base reserve (currently 1 XRP) before they can exist.</li>
+<li><strong>Reserves</strong> — every account must hold a minimum XRP balance: a base
+  reserve plus an <em>owner reserve</em> (currently 0.2 XRP) per on-ledger object
+  it owns (trust lines, offers, escrows, etc.).</li>
+<li><strong>Trust lines</strong> — the mechanism by which issued (non-XRP) value is held.
+  A trust line is a bilateral ledger object between a holder and an issuer.</li>
+<li><strong>Finality</strong> — a transaction included in a <em>validated</em> ledger is final.
+  There is no reorganization, no rollback. "Validated" ≠ probabilistic
+  "confirmed."</li>
+<li><strong>Fees</strong> — transaction costs burn XRP permanently; they are not paid to
+  validators. Fees scale under load.</li>
+</ul>
+<p><strong>XRP vs. issued currencies — a fundamental distinction:</strong></p>
+<p>XRP is the ledger's native asset. It has no issuer, no counterparty risk, and
+cannot be frozen or clawed back. Issued currencies (IOUs) are obligations: the
+holder trusts the issuer to honor redemption. The issuer can freeze a trust
+line, clawback funds (if enabled), or simply fail. Never treat an IOU balance
+as equivalent to XRP in risk or liquidity terms.</p>
+<p><strong>Rippling:</strong></p>
+<p>When Alice holds USD from issuer X and Bob also holds USD from issuer X, a
+payment from Alice to Bob can <em>ripple</em> through the shared issuer: Alice's
+balance with X decreases, Bob's increases, no new funds move externally. This
+is the foundational mechanism behind cross-currency pathfinding — value ripples
+through chains of trust lines. The <code>NoRipple</code> flag on a trust line opts that
+account out of being used as a rippling intermediary.</p>
+<p><strong>Ledger sequence vs. account sequence — two different things:</strong></p>
+<ul>
+<li><strong>Ledger sequence</strong> — a global counter, incremented by 1 with every new
+  validated ledger (~every 3–5 s). Used in <code>LastLedgerSequence</code> to set a
+  transaction expiry.</li>
+<li><strong>Account sequence</strong> — a per-account counter, incremented by 1 for every
+  transaction that account successfully submits. A transaction is only valid at
+  exactly the current account sequence. Conflating these two is a common source
+  of submission bugs.</li>
+</ul>
+<p><strong>Transaction result code taxonomy:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Prefix</th>
+<th>Meaning</th>
+<th>Final?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tes</code></td>
+<td>Success — transaction fully applied, intended state change made.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>tec</code></td>
+<td>Claimed — fee charged and sequence consumed, but the intended operation failed (e.g. <code>tecPATH_DRY</code>). Some state changes <em>do</em> occur (fee deduction, sequence increment, and in some cases partial object deletion).</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>ter</code></td>
+<td>Retry — node rejected before broadcast (e.g. <code>terPRE_SEQ</code>).</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>tef</code></td>
+<td>Failure — malformed or replay (e.g. <code>tefPAST_SEQ</code>).</td>
+<td>No</td>
+</tr>
+<tr>
+<td><code>tel</code></td>
+<td>Local node error (e.g. <code>telINSUF_FEE_P</code> — fee below load threshold).</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>Only <code>tes</code> and <code>tec</code> appear in validated ledgers. <code>ter</code>, <code>tef</code>, and <code>tel</code> are
+never included in consensus — the fee is not charged and the sequence is not
+consumed. For <code>tec</code>, the fee <em>is</em> charged and the sequence <em>is</em> consumed; the
+failed <em>operation</em> does not complete.</p>
+<h2 id="architecture">Architecture</h2>
+<h3 id="blockchain-concepts">Blockchain concepts</h3>
+<p>Before the XRPL-specific mechanics, it helps to fix the vocabulary that applies
+to <em>any</em> decentralized ledger. These are the general problems every blockchain
+must solve; the next section shows the specific way XRPL solves each one.</p>
+<p><strong>Decentralization.</strong> No single party controls the ledger or can unilaterally
+change its state. Authority is distributed across independent participants, and
+the system keeps working even if some of them fail or act maliciously. The open
+question is always <em>how much</em> trust is required and <em>in whom</em>.</p>
+<p><strong>Consensus.</strong> Because many independent nodes each hold a copy of the ledger,
+they need an agreement procedure to decide, for every step, which transactions
+are included and in what order — so that all honest nodes converge on the <em>same</em>
+next state. Consensus models differ mainly in how they resist Sybil attacks and
+choose who gets to propose the next state:</p>
+<ul>
+<li><strong>Proof of Work (PoW)</strong> — the right to extend the chain is earned by spending
+  computation; agreement is probabilistic and emerges from the "longest chain."</li>
+<li><strong>Proof of Stake (PoS)</strong> — that right is weighted by economic stake locked in
+  the system.</li>
+<li><strong>Byzantine-agreement / voting models</strong> — a known set of participants vote,
+  and agreement is reached when a supermajority concurs. XRPL sits here.</li>
+</ul>
+<p><strong>Safety vs. liveness.</strong> Two properties every consensus system is judged on, and
+which can conflict:</p>
+<ul>
+<li><strong>Safety</strong> — "nothing bad happens": honest nodes never disagree on a committed
+  result, and invalid state transitions are never accepted. A safety failure
+  means a <em>fork</em> or double-spend.</li>
+<li><strong>Liveness</strong> — "something good eventually happens": the system keeps making
+  progress and confirming new transactions. A liveness failure means a <em>stall</em>.</li>
+</ul>
+<p>Under a network partition or attack, a system generally cannot guarantee both;
+its design reveals which it sacrifices. A ledger that carries real value almost
+always chooses to <strong>protect safety</strong> and accept a temporary halt.</p>
+<p><strong>Settlement and finality.</strong> <em>Settlement</em> is the point at which a transaction's
+effect is committed to shared state; <em>finality</em> is the guarantee that it will
+never be reversed. Two flavors:</p>
+<ul>
+<li><strong>Probabilistic finality</strong> (typical of PoW) — a transaction becomes
+  exponentially harder to reverse as more blocks build on top, but is never
+  strictly irreversible; applications pick a "confirmation depth."</li>
+<li><strong>Deterministic finality</strong> — once committed, a transaction is irreversible
+  immediately, with no reorg possible. XRPL provides this.</li>
+</ul>
+<p><strong>Immutability and tamper-evidence.</strong> History is append-only and
+cryptographically chained (usually via hash-linked blocks and Merkle
+commitments), so any attempt to alter a past record is detectable by every node.</p>
+<p><strong>Native asset, incentives, and anti-spam.</strong> A public ledger needs a way to
+price scarce resources (block space, persistent state) and deter spam — usually
+via a native asset and transaction fees, and sometimes via explicit rent or
+reserves on stored state.</p>
+<p><strong>Protocol evolution / governance.</strong> A live, decentralized network needs a way
+to change the rules without a trusted central authority and without splitting
+the network — typically some form of coordinated, opt-in upgrade.</p>
+<h3 id="design-principles">Design principles</h3>
+<p>The section above is generic to blockchains; this one is how <strong>XRPL implements
+each concept</strong>, and why. The XRPL was engineered as a <strong>shared financial
+settlement layer</strong>, so wherever the safety/liveness or finality trade-offs
+arise, it consistently favors the choices a value-bearing ledger needs. The
+close cycle, state tree, storage model, and account model later in this chapter
+are all concrete expressions of these principles. Where a principle is directly
+evidenced in the <code>xrpld</code> source (the reference implementation, historically
+named <code>rippled</code>), that is noted; where it is an inferred rationale, it is marked
+as such.</p>
+<p><strong>1. Consensus → a Byzantine-agreement voting model over a chosen validator
+set.</strong> XRPL is not PoW or PoS. Validators on each node's <strong>UNL</strong> exchange
+proposals and converge by voting; agreement is reached when a supermajority
+concurs (see <a href="#the-ledger-close-cycle">The ledger close cycle</a> and the
+<a href="https://arxiv.org/abs/1802.07242">XRP Ledger Consensus Protocol</a>). This is the
+Byzantine-agreement branch described above, specialized so that <em>who</em> you trust
+is an explicit configuration rather than whoever burned the most hash power or
+staked the most capital.</p>
+<p><strong>2. Determinism → the precondition that makes voting-based consensus work.</strong>
+For validators to <em>agree</em> on a next state, each must compute a <strong>byte-identical</strong>
+ledger from the same inputs. This single requirement forces many downstream
+choices: transactions are applied in a <strong>canonical order</strong> (<code>CanonicalTXSet</code>),
+fields serialize in a <strong>canonical order</strong> (<code>fieldCode</code> sort), money uses
+<strong>fixed-precision</strong> integers rather than floats, and signatures are
+<strong>deterministic</strong> (RFC 6979) and canonical (low-<code>S</code>). Nothing that would vary
+across machines or runs is allowed into a consensus path.</p>
+<p><strong>3. Safety over liveness → the protocol halts rather than forks.</strong> This is
+XRPL's answer to the safety/liveness trade-off: when forced to choose, it
+prefers to <strong>stop</strong> rather than risk an incorrect or divergent ledger. Within a
+consensus round the required agreement escalates through avalanche cutoffs of
+<strong>50% → 65% → 70% → 95%</strong>, and it never closes below the <strong>80%</strong>
+<code>minConsensusPct</code> floor (<code>ConsensusParms.h</code>); an amendment-blocked node stops
+following the ledger rather than guess. The clearest expression is the
+<strong>invariant-checking subsystem</strong> (<code>InvariantCheck.h</code>), which re-verifies core
+truths <em>after every transaction</em> and rejects the result if any is violated:</p>
+<blockquote>
+<p>"The entire purpose of invariants is to detect and prevent the impossible…
+Invariants are the last line of defense." — <code>InvariantCheck.h</code></p>
+</blockquote>
+<p>Source-verified invariants include <code>XRPNotCreated</code> (a transaction may only
+<em>destroy</em> XRP via fees, never create it), <code>XRPBalanceChecks</code> (each balance stays
+within <code>[0, kInitialXrp]</code>, the 100-billion-XRP genesis supply defined in
+<code>SystemParameters.h</code>), <code>AccountRootsNotDeleted</code> (accounts vanish only via a
+successful <code>AccountDelete</code>), <code>LedgerEntryTypesMatch</code>, and <code>NoXRPTrustLines</code>.
+Critically, these run <strong>even when a transaction fails</strong> — a bug must not be able
+to mutate state through a failed transaction.</p>
+<p><strong>4. Settlement &amp; finality → deterministic finality via hash-chained ledgers.</strong>
+XRPL chooses the <em>deterministic</em> flavor of finality: a validated ledger is
+<strong>final</strong> — there is no reorg, no rollback, no probabilistic "confirmations" to
+wait for. Each ledger header embeds the <code>parentHash</code>, so the chain of headers is
+a hash chain: altering any historical state would cascade through every later
+hash. This is why application error-handling can treat "validated" as absolute
+(contrast the "wait N confirmations" model of probabilistic chains).</p>
+<p><strong>5. Immutability &amp; tamper-evidence → a Merkle state tree with content
+addressing.</strong> State lives in a <strong>Merkle</strong> SHAMap whose root hash commits to
+every object, and nodes are persisted <strong>content-addressed</strong> (keyed by their own
+hash). Any change to any object is detectable, and unchanged subtrees are shared
+across ledgers for free — this is the concrete mechanism behind the append-only,
+tamper-evident history described above.</p>
+<p><strong>6. Anti-spam &amp; incentives → explicit resource pricing in the native asset.</strong>
+Persistent ledger state and network capacity are finite, so both carry a cost.
+Owning an object locks an <strong>owner reserve</strong> (~0.2 XRP), every account locks a
+<strong>base reserve</strong>, and every transaction <strong>burns</strong> a fee (paid to no one — unlike
+PoW/PoS block rewards) that <strong>escalates</strong> under load. These are economic
+invariants that make state bloat and spam self-limiting rather than relying on a
+gatekeeper.</p>
+<p><strong>7. Protocol evolution → amendments (opt-in, supermajority, irreversible).</strong>
+XRPL's governance answer is the <strong>amendment</strong> system: rule changes must hold an
+<strong>80%</strong> validator majority (<code>kAmendmentMajorityCalcThreshold</code>,
+<code>std::ratio&lt;80,100&gt;</code>) continuously for <strong>two weeks</strong>
+(<code>kDefaultAmendmentMajorityTime = weeks{2}</code>, both in <code>SystemParameters.h</code>) before
+activating at a flag ledger, and activation is <strong>irreversible</strong>. New behavior is
+gated (<code>temDISABLED</code> before activation, see <code>TER.h</code>) so old and new nodes
+interoperate safely, and long-settled amendments are eventually <strong>retired</strong> from
+the code. Governance is a first-class protocol feature, not an out-of-band
+process or a contentious hard fork.</p>
+<p><strong>8. Forward-safety → self-describing serialization.</strong> Supporting (7) at the
+data layer, ledger objects and transactions are <strong><code>STObject</code>s</strong> — ordered sets
+of typed, self-describing (<code>SField</code>) fields, not fixed structs. New fields can
+be added by amendment without breaking the wire format, and nodes reject unknown
+types explicitly rather than misinterpreting them. Evolution never silently
+corrupts old data.</p>
+<blockquote>
+<p><strong>Educated guess (not directly stated in source):</strong> the recurring preference
+for <em>making illegal states unrepresentable or immediately detectable</em> —
+fixed-precision money, typed fields, post-transaction invariants, one-way
+flags like <code>lsfDisableMaster</code> — suggests an overarching philosophy that, for a
+value-bearing ledger, a <strong>halt or a rejected transaction is always cheaper
+than a silent inconsistency</strong>. Read the rest of this chapter through that lens.</p>
+</blockquote>
+<h3 id="the-ledger-close-cycle">The ledger close cycle</h3>
+<pre class="mermaid"><code>sequenceDiagram
+    participant C as Client
+    participant N as xrpld Node
+    participant V as Validator UNL
+
+    C-&gt;&gt;N: submit transaction
+    N-&gt;&gt;N: Add to open ledger (staging)
+
+    Note over N,V: Consensus round (~3–5 s)
+    N-&gt;&gt;V: Propose transaction set
+    V-&gt;&gt;V: Exchange proposals&lt;br/&gt;Init threshold: 50%
+    V-&gt;&gt;V: Mid threshold: 65%
+    V-&gt;&gt;V: Late threshold: 70%
+    V-&gt;&gt;V: Stuck threshold: 95%
+
+    V-&gt;&gt;N: Agreed transaction set
+
+    N-&gt;&gt;N: Apply transactions&lt;br/&gt;deterministic canonical order&lt;br/&gt;(CanonicalTXSet)
+
+    N-&gt;&gt;V: Broadcast computed ledger hash
+    V-&gt;&gt;V: Supermajority agrees on hash
+
+    Note over N,V: Ledger VALIDATED — permanent &amp; immutable
+    N--&gt;&gt;C: transaction metadata + validated=true</code></pre>
+<p>Every 3–5 seconds the network produces a new <em>validated ledger version</em>:</p>
+<ol>
+<li><strong>Open ledger</strong> — Transactions submitted by clients accumulate in each
+   node's open ledger (a staging area). Not final; not agreed upon.</li>
+<li><strong>Consensus</strong> — Validators on each node's <strong>Unique Node List (UNL)</strong>
+   exchange proposed transaction sets and iteratively converge using an
+   <strong>avalanche-threshold</strong> mechanism. The agreement percentage required
+   increases over time within a round: it starts at <strong>50%</strong> (Init), rises to
+   <strong>65%</strong> (Mid, after ~50% of the prior round's duration has elapsed), then
+   <strong>70%</strong> (Late, after ~85%), and finally <strong>95%</strong> (Stuck, once the round
+   reaches 2× the prior round's duration). The <code>minConsensusPct</code> floor
+   is <strong>80%</strong> — consensus cannot close below that threshold regardless of
+   phase. This progressive tightening makes it hard to include a contested
+   transaction early but progressively harder to exclude it late, limiting
+   the window in which a network partition or Byzantine validator set can
+   cause divergence.</li>
+<li><strong>Application</strong> — Each validator independently applies the agreed
+   transactions to the previous validated ledger in a canonical deterministic
+   order. Every validator that follows the same rules will produce the same
+   ledger hash.</li>
+<li><strong>Validation</strong> — Validators broadcast their computed ledger hash. When a
+   supermajority agrees on the same hash, that ledger is <em>validated</em> — permanent
+   and immutable.</li>
+</ol>
+<blockquote>
+<p>Transactions within a ledger are ordered canonically — not by submission
+time. The sort key is a salted composite of <code>(accountKey XOR salt, seqProxy,
+txID)</code> during application (see <code>CanonicalTXSet</code>), and the final
+<code>TransactionIndex</code> assigned in metadata reflects the application order.
+Applications must not assume any particular ordering within a single ledger
+close, and must never rely on tx hash ordering.</p>
+<p>A transaction has two identifiers. The <strong>transaction hash</strong> is
+content-addressed and network-agnostic. The <strong>CTID</strong> (Concise Transaction
+ID, XLS-15d) is position-addressed: it packs <code>(ledgerSeq, TransactionIndex,
+networkID)</code> into a single 16-hex-digit value. CTID is only defined <em>after</em> a
+transaction is included, precisely because it encodes the <code>TransactionIndex</code>
+above — it is the canonical way to reference a transaction unambiguously
+across networks (mainnet vs. sidechain/Testnet with distinct network IDs).</p>
+</blockquote>
+<h3 id="the-state-tree">The state tree</h3>
+<p>A validated ledger is a snapshot of every on-ledger object, stored in a
+hash-tree (SHAMap). Object types and their significance:</p>
+<table>
+<thead>
+<tr>
+<th>Object (<code>lt</code> type)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AccountRoot</code> (<code>ltACCOUNT_ROOT</code>)</td>
+<td>One per account. Holds XRP balance, sequence number, flags, and settings.</td>
+</tr>
+<tr>
+<td><code>RippleState</code> (<code>ltRIPPLE_STATE</code>)</td>
+<td>One per trust line (bilateral). Holds balance and limits for both parties.</td>
+</tr>
+<tr>
+<td><code>Offer</code> (<code>ltOFFER</code>)</td>
+<td>An open order on the native DEX.</td>
+</tr>
+<tr>
+<td><code>Escrow</code> (<code>ltESCROW</code>)</td>
+<td>A time- or condition-locked XRP delivery.</td>
+</tr>
+<tr>
+<td><code>PayChannel</code> (<code>ltPAYCHAN</code>)</td>
+<td>An open payment channel for off-ledger claim streams.</td>
+</tr>
+<tr>
+<td><code>Check</code> (<code>ltCHECK</code>)</td>
+<td>A deferred pull-payment authorization (analogous to a paper check).</td>
+</tr>
+<tr>
+<td><code>NFTokenPage</code> (<code>ltNFTOKEN_PAGE</code>)</td>
+<td>A page of up to 32 NFTs owned by one account (<code>kDirMaxTokensPerPage = 32</code>).</td>
+</tr>
+<tr>
+<td><code>NFTokenOffer</code> (<code>ltNFTOKEN_OFFER</code>)</td>
+<td>A buy or sell offer for a specific NFT.</td>
+</tr>
+<tr>
+<td><code>AMM</code> (<code>ltAMM</code>)</td>
+<td>An Automated Market Maker pool object. Holds pool assets, LP token info, trading fee, and auction slot. LP token balances are tracked as <code>RippleState</code> objects for the LP token issue.</td>
+</tr>
+<tr>
+<td><code>MPToken</code> / <code>MPTokenIssuance</code> (<code>ltMPTOKEN</code> / <code>ltMPTOKEN_ISSUANCE</code>)</td>
+<td>Multi-Purpose Token holder balances and issuance metadata.</td>
+</tr>
+<tr>
+<td><code>Ticket</code> (<code>ltTICKET</code>)</td>
+<td>A reserved sequence slot enabling out-of-order transaction submission.</td>
+</tr>
+<tr>
+<td><code>SignerList</code> (<code>ltSIGNER_LIST</code>)</td>
+<td>A multi-signing configuration attached to an account.</td>
+</tr>
+<tr>
+<td><code>Oracle</code> (<code>ltORACLE</code>)</td>
+<td>An on-ledger price oracle data series.</td>
+</tr>
+<tr>
+<td><code>DID</code> (<code>ltDID</code>)</td>
+<td>A W3C Decentralized Identifier document anchored on-ledger.</td>
+</tr>
+<tr>
+<td><code>Credential</code> (<code>ltCREDENTIAL</code>)</td>
+<td>A verifiable credential issued by one account to another.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="storage-model">Storage model</h3>
+<p>The "state tree" above is a <strong>SHAMap</strong> — a single data structure that is
+simultaneously a <strong>radix tree</strong> (for fast keyed lookup) and a <strong>Merkle tree</strong>
+(for tamper-evident hashing). Understanding it explains how every validator
+independently arrives at the <em>same</em> ledger hash, and why lookups stay fast
+regardless of how many objects the ledger holds.</p>
+<p><strong>SHAMap — a 16-way radix Merkle tree.</strong> Every object is addressed by a 256-bit
+key. The tree walks that key <strong>one nibble (4 bits) at a time</strong>, so each inner
+node fans out to exactly <strong>16 children</strong> (<code>kBranchFactor = 16</code>). Depth is
+therefore bounded by the key length — at most 64 levels — <em>not</em> by the number of
+stored objects, so lookup is effectively O(1) in ledger size.</p>
+<ul>
+<li><strong>Inner nodes</strong> (<code>SHAMapInnerNode</code>) hold up to 16 child hashes. A node's hash
+  is <code>sha512Half(HashPrefix::InnerNode, child₀ ‖ child₁ ‖ … ‖ child₁₅)</code> — the
+  ordered concatenation of all 16 child hashes (empty branches hash as zero).</li>
+<li><strong>Leaf nodes</strong> hold a single object. Account-state leaves
+  (<code>SHAMapAccountStateLeafNode</code>) hash as
+  <code>sha512Half(HashPrefix::LeafNode, item_data, item_key)</code>; transaction leaves
+  use their own prefixes.</li>
+</ul>
+<p>Because the hash of every node folds in the hashes of its children, the single
+<strong>root hash</strong> commits to the entire contents of the tree. Change one field in
+one object and the root hash changes — this is what makes the ledger
+tamper-evident and lets nodes prove membership with a compact Merkle path.</p>
+<p><strong>Two SHAMaps per ledger.</strong> Each ledger version carries <em>two</em> independent trees,
+producing two root hashes stored in the header:</p>
+<ul>
+<li><strong>State map</strong> — every on-ledger object (<code>AccountRoot</code>, <code>RippleState</code>, offers,
+  escrows, …). Its root is the <code>accountHash</code>.</li>
+<li><strong>Transaction map</strong> — the transactions applied in this ledger, each with its
+  metadata. Its root is the <code>txHash</code>.</li>
+</ul>
+<p><strong>Ledger header hashing.</strong> The ledger's own identifying hash is a deterministic
+function of a small fixed-size header — not of the full state. It folds in the
+two tree roots plus the chain link to the parent:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ledgerHash = sha512Half(
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    HashPrefix::LedgerMaster,
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    sequence, totalDrops, parentHash,
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    txHash, accountHash,
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    parentCloseTime, closeTime, closeTimeResolution, closeFlags)
+</span></code></pre></div>
+<p>Since <code>parentHash</code> is itself a prior ledger hash, the sequence of headers forms
+a hash chain: any change to historical state would cascade through every
+subsequent header hash.</p>
+<p><strong>NodeStore — content-addressed persistence.</strong> SHAMap nodes are persisted to a
+pluggable key-value backend as <code>NodeObject</code>s, <strong>keyed by their own hash</strong>
+(content-addressed storage). Identical subtrees across ledgers are therefore
+stored once and shared — a node is only rewritten when its contents (and thus
+its hash) change. Two production backends ship with <code>xrpld</code>:</p>
+<ul>
+<li><strong>NuDB</strong> — an append-only store tuned for SSDs and the write-once,
+  content-addressed access pattern; the common choice for high-throughput nodes.</li>
+<li><strong>RocksDB</strong> — a general-purpose LSM-tree store.</li>
+</ul>
+<p><strong>Bounding growth — online deletion.</strong> A full-history ledger grows without
+bound, so most nodes run <strong>online deletion</strong>: <code>DatabaseRotating</code> keeps two
+backends and periodically rotates a fresh writable backend in while retiring
+(and eventually deleting) the old one, retaining only the recent ledger window
+configured in <code>[node_db]</code> (<code>online_delete</code>). In-memory <code>TreeNodeCache</code> (weak
+pointers) and <code>FullBelowCache</code> (which subtrees are fully resident) keep hot
+paths fast without pinning the whole tree in RAM.</p>
+<h3 id="cryptographic-foundations">Cryptographic foundations</h3>
+<p>An account's identity is not an arbitrary string — it is deterministically
+derived from a public key. Understanding this derivation clarifies why
+addresses look the way they do, why two key types exist, and why a signed
+transaction cannot be tampered with in flight.</p>
+<p><strong>Key types.</strong> The XRPL supports two signing algorithms:</p>
+<ul>
+<li><strong><code>secp256k1</code></strong> — the Koblitz curve used by Bitcoin. Efficient, battle-tested,
+  and widely supported in hardware security modules (HSMs). This is the default
+  for most tooling.</li>
+<li><strong><code>Ed25519</code></strong> — a modern, high-performance Edwards-curve DSA (EdDSA). To
+  distinguish an Ed25519 public key from a <code>secp256k1</code> one, the ledger prefixes
+  the 32-byte Ed25519 key with a single <code>0xED</code> byte, yielding a 33-byte value
+  that matches the compressed <code>secp256k1</code> length.</li>
+</ul>
+<p><strong>AccountID derivation.</strong> The <code>AccountID</code> is the 160-bit fingerprint of the
+public key, computed with the same "HASH160" construction Bitcoin uses:</p>
+<ul>
+<li><strong>Step 1:</strong> <code>SHA-256(PublicKey)</code> — reduce the key to a 256-bit digest.</li>
+<li><strong>Step 2:</strong> <code>RIPEMD-160(Result from Step 1)</code> — reduce further to 160 bits.</li>
+</ul>
+<p>This double hash (<code>RIPEMD160(SHA256(PublicKey))</code>, internally nicknamed
+<em>Ripesha</em> in the <code>xrpld</code> source) shortens the identifier to 160 bits while
+resisting length-extension attacks against the raw SHA-256 output.</p>
+<p><strong>Address encoding (Base58Check).</strong> The familiar <code>r...</code> address is the
+Base58Check encoding of the 160-bit <code>AccountID</code>:</p>
+<ul>
+<li>It uses a <strong>custom Ripple alphabet</strong> —
+  <code>rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz</code> — chosen to avoid
+  visually ambiguous characters (<code>0</code>/<code>O</code>, <code>l</code>/<code>I</code>).</li>
+<li>A <strong>version prefix</strong> of <code>0</code> (TokenType <code>0</code>) forces the encoded string to begin
+  with <code>r</code>, which is why every classic account address starts with <code>r</code>.</li>
+<li>A <strong>4-byte checksum</strong> (the first 4 bytes of a double-SHA-256 over the payload)
+  is appended before encoding, so a mistyped address fails validation rather
+  than silently pointing at the wrong account.</li>
+</ul>
+<p><strong>Signing integrity.</strong> For <code>secp256k1</code>, signatures are generated
+deterministically per <strong>RFC 6979</strong> — the nonce is derived from the message and
+private key, eliminating the catastrophic key-leakage that follows a reused or
+weak random nonce. The ledger additionally enforces <strong>canonical (low-<code>S</code>)
+signatures</strong>, so a signature cannot be trivially mutated into a second valid
+form for the same transaction — closing off transaction malleability.</p>
+<h3 id="account-memory-model">Account memory model</h3>
+<p>An account lives on the ledger as an <strong><code>AccountRoot</code></strong> object. Internally
+<code>xrpld</code> represents it — and every other ledger object — as a
+<strong><code>STLedgerEntry</code></strong> (an SLE), which is an <strong><code>STObject</code></strong>: an ordered collection
+of typed, self-describing fields rather than a fixed C struct. This is why the
+protocol can add new account fields via amendments without breaking the wire
+format.</p>
+<p><strong>Fields are typed and self-describing (<code>SField</code>).</strong> Every field carries an
+<code>SField</code> descriptor pairing a <strong>type</strong> (<code>SerializedTypeID</code>, e.g. <code>STI_UINT32</code>,
+<code>STI_AMOUNT</code>, <code>STI_ACCOUNT</code>, <code>STI_VL</code>) with an <strong>index</strong> within that type. The
+two combine into a single <code>fieldCode = (type &lt;&lt; 16) | index</code>, which is both the
+wire tag and the <strong>canonical sort key</strong>.</p>
+<p><strong>Canonical serialization order.</strong> Before serializing, fields are sorted by
+<code>fieldCode</code> — type first, then index. Because every node applies the exact same
+ordering, the same logical account always produces byte-identical serialization,
+which is precisely what makes the SHAMap leaf hash reproducible across
+validators. Multi-byte integers are stored <strong>big-endian</strong>, part of the binary
+protocol.</p>
+<p><strong><code>AccountRoot</code> fields.</strong> A handful are required; the rest appear only when set:</p>
+<ul>
+<li><strong>Required:</strong> <code>Account</code> (the <code>AccountID</code>), <code>Sequence</code> (per-account nonce),
+  <code>Balance</code> (XRP, in drops), <code>OwnerCount</code> (number of owned objects — drives the
+  owner reserve), <code>Flags</code>, <code>PreviousTxnID</code> and <code>PreviousTxnLgrSeq</code> (the last
+  transaction to touch this account, for history threading).</li>
+<li><strong>Optional / settings:</strong> <code>RegularKey</code>, <code>Domain</code>, <code>EmailHash</code>, <code>MessageKey</code>,
+  <code>TransferRate</code>, <code>TickSize</code>, <code>AccountTxnID</code>, <code>NFTokenMinter</code>.</li>
+<li><strong>Default (present as 0 unless set):</strong> <code>MintedNFTokens</code>, <code>BurnedNFTokens</code>,
+  and the sponsorship counters.</li>
+</ul>
+<p><strong>Account flags live in <code>Flags</code>.</strong> The <code>lsf*</code> bits encode account-level policy —
+<code>lsfDisableMaster</code>, <code>lsfDefaultRipple</code>, <code>lsfRequireAuth</code>, <code>lsfDepositAuth</code>,
+<code>lsfGlobalFreeze</code>, <code>lsfRequireDestTag</code>, and the <code>lsfDisallowIncoming*</code> family.
+These are read/written as a single <code>UINT32</code> field.</p>
+<p><strong>From <code>AccountID</code> to a SHAMap key (Keylets).</strong> The 160-bit <code>AccountID</code>
+(a <code>base_uint&lt;160&gt;</code>) is <em>not</em> itself the SHAMap key. The key is derived through
+a <strong>Keylet</strong> — a <code>(type, 256-bit key)</code> pair — by hashing a <strong>namespace byte</strong>
+with the account ID:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>keylet::account(id)  →  { ltACCOUNT_ROOT,
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>                          sha512Half(LedgerNameSpace::Account &#39;a&#39;, id) }
+</span></code></pre></div>
+<p>Every object type uses its own namespace byte (<code>'a'</code> account, <code>'r'</code> trust line,
+<code>'o'</code> offer, …), so the same input under different namespaces yields distinct,
+non-colliding keys. This <em>tagged hashing</em> is how the 16-way tree keeps every
+object type in one shared address space without collisions — and why you look up
+an account by deriving its keylet, never by using the raw address bytes.</p>
+<h3 id="reserve-math">Reserve math</h3>
+<p>Every owned object beyond the account itself costs <strong>0.2 XRP</strong> in <em>owner
+reserve</em>, locking that XRP until the object is deleted.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>XRP locked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base reserve (per account)</td>
+<td>1 XRP</td>
+</tr>
+<tr>
+<td>Each trust line</td>
+<td>0.2 XRP</td>
+</tr>
+<tr>
+<td>Each open offer</td>
+<td>0.2 XRP</td>
+</tr>
+<tr>
+<td>Each escrow</td>
+<td>0.2 XRP</td>
+</tr>
+<tr>
+<td>Each payment channel</td>
+<td>0.2 XRP</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Reserve values are set by on-ledger validator fee votes and <strong>can change</strong>.
+Always fetch live values from <code>server_info</code> — never hard-code them.</p>
+</blockquote>
+<h3 id="transaction-engine-internals">Transaction engine internals</h3>
+<p>The ledger close cycle above says transactions are "applied" — but <em>how</em> a
+single transaction turns into a state change (or a rejection) is a three-stage
+pipeline every transaction passes through, no matter its type. Understanding
+the stages explains <strong>why some failures cost a fee and others cost nothing</strong>,
+and maps directly onto the result-code taxonomy above.</p>
+<p>Each transaction type is a subclass of a common <strong><code>Transactor</code></strong> base class, and
+the engine runs it through three stages with progressively more powerful access
+to ledger state:</p>
+<ol>
+<li><strong><code>preflight</code> — stateless.</strong> Runs with <strong>no ledger access at all</strong> (its
+   context, <code>PreflightContext</code>, carries only the transaction, the active
+   <code>Rules</code>, and flags — no view). It checks what can be known from the
+   transaction alone: well-formedness, the signature, flag validity, and whether
+   the required amendment is enabled. Failures here are <code>tem*</code> (malformed) or
+   <code>tel*</code> (local) — the transaction is <strong>rejected before consensus</strong> and costs
+   nothing.</li>
+<li><strong><code>preclaim</code> — stateful, read-only.</strong> Runs against a <strong><code>ReadView</code></strong> (via
+   <code>PreclaimContext</code>): it may <em>read</em> ledger state but must <strong>not mutate</strong> it. It
+   checks facts that depend on the current ledger — the account exists, the
+   sequence/<code>Sequence</code> is right (<code>checkSeqProxy</code>), the fee is affordable
+   (<code>checkFee</code>), signing authority is valid (<code>checkSign</code>). Failures here are
+   <code>tef*</code> (would fail against this ledger), <code>ter*</code> (retry — may succeed later,
+   and can be queued in the TxQ), or a decision to charge a fee (<code>tec</code>).</li>
+<li><strong><code>doApply</code> — mutation.</strong> Runs against a mutable <strong><code>ApplyView</code></strong> (via
+   <code>ApplyContext</code>) and is the <em>only</em> stage that writes to the ledger. It performs
+   the actual state change and returns <code>tes</code> (success) or <code>tec</code> (claim — the fee
+   is taken and the sequence consumed, but the intended effect does not occur).</li>
+</ol>
+<p>This is the mechanism behind the earlier rule that <strong>only <code>tes</code> and <code>tec</code> reach
+a validated ledger</strong>: <code>tem</code>/<code>tel</code>/<code>tef</code>/<code>ter</code> are all decided <em>before</em> the
+mutation stage, so there is no state change and no fee to record. The fee is
+deducted inside the apply stage, and — crucially — <strong>invariant checks run after
+<code>doApply</code></strong>; if a transaction would violate a ledger invariant, the engine
+downgrades it to a fee-only claim (<code>tec</code>) rather than committing the bad state.
+The three-stage split is also why a node can cheaply reject spam (it dies in
+stateless <code>preflight</code>) while still charging for transactions that were
+well-formed and affordable but simply could not achieve their effect.</p>
+<blockquote>
+<p>The stages read/write increasingly powerful views: <code>PreflightContext</code> (no
+view) → <code>PreclaimContext</code> (<code>ReadView</code>, read-only) → <code>ApplyContext</code>
+(<code>ApplyView</code>, mutable). The view hierarchy (<code>ReadView</code> → <code>OpenView</code> →
+<code>ApplyView</code>) is the same abstraction the <a href="#storage-model">Storage model</a>
+builds on — the engine never touches the SHAMap directly, only through a view.</p>
+</blockquote>
+<h3 id="fixed-precision-amounts-stamount">Fixed-precision amounts (<code>STAmount</code>)</h3>
+<p>A recurring warning in this playbook is <em>never use floating-point for amounts</em>.
+The reason is structural: the ledger's own amount type, <strong><code>STAmount</code></strong>, is
+<strong>fixed-precision by construction</strong>, and every validator must compute
+byte-identical results or consensus fails. There are two distinct
+representations:</p>
+<ul>
+<li><strong>XRP is an integer count of drops.</strong> One XRP is exactly <strong>1,000,000 drops</strong>
+  (<code>kDropsPerXrp</code>), and the total supply is capped at
+  <code>kMaxNativeN = 100,000,000,000,000,000</code> drops (100 billion XRP × 10⁶). XRP
+  amounts are plain 64-bit integers — no fractions below a drop exist, so there
+  is nothing to round.</li>
+<li><strong>Issued currencies (IOUs) use a mantissa + exponent.</strong> The value is
+  <code>mantissa × 10^exponent</code>, where the normalized mantissa is held in the range
+  <strong><code>kMinValue = 10¹⁵</code></strong> to <strong><code>kMaxValue = 10¹⁶ − 1</code></strong> and the exponent ranges
+  from <strong><code>kMinOffset = −96</code></strong> to <strong><code>kMaxOffset = +80</code></strong>. That mantissa width is
+  why an IOU carries roughly <strong>15–16 significant decimal digits</strong> — no more, no
+  fewer.</li>
+</ul>
+<p><strong>Canonicalization is what makes equality exact.</strong> Every IOU value is normalized
+(<code>canonicalize()</code> / <code>IOUAmount::normalize()</code>) into that mantissa/exponent range,
+so there is exactly <em>one</em> representation of any given value. Two amounts are
+equal iff their normalized forms are bit-identical — there is no
+"floating-point epsilon" problem, because the type is not floating-point. Values
+too small to represent normalize to <strong>zero</strong>.</p>
+<p><strong>Rounding is explicit and deterministic.</strong> Arithmetic that cannot be
+represented exactly rounds through named functions (<code>mulRound</code>, <code>divRound</code>, and
+<code>canonicalizeRound</code>) that take an explicit <strong><code>roundUp</code></strong> direction; the same
+inputs always produce the same output on every node. This is the engine-level
+reason your application code must also use exact-decimal or integer arithmetic:
+if you compute an amount with a float and then submit it, your rounding and the
+ledger's rounding can disagree, and the ledger's is the one that counts.</p>
+<h3 id="consensus-internals-unl-validator-lists-and-the-negative-unl">Consensus internals: UNL, Validator Lists, and the Negative UNL</h3>
+<p>The <a href="#the-ledger-close-cycle">ledger close cycle</a> referred to each node's
+<strong>Unique Node List (UNL)</strong> — the set of validators it trusts. Three mechanisms
+turn that phrase into a working trust model, and together they explain how the
+network stays <em>safe</em> (no forks) while staying <em>live</em> (no stall) when validators
+misbehave or go offline.</p>
+<p><strong>UNL — the trusted set, per node.</strong> Each node independently maintains a list of
+validator public keys it will listen to. Consensus (the 80% <code>minConsensusPct</code>
+floor from the close cycle) is measured against this set. Two nodes only agree
+on the same validated ledger if their UNLs overlap sufficiently — this is why a
+common trust anchor matters.</p>
+<p><strong>Validator Lists (VL) — trust is configured, not hard-coded.</strong> Node operators
+do not hand-enter validator keys; they subscribe to signed <strong>Validator Lists</strong>
+published by trusted <em>publisher</em> keys (managed by <code>ValidatorList</code> /
+<code>ValidatorSite</code>). A publisher signs a list (blob + manifest + signature) with a
+sequence number and validity window; nodes fetch and verify it, and their UNL
+updates automatically as new lists are issued. A node can require a validator to
+appear on lists from <em>multiple</em> publishers before trusting it (<code>listThreshold</code>).
+The operational risk this creates: a node running a <strong>stale or divergent</strong> VL
+can compute a different UNL — and therefore potentially a different validated
+ledger — than its peers.</p>
+<p><strong>Negative UNL (nUNL) — protecting liveness without weakening safety.</strong> If a
+trusted validator goes offline, a fixed 80%-of-UNL quorum could stall the whole
+network. The <strong>Negative UNL</strong> is the protocol's answer: a validator that becomes
+unreliable is <em>temporarily</em> removed from the <strong>effective</strong> UNL, which lowers the
+effective quorum just enough to keep progressing — without ever dropping below a
+hard safety floor. The quorum rule is:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>quorum = max( ceil(0.8 × effectiveUnlSize),  ceil(0.6 × originalUnlSize) )
+</span></code></pre></div>
+<p>So the 80% agreement threshold is preserved against the <em>shrunken</em> effective
+set, but quorum can never fall below <strong>60% of the original UNL</strong> — bounding how
+much liveness the network will trade for safety. At most <strong>25% of the UNL</strong>
+(<code>kNegativeUnlMaxListed</code>) can be on the nUNL at once.</p>
+<p>Membership is decided <strong>on-ledger and deterministically</strong>:</p>
+<ul>
+<li>Reliability is measured over each 256-ledger window. A validator whose
+  agreement falls <strong>below 50%</strong> (<code>kNegativeUnlLowWaterMark = 128</code> of 256) is a
+  candidate to be <em>disabled</em>; one back <strong>above 80%</strong> (<code>kNegativeUnlHighWaterMark
+  = 205</code>) is a candidate to be <em>re-enabled</em>. A node only votes if it has itself
+  seen enough of the window (<code>kNegativeUnlMinLocalValsToVote</code>), and brand-new
+  validators are exempt for a grace period (<code>kNewValidatorDisableSkip = 512</code>
+  ledgers).</li>
+<li>Changes are enacted only at <strong>flag ledgers</strong> (every 256 —
+  <code>kFlagLedgerInterval</code>, <code>isFlagLedger</code>) via a <strong><code>ttUNL_MODIFY</code></strong>
+  pseudo-transaction, and take effect one flag ledger later so every node
+  applies the same change synchronously. The state lives in a singleton
+  <code>ltNEGATIVE_UNL</code> ledger object with fields <code>sfDisabledValidators</code>,
+  <code>sfValidatorToDisable</code>, and <code>sfValidatorToReEnable</code>.</li>
+</ul>
+<p>The design goal maps back to the <a href="#design-principles">safety-vs-liveness principle</a>:
+the nUNL lets the network keep closing ledgers when a minority of validators are
+down, but the 60%-of-original-UNL floor guarantees it will still <strong>halt rather
+than fork</strong> if too many are unavailable.</p>
+<h2 id="example-flow">Example flow</h2>
+<p>The following traces a simple XRP payment from client construction to validated
+finality.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Client                       xrpld node                Validator network
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  |                               |                           |
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  |-- construct &amp; sign tx -------&gt;|                           |
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  |                               |-- validate sig &amp; fee      |
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  |&lt;-- preliminary result --------|   broadcast to peers ----&gt;|
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  |   (tesSUCCESS = prediction,   |                           |
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  |    NOT final)                 |                           |
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  |                               |   [consensus rounds]      |
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>  |                               |&lt;-- agreed tx set --------&gt;|
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  |                               |                           |
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>  |                               |   [apply tx set to prev   |
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>  |                               |    validated ledger]      |
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>  |                               |                           |
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>  |                               |&lt;-- validators broadcast   |
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>  |                               |    ledger hashes          |
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>  |                               |   supermajority agrees    |
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>  |                               |   → ledger N validated    |
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>  |                               |                           |
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>  |-- poll tx / subscribe -------&gt;|                           |
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>  |&lt;-- validated: true ------------|                           |
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>  |   meta.TransactionResult       |                           |
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>  |   meta.delivered_amount        |                           |
+</span></code></pre></div>
+<p><strong>Step-by-step:</strong></p>
+<ol>
+<li><strong>Construct</strong> — Build the transaction fields: <code>Account</code>, <code>Destination</code>,
+   <code>Amount</code> (in drops for XRP), <code>Fee</code>, <code>Sequence</code>, <code>LastLedgerSequence</code>
+   (current ledger + ~4 is a reasonable buffer).</li>
+<li><strong>Sign</strong> — Sign with the account's private key and serialize to hex.</li>
+<li><strong>Submit</strong> — Send <code>submit</code> to an xrpld node. The node checks the signature
+   and basic sanity, then broadcasts to peers. The response is a <em>prediction</em>
+   only.</li>
+<li><strong>Open ledger</strong> — The transaction enters the open ledger (not consensus yet).
+   <code>tesSUCCESS</code> here means "would succeed if applied now" — <strong>not final</strong>.</li>
+<li><strong>Consensus</strong> — Validators converge on an agreed transaction set (~2 s).</li>
+<li><strong>Application</strong> — The agreed transactions are applied to the previous
+   validated ledger deterministically. All validators produce the same result.</li>
+<li><strong>Validation</strong> — A supermajority agree on the new ledger hash; the ledger
+   is validated.</li>
+<li><strong>Observe</strong> — Poll <code>tx</code> or subscribe to <code>transactions</code> stream. Check:</li>
+<li><code>validated: true</code> — the ledger containing this tx is final.</li>
+<li><code>meta.TransactionResult === "tesSUCCESS"</code> — the tx succeeded.</li>
+<li><code>meta.delivered_amount</code> — the amount that actually moved.</li>
+</ol>
+<p>If <code>LastLedgerSequence</code> closes without including the transaction, it is
+permanently expired — safe to reconstruct with a new sequence number and
+resubmit.</p>
+<h2 id="security-considerations">Security considerations</h2>
+<ul>
+<li><strong>Disable the master key after hardening.</strong> The master key has unconditional
+  signing authority — it overrides regular keys and signer lists. Disable it
+  (<code>lsfDisableMaster</code>) only <em>after</em> verifying a regular key or multi-sig
+  configuration works, or you will permanently lock the account.</li>
+<li><strong>Sign offline for high-value operations.</strong> Construct and sign transactions
+  on an air-gapped machine. Submit the signed blob from an online machine.
+  Never expose a private key to a network-connected process.</li>
+<li><strong>Use multi-signing for treasury and issuer accounts.</strong> A <code>SignerList</code> with
+  a threshold (e.g. 3-of-5) prevents single-key compromise from draining
+  critical accounts. Set <code>SignerListSet</code> before disabling the master key.</li>
+<li><strong>Plan key rotation explicitly.</strong> Define a rotation runbook before going
+  live: how to set a new <code>RegularKey</code>, verify it, and remove the old one.
+  A broken rotation with the master key disabled = permanent lockout.</li>
+<li><strong>Reserve requirements can lock funds.</strong> Model reserve consumption in
+  capacity planning. An account with insufficient XRP to cover reserves cannot
+  send transactions.</li>
+<li><strong>Never derive conclusions from <code>tesSUCCESS</code> alone.</strong> Always check the
+  validated ledger and <code>meta.delivered_amount</code>.</li>
+</ul>
+<h2 id="common-mistakes">Common mistakes</h2>
+<ul>
+<li><strong>Treating IOUs like XRP.</strong> Issued currencies flow through trust lines and
+  can be frozen, clawed back, or blocked by the issuer. XRP cannot.</li>
+<li><strong>Ignoring reserves.</strong> Applications that create many on-ledger objects
+  without accounting for owner reserves hit unexpected failures.</li>
+<li><strong>Confusing preliminary and validated results.</strong> A transaction appearing
+  in a proposed ledger is not final. Always anchor decisions to the validated
+  ledger.</li>
+<li><strong>Floating-point arithmetic on amounts.</strong> XRPL amounts are fixed-precision.
+  Use integer or exact-decimal arithmetic in all application code.</li>
+<li><strong>Confusing ledger sequence with account sequence.</strong> <code>LastLedgerSequence</code>
+  is the <em>global</em> ledger counter. <code>Sequence</code> on the transaction is the
+  <em>per-account</em> nonce. Using one where the other is expected produces
+  submission errors that are hard to diagnose.</li>
+<li><strong>Misconfiguring <code>NoRipple</code>.</strong> Failing to set <code>NoRipple</code> on trust lines that
+  should not be used as rippling intermediaries can expose an account to
+  unwanted value flows. Conversely, setting it on every trust line breaks
+  cross-currency pathfinding.</li>
+<li><strong>Hard-coding fee values.</strong> Transaction fees scale under load. Always fetch
+  the current <code>base_fee</code> and load multiplier from <code>server_info</code> or the <code>fee</code>
+  command — hard-coded fees cause transactions to be dropped during load spikes.</li>
+</ul>
+<h2 id="production-checklist">Production checklist</h2>
+<ul>
+<li>[ ] Reserve values fetched live from <code>server_info</code> — not hard-coded.</li>
+<li>[ ] Reserve consumption modeled for every object type the application creates
+      (trust lines, offers, escrows, channels).</li>
+<li>[ ] Reserve headroom monitored and alerted on (e.g. &lt; 2 XRP above minimum).</li>
+<li>[ ] All amount handling uses exact-decimal or integer types — no floats.</li>
+<li>[ ] Transaction results verified against the validated ledger, not the
+      preliminary submission response.</li>
+<li>[ ] Master key disabled on all operational and issuer accounts.</li>
+<li>[ ] Multi-signing (<code>SignerList</code>) configured on treasury and issuer accounts
+      before master key is disabled.</li>
+<li>[ ] Key rotation runbook written and tested on Testnet before mainnet deploy.</li>
+<li>[ ] Fee values fetched dynamically; no hard-coded fee constants in production
+      transaction construction code.</li>
+<li>[ ] Node failover configured — application can reconnect to an alternate
+      xrpld endpoint if primary node is unreachable.</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://xrpl.org/docs/concepts/ledger-overview">Ledger Overview</a></li>
+<li><a href="https://xrpl.org/docs/concepts/accounts/reserves">Reserves</a></li>
+<li><a href="https://xrpl.org/docs/concepts/tokens/fungible-tokens">Trust Lines and Rippling</a></li>
+<li><a href="https://xrpl.org/docs/concepts/consensus-protocol">Consensus Protocol</a></li>
+<li><a href="https://xrpl.org/docs/concepts/accounts">Accounts</a></li>
+<li><a href="https://xrpl.org/docs/references/protocol/transactions/types">Transaction Types Reference</a></li>
+<li><a href="https://xrpl.org/docs/references/protocol/transactions/transaction-results">Transaction Results (error codes)</a></li>
+<li><a href="https://xrpl.org/docs/concepts/accounts/multi-signing">Multi-Signing</a></li>
+<li><a href="https://xrpl.org/docs/concepts/accounts/tickets">Tickets</a></li>
+<li><a href="https://xrpl.org/docs/concepts/ledgers">Ledger Structure (SHAMap)</a></li>
+<li><a href="https://xrpl.org/docs/references/protocol/ledger-data/ledger-entry-types/accountroot">AccountRoot Object</a></li>
+<li><a href="https://xrpl.org/docs/references/protocol/binary-format">Serialization Format</a></li>
+<li><a href="https://xrpl.org/docs/infrastructure/configuration/data-retention/online-deletion">Online Deletion / Data Retention</a></li>
+<li><a href="https://arxiv.org/abs/1802.07242">XRP Ledger Consensus Protocol (whitepaper)</a></li>
+<li><a href="https://xrpl.org/docs/concepts/networks-and-servers/amendments">Amendments</a></li>
+<li><a href="https://xrpl.org/docs/concepts/transactions/transaction-cost">Transaction Cost &amp; Fee Escalation</a></li>
+</ul>
+<p><strong><code>xrpld</code> source referenced in this chapter</strong> (paths relative to the vendored
+<code>rippled/</code> tree — the on-disk directory retains the historical name):</p>
+<ul>
+<li>Consensus thresholds — <code>src/xrpld/consensus/ConsensusParms.h</code>
+  (<code>minConsensusPct</code>, avalanche cutoffs 50/65/70/95).</li>
+<li>Canonical transaction ordering — <code>src/libxrpl/ledger/CanonicalTXSet.cpp</code>.</li>
+<li>Transaction invariants — <code>include/xrpl/tx/invariants/InvariantCheck.h</code>.</li>
+<li>Genesis XRP supply / balance bounds — <code>include/xrpl/protocol/SystemParameters.h</code>
+  (<code>kInitialXrp</code>).</li>
+<li>Amendment majority / window — <code>include/xrpl/protocol/SystemParameters.h</code>
+  (<code>kAmendmentMajorityCalcThreshold</code>, <code>kDefaultAmendmentMajorityTime</code>).</li>
+<li>Result codes (<code>temDISABLED</code>) — <code>include/xrpl/protocol/TER.h</code>.</li>
+<li>Flag-ledger interval (amendment/fee-vote activation points) —
+  <code>src/libxrpl/protocol/Protocol.cpp</code> (<code>isFlagLedger</code>, <code>kFlagLedgerInterval = 256</code>).</li>
+<li>Deterministic / canonical signatures — <code>src/libxrpl/protocol/SecretKey.cpp</code>,
+  <code>src/libxrpl/protocol/PublicKey.cpp</code> (<code>ecdsaCanonicality</code>).</li>
+<li>Close-time resolution binning — <code>include/xrpl/ledger/LedgerTiming.h</code>.</li>
+<li>Transaction engine pipeline (<code>preflight</code>/<code>preclaim</code>/<code>doApply</code>, the
+  <code>Transactor</code> base class, and stage dispatch) — <code>include/xrpl/tx/Transactor.h</code>
+  (<code>PreflightContext</code>, <code>PreclaimContext</code>), <code>include/xrpl/tx/ApplyContext.h</code>
+  (<code>ApplyContext</code>), <code>src/libxrpl/tx/applySteps.cpp</code>, <code>src/libxrpl/tx/Transactor.cpp</code>.</li>
+<li>View hierarchy (<code>ReadView</code> → <code>OpenView</code> → <code>ApplyView</code>) —
+  <code>include/xrpl/ledger/ReadView.h</code>, <code>include/xrpl/ledger/OpenView.h</code>,
+  <code>include/xrpl/ledger/ApplyView.h</code>.</li>
+<li>Fixed-precision amounts (<code>kDropsPerXrp</code>, <code>kMinValue</code>/<code>kMaxValue</code>,
+  <code>kMinOffset</code>/<code>kMaxOffset</code>, <code>kMaxNativeN</code>, <code>canonicalize</code>, <code>mulRound</code>/<code>divRound</code>)
+  — <code>include/xrpl/protocol/STAmount.h</code>, <code>src/libxrpl/protocol/STAmount.cpp</code>,
+  <code>include/xrpl/protocol/IOUAmount.h</code>, <code>include/xrpl/protocol/XRPAmount.h</code>.</li>
+<li>Validator trust and Validator Lists — <code>src/xrpld/app/misc/ValidatorList.h</code>
+  (quorum via <code>calculateQuorum</code>), <code>src/xrpld/app/misc/detail/ValidatorList.cpp</code>.</li>
+<li>Negative UNL (water marks, max-listed, voting, flag-ledger application) —
+  <code>src/xrpld/app/misc/NegativeUNLVote.h</code>
+  (<code>kNegativeUnlLowWaterMark</code>/<code>HighWaterMark</code>, <code>kNegativeUnlMaxListed</code>,
+  <code>kNewValidatorDisableSkip</code>), <code>src/xrpld/app/misc/NegativeUNLVote.cpp</code>,
+  <code>ltNEGATIVE_UNL</code> and <code>ttUNL_MODIFY</code> in
+  <code>include/xrpl/protocol/detail/ledger_entries.macro</code> /
+  <code>include/xrpl/protocol/detail/transactions.macro</code>.</li>
+</ul>
+<h2 id="what-i-learned">What I learned</h2>
+<ul>
+<li><strong>Finality is a design choice, not a spectrum.</strong> Most chains offer
+  probabilistic finality and force you to pick a confirmation depth. XRPL's
+  deterministic finality changes the entire error-handling architecture — once
+  a ledger is validated, there is nothing to wait for.</li>
+<li><strong>Reserves encode state cost directly.</strong> The owner reserve is not just
+  spam protection; it is a direct signal that you are consuming persistent
+  ledger state. Modeling reserve consumption is a capacity-planning concern,
+  not an afterthought.</li>
+<li><strong><code>tesSUCCESS</code> from submission is a prediction.</strong> It reflects how the node
+  <em>would</em> apply the transaction to its current open ledger. The actual result
+  can differ. The validated ledger is the only authoritative source.</li>
+<li><strong>Trust lines are bilateral objects, not unilateral balances.</strong> Both the
+  issuer and the holder can set limits and flags independently. The issuer's
+  flags (freeze, require auth) have direct operational consequences for holders.</li>
+<li><strong>Sequence numbers are a replay-prevention primitive.</strong> Each account has a
+  monotonically increasing sequence number. A transaction is only valid at
+  exactly the current sequence — this is what makes idempotent resubmission
+  tractable.</li>
+</ul>
+<h2 id="open-questions">Open questions</h2>
+<p><strong>How does the consensus protocol handle validator set changes and UNL divergence at scale?</strong></p>
+<blockquote>
+<p><strong>Confirmed against source</strong> — see
+<a href="#consensus-internals-unl-validator-lists-and-the-negative-unl">Consensus internals</a>
+for the full mechanism. Validator trust is configured through signed
+<strong>Validator Lists</strong> from trusted publishers (<code>ValidatorList</code> /
+<code>ValidatorSite</code>), so a node's UNL updates automatically as new lists are
+issued; keys are never hard-coded. Consensus is measured against that UNL with
+the <strong>80%</strong> <code>minConsensusPct</code> floor and the avalanche escalation
+(50% → 65% → 70% → 95%). When validators become unreliable, the <strong>Negative
+UNL</strong> shrinks the <em>effective</em> UNL so the network stays live, while a hard floor
+keeps the quorum at ≥ <strong>60% of the original UNL</strong>
+(<code>quorum = max(ceil(0.8 × effectiveUnlSize), ceil(0.6 × originalUnlSize))</code>,
+<code>calculateQuorum</code> in <code>ValidatorList.cpp</code>) — the network halts rather than forks
+if too many are down. Application-level implication: a node running a <strong>stale
+or divergent VL</strong> can compute a different UNL — and therefore potentially a
+different validated ledger — than its peers, so monitor VL expiry and update
+promptly.</p>
+</blockquote>
+<p><strong>What are the performance characteristics of the SHAMap state tree under very high object counts (e.g., accounts with thousands of trust lines or offers)?</strong></p>
+<blockquote>
+<p><strong>Hypothesis:</strong> SHAMap is a <strong>16-way radix (Merkle prefix) tree</strong> — not a
+binary trie. Each inner node fans out to exactly 16 children (<code>kBranchFactor
+= 16</code>, indexed by nibbles of the 256-bit key). Lookup depth is bounded by the
+key length (up to 64 nibble levels), making it effectively O(1) in the number
+of stored objects once the tree is populated. For accounts with thousands of
+owned objects, raw lookup performance degrades slowly — the practical
+bottleneck is not computational but economic: each object consumes 0.2 XRP in
+owner reserve, so the cost of holding 1,000 trust lines is 200 XRP locked
+indefinitely. At the network level, high object counts on popular accounts
+increase the cost of ledger serialization and snapshot delivery.
+Application-side, fetching all owned objects for an account with thousands of
+entries via <code>account_objects</code> requires pagination (the <code>limit</code> and <code>marker</code>
+fields); fetching all at once will time out on a public node. Design around
+this by pruning stale objects (closing zero-balance trust lines, canceling
+unfilled offers) to keep owner counts manageable.</p>
+<p><strong>Confirmed against source</strong> — see <a href="#storage-model">Storage model</a>: the
+16-way fan-out (<code>kBranchFactor = 16</code>) and nibble-indexed depth bound are
+verified in <code>SHAMap.h</code> / <code>SHAMapInnerNode.h</code>.</p>
+</blockquote>
+<p><strong>How do reserve value changes (via fee votes) propagate, and what is the minimum notice a well-operated application should plan for?</strong></p>
+<blockquote>
+<p><strong>Hypothesis:</strong> Reserve values are changed by a fee voting mechanism: each
+validator can express a preferred <code>BaseFee</code>, <code>ReserveBase</code>, and
+<code>ReserveIncrement</code> in its validation messages. When a majority of validators
+vote for a new value over a voting window (~256 ledgers ≈ 15–20 minutes),
+the new values take effect in the following ledger. There is no advance
+warning period beyond observing the vote in progress via the <code>fee</code> command.
+Existing objects are grandfathered — accounts that already owned objects
+below the new minimum will not become invalid, but they may lose the ability
+to send new transactions if their available XRP falls below the updated
+minimum. Best practice: monitor <code>fee.reserve_base</code> and <code>fee.reserve_inc</code>
+each ledger close, alert when they change, and maintain a buffer of at least
+2–5 XRP above the current minimum to absorb a reserve increase without
+triggering an operational incident.</p>
+</blockquote>
+<p><strong>How should a multi-account application reason about aggregate reserve consumption and XRP liquidity across all its accounts?</strong></p>
+<blockquote>
+<p><strong>Hypothesis:</strong> Reserves are per-account and cannot be pooled — an account
+can only spend XRP it holds above its own minimum. The right model is a
+per-account reserve ledger: for each operational account, track
+<code>base_reserve + (owned_objects × owner_reserve)</code> as locked XRP, and
+<code>actual_balance − locked_xrp</code> as spendable XRP. Aggregate these across all
+accounts to understand total locked vs. liquid XRP at the system level.
+High-frequency accounts that open many offers or escrows should be provisioned
+with a reserve buffer sized to their maximum expected concurrent object count.
+New account creation (funding a previously unfunded address) requires at least
+<code>base_reserve</code> XRP in the funding transaction — this should be modeled as a
+capital expense in account provisioning budgets.</p>
+</blockquote>
+<p><strong>What are the operational implications of the <code>lsfDisableMaster</code> flag if a regular key is lost — and how should key rotation be designed to avoid lockout?</strong></p>
+<blockquote>
+<p><strong>Hypothesis:</strong> If <code>lsfDisableMaster</code> is set and the regular key is lost with
+no <code>SignerList</code> configured, the account is permanently inaccessible — there
+is no recovery mechanism, no admin override, and no fork to revert the state.
+This is a funds-at-risk scenario with no remedy. The safe pattern is:
+(1) configure a <code>SignerList</code> with a threshold ≥ 2 before disabling the master
+key — multi-sig can still submit <code>AccountSet</code> to re-enable the master or set
+a new regular key even after <code>lsfDisableMaster</code> is set;
+(2) store master key material offline in cold storage even after disabling it
+— it is the last-resort recovery tool if the signer list is also lost;
+(3) write a rotation runbook that covers setting a new <code>RegularKey</code>, verifying
+it on Testnet, and only then disabling the master on mainnet;
+(4) schedule and test key rotation before credentials approach their shelf life.</p>
+</blockquote>
+<hr />
+<p><strong>← Back to <a href="../">Chapter 1 — Foundations</a></strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

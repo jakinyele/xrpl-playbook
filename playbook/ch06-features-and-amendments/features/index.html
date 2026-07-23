@@ -1,0 +1,4091 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jakinyele.github.io/xrpl-playbook/playbook/ch06-features-and-amendments/features/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../GLOSSARY/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Feature Reference - XRPL Playbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#feature-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="XRPL Playbook" class="md-header__button md-logo" aria-label="XRPL Playbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            XRPL Playbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Feature Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jakinyele/awesome-xrpl-playbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jakinyele/awesome-xrpl-playbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About this Playbook
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../ch00-coming-from-other-chains/" class="md-tabs__link">
+          
+  
+  
+  Road to Mastery
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../GLOSSARY/" class="md-tabs__link">
+          
+  
+  
+  Appendices
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../examples/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Examples
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="XRPL Playbook" class="md-nav__button md-logo" aria-label="XRPL Playbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    XRPL Playbook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jakinyele/awesome-xrpl-playbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jakinyele/awesome-xrpl-playbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About this Playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Road to Mastery
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Road to Mastery
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coming from Other Chains
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Coming from Other Chains
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/concept-mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/rpc-method-mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RPC Method Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/indexing-and-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indexing & History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/subscriptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subscriptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01-foundations/mental-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mental Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01-foundations/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01-foundations/payments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issuing Value
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Issuing Value
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02-issuing-value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02-issuing-value/issuer-controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issuer Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02-issuing-value/stablecoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stablecoins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02-issuing-value/tokenization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tokenization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markets & Liquidity
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Markets & Liquidity
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/defi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DeFi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/dex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DEX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/amm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/oracles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oracles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardening
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardening
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04-hardening/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04-hardening/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04-hardening/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04-hardening/custody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custody
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Architectures
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference Architectures
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch05-reference-architectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch05-reference-architectures/reference-architectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Architectures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features & Amendments
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features & Amendments
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-this-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why does this matter?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mental model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#history-of-amendments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        History of amendments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="History of amendments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem-amendments-were-built-to-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem amendments were built to solve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-idea-to-on-ledger-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From idea to on-ledger switch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-safety-valve-amendment-blocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The safety valve: amendment-blocking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#milestones-and-lessons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Milestones and lessons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-amendments-affect-your-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How amendments affect your code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-compatibility-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version compatibility matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version compatibility matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-payments-and-fees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Payments and Fees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escrow-and-payment-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escrow and Payment Channels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-management-and-signing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Management and Signing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-fungible-tokens-nfts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Fungible Tokens (NFTs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fungible-tokens-and-issuance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fungible Tokens and Issuance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defi-dex-and-markets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeFi, DEX, and Markets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#price-oracles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Price Oracles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identity-and-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identity and Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-chain-bridges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Chain Bridges
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lending-protocol-and-vaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lending Protocol and Vaults
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permission-delegation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permission Delegation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Transactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confidential-transfers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confidential Transfers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sponsorship" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sponsorship
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-flow-checking-amendment-readiness-before-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example flow: checking amendment readiness before building
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-activating-an-amendment-on-a-private-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: activating an amendment on a private network
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common mistakes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-i-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What I learned
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-guidance-what-to-build-against-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design guidance: what to build against now
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design guidance: what to build against now">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-now-voting-phase-api-is-frozen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Design now (voting phase — API is frozen)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-with-caution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ Design with caution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-not-design-against-devnet-only-api-not-stable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ Do not design against (devnet-only, API not stable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-detect-when-an-amendment-becomes-safe-to-design-against" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to detect when an amendment becomes safe to design against
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CHEATSHEET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Sheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ROADMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-this-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why does this matter?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mental model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#history-of-amendments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        History of amendments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="History of amendments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem-amendments-were-built-to-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem amendments were built to solve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-idea-to-on-ledger-switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From idea to on-ledger switch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-safety-valve-amendment-blocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The safety valve: amendment-blocking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#milestones-and-lessons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Milestones and lessons
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-amendments-affect-your-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How amendments affect your code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-compatibility-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version compatibility matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version compatibility matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-payments-and-fees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Payments and Fees
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escrow-and-payment-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escrow and Payment Channels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-management-and-signing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Management and Signing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-fungible-tokens-nfts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-Fungible Tokens (NFTs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fungible-tokens-and-issuance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fungible Tokens and Issuance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defi-dex-and-markets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeFi, DEX, and Markets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#price-oracles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Price Oracles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identity-and-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identity and Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-chain-bridges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Chain Bridges
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lending-protocol-and-vaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lending Protocol and Vaults
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permission-delegation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permission Delegation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#batch-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Batch Transactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confidential-transfers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confidential Transfers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sponsorship" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sponsorship
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-flow-checking-amendment-readiness-before-building" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example flow: checking amendment readiness before building
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example-activating-an-amendment-on-a-private-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example: activating an amendment on a private network
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common mistakes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-i-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What I learned
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-guidance-what-to-build-against-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design guidance: what to build against now
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design guidance: what to build against now">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-now-voting-phase-api-is-frozen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ Design now (voting phase — API is frozen)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-with-caution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ Design with caution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-not-design-against-devnet-only-api-not-stable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❌ Do not design against (devnet-only, API not stable)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-detect-when-an-amendment-becomes-safe-to-design-against" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to detect when an amendment becomes safe to design against
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="feature-reference">Feature Reference</h1>
+<h2 id="why-does-this-matter">Why does this matter?</h2>
+<p>XRPL features are permanent once activated — no rollback, no opt-out. A
+transaction type or ledger entry type introduced by an unactivated amendment
+returns <code>temDISABLED</code>. An architecture built on an amendment that later stalls
+in voting will not ship on schedule. This reference gives you the current
+activation status, minimum xrpld version, and the practical use cases for
+every significant feature through xrpld 3.3.</p>
+<h2 id="mental-model">Mental model</h2>
+<p>The amendment lifecycle has four stages, derived from the source:</p>
+<pre class="mermaid"><code>stateDiagram-v2
+    [*] --&gt; InDevelopment : merged into xrpld\n(Supported::No)
+
+    InDevelopment --&gt; OpenForVoting : Supported::Yes\n(API frozen; validators can vote)
+
+    OpenForVoting --&gt; MajorityHeld : ≥ 80% of UNL\nvotes yes on a flag ledger\n(DefaultNo: opt-in)\n(DefaultYes: auto-voted)
+
+    MajorityHeld --&gt; Active : majority held\ncontinuously for 2 weeks →\nEnableAmendment pseudo-tx\nat next flag ledger
+
+    MajorityHeld --&gt; OpenForVoting : majority lost\nbefore 2 weeks\n(clock resets)
+
+    Active --&gt; Retired : ≥ 2 years active →\ngating code removed\nfrom xrpld source\n(still fully live on Mainnet)
+
+    OpenForVoting --&gt; Obsolete : superseded by a\ncorrected amendment\n(e.g. Batch → BatchV1_1)
+
+    note right of InDevelopment
+        temDISABLED on all networks.
+        Only on private devchains
+        with force_enable.
+    end note
+
+    note right of Active
+        Permanent. Irreversible.
+        Cannot be turned off.
+    end note
+
+    note right of Retired
+        "Retired" ≠ deactivated.
+        Still enforced on Mainnet;
+        the gating toggle was deleted.
+    end note</code></pre>
+<blockquote>
+<p><strong>"Retired" does not mean deactivated — it means the opposite.</strong> A <em>retired</em>
+amendment is still permanently enabled on Mainnet. It has simply been active
+long enough (<strong>≥ 2 years</strong>) that it is now a mandatory part of the protocol,
+so <code>xrpld</code> deleted the old "if this amendment is enabled" toggle code and
+moved the identifier to its deprecated <code>XRPL_RETIRE_FEATURE</code> list in
+<code>features.macro</code>. A retired amendment <strong>can never be turned off</strong>. Retirement
+is a source-code cleanup milestone, not a deactivation. This is why the
+tables below show entries like <code>Escrow</code> as <code>✅ Active (retired)</code>: fully live
+on Mainnet, and so entrenched that its gating code no longer exists.</p>
+</blockquote>
+<p>Obsolete = supported but permanently flagged as never-to-be-voted-for.
+This happens when an amendment is replaced by a corrected version.</p>
+<h2 id="history-of-amendments">History of amendments</h2>
+<h3 id="the-problem-amendments-were-built-to-solve">The problem amendments were built to solve</h3>
+<p>Every blockchain eventually needs to change its rules. The conventional answer
+is a <strong>hard fork</strong>: operators coordinate off-chain to run new software by a
+flag date, and nodes that miss the date end up on a diverging chain. For a
+decentralized value-settlement network that is a serious hazard — a botched or
+contested fork can split the ledger, and "the rules changed out from under me"
+is exactly the failure a settlement system cannot tolerate.</p>
+<p>The XRP Ledger's answer, introduced in <strong><code>rippled</code> 0.31.0 (2016)</strong>, was to make
+protocol evolution a <em>first-class, on-ledger process</em> rather than an off-chain
+social coordination problem. The design goal, in the original framing, was
+"sensible evolution": let the network adopt new features <strong>without disruptive
+hard forks</strong>, with the <em>validators themselves</em> — not any single company —
+deciding when a change goes live, and with an explicit safety mechanism for
+nodes that fall behind. This is why the amendment system predates most of the
+features this chapter documents: it is the substrate that made all of them
+shippable.</p>
+<h3 id="from-idea-to-on-ledger-switch">From idea to on-ledger switch</h3>
+<p>The insight that makes the system work is that a rule change does not need a
+new chain — it only needs a <strong>coordinated flag day that the ledger itself
+records and enforces</strong>. The mechanism has three moving parts, all visible in
+<code>xrpld</code> source:</p>
+<ol>
+<li><strong>The vote rides on validations.</strong> Each validator publishes its amendment
+   preferences in the <code>sfAmendments</code> field of the validations it already signs
+   every ledger (<code>src/xrpld/app/misc/detail/AmendmentTable.cpp</code> — see
+   <code>doVoting()</code>). No separate election is needed; governance piggybacks on
+   consensus.</li>
+<li><strong>The network writes its own transactions.</strong> When an amendment's support
+   crosses the threshold, the network injects an <code>EnableAmendment</code>
+   <em>pseudo-transaction</em> — transaction type <code>ttAMENDMENT</code> (100),
+   <code>include/xrpl/protocol/detail/transactions.macro</code> — that no account submits.
+   It is applied by the <code>Change</code> transactor
+   (<code>src/libxrpl/tx/transactors/system/Change.cpp</code>, <code>applyAmendment()</code>).</li>
+<li><strong>The ledger holds the canonical state.</strong> <code>applyAmendment()</code> maintains the
+   <code>Amendments</code> singleton object (<code>keylet::amendments()</code>): a running
+   <code>sfMajorities</code> array (each entry an amendment plus the <code>sfCloseTime</code> when it
+   <em>first</em> reached majority — the start of the clock) and the <code>sfAmendments</code>
+   list of what is permanently enabled. The <code>tfGotMajority</code> flag adds an entry
+   and starts the timer; <code>tfLostMajority</code> removes it and <em>resets</em> the timer; an
+   <code>EnableAmendment</code> with <strong>no</strong> flag pushes the amendment into <code>sfAmendments</code>
+   and enables it for good.</li>
+</ol>
+<p>The activation rule sits on top of that state: an amendment enables only after
+it has held <strong>≥ 80% support for two consecutive weeks</strong>
+(<code>kAmendmentMajorityCalcThreshold = 80/100</code> and
+<code>kDefaultAmendmentMajorityTime = weeks{2}</code> in
+<code>include/xrpl/protocol/SystemParameters.h</code>; the gate
+<code>(*majorityTime + majorityTime_) &lt;= closeTime</code> in <code>AmendmentTable.cpp</code>). Because
+losing majority resets the <code>sfCloseTime</code>, the two-week clock is a <em>sustained</em>
+threshold, not a one-time poll — a design choice that favors stability over
+speed. See <a href="../../ch04-hardening/operations/">ch04 Operations</a> for the
+operator-facing side of these same constants.</p>
+<h3 id="the-safety-valve-amendment-blocking">The safety valve: amendment-blocking</h3>
+<p>The other half of "no disruptive hard forks" is what happens to a node that is
+<em>behind</em>. When <code>applyAmendment()</code> enables an amendment the local build does not
+understand, it calls <code>setAmendmentBlocked()</code> (<code>Change.cpp</code>) and the node stops
+processing rather than applying rules it cannot validate correctly. A stale
+node fails <em>safe and loud</em> (visible as <code>server_info.amendment_blocked</code>) instead
+of silently diverging onto its own fork. This is the mechanism that lets the
+network upgrade itself without splitting.</p>
+<h3 id="milestones-and-lessons">Milestones and lessons</h3>
+<ul>
+<li><strong><code>FeeEscalation</code> — the first activated amendment (2016-05-05).</strong> Fittingly,
+  the amendment system's debut change hardened the network under load
+  (transaction-cost escalation), proving the pipeline on an operational fix
+  before feature work.</li>
+<li><strong><code>MultiSign</code> — governance enabling security.</strong> Multi-signing shipped as one
+  of the earliest amendments, establishing the pattern that even
+  account-security primitives arrive through the same vote.</li>
+<li><strong>Feature waves.</strong> Escrow and payment channels, then <code>Flow</code> (the rewritten
+  payment engine), later the <code>AMM</code>, and most recently permissioned tokens and
+  DEX — each entered through the identical pipeline, which is why this chapter
+  can describe them uniformly as <code>active</code> / <code>voting</code> / <code>in-development</code>.</li>
+<li><strong>Obsoletion is part of the design, not a failure of it.</strong> <code>Batch</code> and
+  <code>PermissionDelegation</code> were superseded by corrected versions
+  (<code>BatchV1_1</code>, <code>PermissionDelegationV1_1</code>); the originals are marked
+  permanently un-votable rather than deleted. The lesson: because activation is
+  <em>irreversible</em>, a flawed amendment is retired by shipping a fixed successor,
+  not by "turning it off" — reinforcing why the two-week sustained threshold and
+  validator opt-in exist in the first place.</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<h3 id="how-amendments-affect-your-code">How amendments affect your code</h3>
+<ul>
+<li><strong>New transaction type</strong> — submitting before activation → <code>temDISABLED</code>.</li>
+<li><strong>New ledger entry type</strong> — <code>ledger_entry</code> queries return nothing or errors.</li>
+<li><strong>New RPC method</strong> — returns <code>unknown command</code> on nodes below the minimum version.</li>
+<li><strong>Flag changes</strong> — new flags on existing transactions are silently ignored
+  or error depending on whether the amendment is active.</li>
+</ul>
+<p>Always check <code>server_info.amendment_blocked</code> on any production node. A value
+of <code>true</code> means the node is running software that does not support an enabled
+amendment — it is no longer tracking the live ledger.</p>
+<h3 id="version-compatibility-matrix">Version compatibility matrix</h3>
+<p><strong>Status key:</strong>
+✅ Active — enabled on Mainnet | 🗳️ Voting — open, not yet activated
+🔧 Dev — <code>Supported::No</code>; not votable | ⚠️ Obsolete — removed/replaced</p>
+<p><strong><code>✅ Active (retired)</code></strong> — enabled on Mainnet <strong>and</strong> active for 2+ years, so
+its amendment-gating code has been removed from <code>xrpld</code> (identifier moved to
+the <code>XRPL_RETIRE_FEATURE</code> list). It is <strong>still fully active and can never be
+disabled</strong> — "retired" refers only to the source-code cleanup, <em>not</em> to the
+amendment's status on the ledger. Do not read <code>(retired)</code> as "off" or
+"deprecated feature."</p>
+<p>Sources: <code>features.macro</code> (xrpld 3.3 branch), xrpscan.com/amendments (live Mainnet status), xrpl.org/resources/known-amendments, API-CHANGELOG.md.</p>
+<h4 id="core-payments-and-fees">Core Payments and Fees</h4>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Introduced</th>
+<th>Mainnet Status</th>
+<th>Activated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FeeEscalation</code></td>
+<td>v0.31</td>
+<td>✅ Active (retired)</td>
+<td>2016-05-19</td>
+</tr>
+<tr>
+<td><code>XRPFees</code></td>
+<td>v1.10.0</td>
+<td>✅ Active</td>
+<td>2024-03-25</td>
+</tr>
+<tr>
+<td><code>fixFillOrKill</code></td>
+<td>v2.0.0</td>
+<td>✅ Active</td>
+<td>2024-04-11</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>XRPFees</code> use case:</strong> Replaces fee-unit accounting with direct XRP drops.
+<code>FeeSettings</code> now uses <code>BaseFeeDrops</code>, <code>ReserveBaseDrops</code>,
+<code>ReserveIncrementDrops</code>. Critical for any code that previously read <code>BaseFee</code>
+or <code>ReferenceFeeUnits</code> from <code>fee</code> RPCs — those fields are gone.</p>
+<h4 id="escrow-and-payment-channels">Escrow and Payment Channels</h4>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Introduced</th>
+<th>Mainnet Status</th>
+<th>Activated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Escrow</code></td>
+<td>v0.60</td>
+<td>✅ Active (retired)</td>
+<td>2017-03-31</td>
+</tr>
+<tr>
+<td><code>PayChan</code></td>
+<td>v0.33</td>
+<td>✅ Active (retired)</td>
+<td>2017-03-31</td>
+</tr>
+<tr>
+<td><code>Checks</code></td>
+<td>v0.90</td>
+<td>✅ Active (retired)</td>
+<td>2020-06-18</td>
+</tr>
+<tr>
+<td><code>fixPayChanCancelAfter</code></td>
+<td>v2.5.0</td>
+<td>✅ Active</td>
+<td>2025-08-29</td>
+</tr>
+<tr>
+<td><code>TokenEscrow</code></td>
+<td>v2.5.0</td>
+<td>✅ Active</td>
+<td>2026-02-12</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>TokenEscrow</code> use case (XLS-85):</strong> Extends <code>EscrowCreate/Finish/Cancel</code>
+to hold Trust Line Tokens and MPTs — not just XRP. Issuers must set
+<code>AllowTrustLineLocking</code> (for TL tokens) or <code>CanEscrow</code> (for MPTs). Enables
+vesting schedules, conditional token delivery, and deferred payments for
+tokenized assets. Depends on <code>MPTokensV1</code>.</p>
+<h4 id="account-management-and-signing">Account Management and Signing</h4>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Introduced</th>
+<th>Mainnet Status</th>
+<th>Activated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MultiSign</code></td>
+<td>v0.31</td>
+<td>✅ Active (retired)</td>
+<td>2016-06-27</td>
+</tr>
+<tr>
+<td><code>ExpandedSignerList</code></td>
+<td>v1.9.1</td>
+<td>✅ Active (retired)</td>
+<td>2022-10-13</td>
+</tr>
+<tr>
+<td><code>DeletableAccounts</code></td>
+<td>v1.4.0</td>
+<td>✅ Active (retired)</td>
+<td>2020-05-08</td>
+</tr>
+<tr>
+<td><code>DepositAuth</code></td>
+<td>v0.90</td>
+<td>✅ Active (retired)</td>
+<td>2018-04-06</td>
+</tr>
+<tr>
+<td><code>DepositPreauth</code></td>
+<td>v1.1.0</td>
+<td>✅ Active (retired)</td>
+<td>2018-10-09</td>
+</tr>
+<tr>
+<td><code>DisallowIncoming</code></td>
+<td>v1.10.0</td>
+<td>✅ Active (retired)</td>
+<td>2023-08-21</td>
+</tr>
+<tr>
+<td><code>TicketBatch</code></td>
+<td>v1.7.0</td>
+<td>✅ Active (retired)</td>
+<td>2021-11-18</td>
+</tr>
+</tbody>
+</table>
+<h4 id="non-fungible-tokens-nfts">Non-Fungible Tokens (NFTs)</h4>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Introduced</th>
+<th>Mainnet Status</th>
+<th>Activated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NonFungibleTokensV1_1</code></td>
+<td>v1.9.2</td>
+<td>✅ Active (retired)</td>
+<td>2022-10-31</td>
+</tr>
+<tr>
+<td><code>fixRemoveNFTokenAutoTrustLine</code></td>
+<td>v1.9.4</td>
+<td>✅ Active</td>
+<td>2022-10-27</td>
+</tr>
+<tr>
+<td><code>NFTokenMintOffer</code></td>
+<td>v2.3.0</td>
+<td>✅ Active</td>
+<td>2025-02-15</td>
+</tr>
+<tr>
+<td><code>DynamicNFT</code></td>
+<td>v2.4.0</td>
+<td>✅ Active</td>
+<td>2025-06-11</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>NFTokenMintOffer</code> use case:</strong> Combines <code>NFTokenMint</code> + <code>NFTokenCreateOffer</code>
+into a single atomic transaction. Adds optional <code>Amount</code>, <code>Destination</code>, and
+<code>Expiration</code> fields to <code>NFTokenMint</code>. Eliminates the two-step mint-then-list
+flow and the race condition where a token is minted but the sell offer fails.</p>
+<p><strong><code>DynamicNFT</code> use case (XLS-46):</strong> Allows the <code>NFTokenMinter</code> to update the
+<code>URI</code> field of a minted NFT post-mint using the new <code>NFTokenModify</code>
+transaction. Enables evolving digital assets (gaming items, membership passes
+with refreshed metadata, credentials with expiry). The <code>tfMutable</code> flag set
+at mint time is required; immutable NFTs cannot be modified.</p>
+<h4 id="fungible-tokens-and-issuance">Fungible Tokens and Issuance</h4>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Introduced</th>
+<th>Mainnet Status</th>
+<th>Activated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Clawback</code></td>
+<td>v1.12.0</td>
+<td>✅ Active (retired)</td>
+<td>2024-02-08</td>
+</tr>
+<tr>
+<td><code>MPTokensV1</code></td>
+<td>v2.3.0</td>
+<td>✅ Active</td>
+<td>2025-10-01</td>
+</tr>
+<tr>
+<td><code>AMMClawback</code></td>
+<td>v2.3.0</td>
+<td>✅ Active</td>
+<td>2025-01-30</td>
+</tr>
+<tr>
+<td><code>DynamicMPT</code></td>
+<td>v3.x</td>
+<td>🗳️ Voting</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>MPTokensV2</code></td>
+<td>v3.x</td>
+<td>🔧 Dev</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>MPTokensV1</code> use case (XLS-33):</strong> Introduces Multi-Purpose Tokens (MPTs) —
+a simpler, more gas-efficient alternative to Trust Line tokens. MPTs live in
+<code>MPTokenIssuance</code> (issuer settings) and <code>MPToken</code> (holder balance) objects.
+No bidirectional trust line required. Supports transfer fees, clawback, and
+locking. Payments can deliver MPTs natively. Optimal for stablecoins and
+high-volume fungible token use cases where trust-line overhead is undesirable.</p>
+<p><strong><code>DynamicMPT</code> — Source-verified deep dive:</strong></p>
+<p><code>DynamicMPT</code> adds a <strong>two-phase capability model</strong> to MPTs: capabilities you
+intend to enable post-creation must be declared at issuance creation time via
+a new <code>sfMutableFlags</code> field. Without the corresponding <code>lsmfMPTCanEnable*</code>
+bit, the post-creation mutation is permanently blocked.</p>
+<p><em>Phase 1 — at <code>MPTokenIssuanceCreate</code></em> (<code>sfMutableFlags</code> declares future capabilities):</p>
+<table>
+<thead>
+<tr>
+<th>Creation <code>sfMutableFlags</code> bit</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tmfMPTCanEnableCanLock</code></td>
+<td>Allows enabling holder-locking later</td>
+</tr>
+<tr>
+<td><code>tmfMPTCanEnableRequireAuth</code></td>
+<td>Allows enabling <code>RequireAuth</code> later</td>
+</tr>
+<tr>
+<td><code>tmfMPTCanEnableCanEscrow</code></td>
+<td>Allows escrowing tokens later</td>
+</tr>
+<tr>
+<td><code>tmfMPTCanEnableCanTrade</code></td>
+<td>Allows enabling DEX trading later (<code>lsfMPTCanTrade</code>)</td>
+</tr>
+<tr>
+<td><code>tmfMPTCanEnableCanTransfer</code></td>
+<td>Allows enabling peer-to-peer transfer later</td>
+</tr>
+<tr>
+<td><code>tmfMPTCanEnableCanClawback</code></td>
+<td>Allows enabling issuer clawback later</td>
+</tr>
+<tr>
+<td><code>tmfMPTCanMutateMetadata</code></td>
+<td>Allows updating <code>MPTokenMetadata</code> after creation</td>
+</tr>
+<tr>
+<td><code>tmfMPTCanMutateTransferFee</code></td>
+<td>Allows updating <code>TransferFee</code> after creation</td>
+</tr>
+<tr>
+<td><code>tmfMPTCannotEnableCanHoldConfidentialBalance</code></td>
+<td><strong>Permanently blocks</strong> enabling confidential mode (opt-out lock)</td>
+</tr>
+</tbody>
+</table>
+<p><em>Phase 2 — at <code>MPTokenIssuanceSet</code></em> (<code>sfMutableFlags</code> enables a declared capability):</p>
+<table>
+<thead>
+<tr>
+<th>Set <code>sfMutableFlags</code> bit</th>
+<th>Effect on issuance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tmfMPTSetCanLock</code></td>
+<td>Sets <code>lsfMPTCanLock</code></td>
+</tr>
+<tr>
+<td><code>tmfMPTSetRequireAuth</code></td>
+<td>Sets <code>lsfMPTRequireAuth</code></td>
+</tr>
+<tr>
+<td><code>tmfMPTSetCanEscrow</code></td>
+<td>Sets <code>lsfMPTCanEscrow</code></td>
+</tr>
+<tr>
+<td><code>tmfMPTSetCanTrade</code></td>
+<td>Sets <code>lsfMPTCanTrade</code> (prerequisite for MPTokensV2 DEX)</td>
+</tr>
+<tr>
+<td><code>tmfMPTSetCanTransfer</code></td>
+<td>Sets <code>lsfMPTCanTransfer</code></td>
+</tr>
+<tr>
+<td><code>tmfMPTSetCanClawback</code></td>
+<td>Sets <code>lsfMPTCanClawback</code></td>
+</tr>
+<tr>
+<td><code>tmfMPTSetCanHoldConfidentialBalance</code></td>
+<td>Enables encrypted balances (requires <code>ConfidentialTransfer</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>Key source constraints (from <code>MPTokenIssuanceCreate.cpp</code> / <code>MPTokenIssuanceSet.cpp</code>):</p>
+<ul>
+<li><strong>Capabilities are one-way.</strong> Once enabled, <code>lsfMPTCanLock</code>, <code>lsfMPTRequireAuth</code>, etc. cannot be disabled. There is no unset path in the current implementation.</li>
+<li><strong><code>TransferFee</code> update</strong> — fee can only be set non-zero if <code>lsfMPTCanTransfer</code> was <em>already</em> active before the mutation. Setting fee to 0 removes the field from the ledger entry.</li>
+<li><strong><code>Metadata</code> update</strong> — setting to an empty blob removes the field. Maximum length: <code>kMaxMpTokenMetadataLength</code>.</li>
+<li><strong>Confidential mode is exclusive of transfer fees.</strong> <code>TransferFee &gt; 0</code> and <code>lsfMPTCanHoldConfidentialBalance</code> cannot coexist — amounts are encrypted so a percentage fee is not computable on-chain.</li>
+<li><strong>Encryption keys are set-once.</strong> <code>sfIssuerEncryptionKey</code> and <code>sfAuditorEncryptionKey</code> can be set via <code>MPTokenIssuanceSet</code> but cannot be updated after being set (<code>tecNO_PERMISSION</code>).</li>
+<li><strong><code>featureDynamicMPT</code> gates all mutation.</strong> Without the amendment active, any <code>MPTokenIssuanceSet</code> that includes <code>sfMutableFlags</code>, <code>sfMPTokenMetadata</code>, or <code>sfTransferFee</code> returns <code>temDISABLED</code>.</li>
+</ul>
+<p>Practical use cases:
+- <strong>Regulatory compliance trigger</strong> — issue a token that allows clawback or RequireAuth to be enabled <em>if</em> a regulatory order requires it, without baking those constraints into every holder's initial experience.
+- <strong>Progressive feature rollout</strong> — ship a stablecoin with basic transfer, then enable DEX trading (<code>tmfMPTSetCanTrade</code>) once liquidity infrastructure is ready.
+- <strong>Metadata refresh</strong> — update <code>MPTokenMetadata</code> URI when hosted asset metadata moves (e.g., off-chain document location changes).
+- <strong>Fee tier changes</strong> — adjust <code>TransferFee</code> without reissuing (only if <code>tmfMPTCanMutateTransferFee</code> was declared at creation).</p>
+<p><strong><code>MPTokensV2</code> — DEX integration for MPTs (in dev, XLS-82):</strong></p>
+<p><code>MPTokensV2</code> (<code>Supported::No</code> in xrpld 3.3) extends the native DEX and AMM to
+treat MPTs as first-class tradeable assets alongside XRP and Trust Line tokens.</p>
+<p>What changes when <code>MPTokensV2</code> activates:</p>
+<table>
+<thead>
+<tr>
+<th>Transaction type</th>
+<th>New MPT behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OfferCreate</code></td>
+<td><code>TakerGets</code> / <code>TakerPays</code> may be MPT amounts (requires <code>lsfMPTCanTrade</code> on the issuance)</td>
+</tr>
+<tr>
+<td><code>Payment</code> (cross-currency)</td>
+<td>Pathfinding can route through MPT-denominated order book hops</td>
+</tr>
+<tr>
+<td><code>AMMCreate</code></td>
+<td>Either pool asset can be an MPT</td>
+</tr>
+<tr>
+<td><code>AMMDeposit/Withdraw</code></td>
+<td>Standard LP token flow extended to MPT reserves</td>
+</tr>
+<tr>
+<td><code>Checks</code> (<code>CheckCreate/Cash</code>)</td>
+<td>MPT amounts accepted</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>lsfMPTCanTrade</code> issuance flag (set at creation via <code>tfMPTCanTrade</code>, or
+post-creation via <code>DynamicMPT + tmfMPTSetCanTrade</code>) is the DEX gate: an MPT
+issuance without <code>lsfMPTCanTrade</code> cannot appear in offers or AMM pools even
+after <code>MPTokensV2</code> activates. This means issuers opt in to DEX trading
+explicitly, which matters for regulated stablecoins that should not appear in
+open order books.</p>
+<p>Source status: <code>Supported::No</code> in <code>features.macro</code> — not votable in any
+released xrpld version. Available on private Devnet chains only. Do not
+include in mainnet architecture plans until status changes to
+<code>Supported::Yes</code>.</p>
+<p><strong><code>DynamicMPT</code> + <code>MPTokensV2</code> dependency matrix:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th>Requires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Issue an MPT</td>
+<td><code>MPTokensV1</code></td>
+</tr>
+<tr>
+<td>Update MPT metadata or fee post-issuance</td>
+<td><code>MPTokensV1</code> + <code>DynamicMPT</code></td>
+</tr>
+<tr>
+<td>Enable DEX/AMM trading for an MPT</td>
+<td><code>MPTokensV1</code> + <code>MPTokensV2</code> + <code>lsfMPTCanTrade</code> on issuance</td>
+</tr>
+<tr>
+<td>Enable DEX trading on an MPT that was issued without <code>lsfMPTCanTrade</code></td>
+<td><code>MPTokensV1</code> + <code>DynamicMPT</code> + <code>MPTokensV2</code> (enable <code>lsfMPTCanTrade</code> post-creation, then trade)</td>
+</tr>
+<tr>
+<td>Enable confidential MPT balances</td>
+<td><code>MPTokensV1</code> + <code>ConfidentialTransfer</code> (+ <code>DynamicMPT</code> if enabling post-creation)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="defi-dex-and-markets">DeFi, DEX, and Markets</h4>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Introduced</th>
+<th>Mainnet Status</th>
+<th>Activated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AMM</code></td>
+<td>v1.12.0</td>
+<td>✅ Active</td>
+<td>2024-03-22</td>
+</tr>
+<tr>
+<td><code>fixAMMv1_1</code></td>
+<td>v2.2.0</td>
+<td>✅ Active</td>
+<td>2024-09-24</td>
+</tr>
+<tr>
+<td><code>fixAMMv1_2</code></td>
+<td>v2.3.0</td>
+<td>✅ Active</td>
+<td>2025-01-30</td>
+</tr>
+<tr>
+<td><code>fixAMMv1_3</code></td>
+<td>v2.5.0</td>
+<td>✅ Active</td>
+<td>2025-08-29</td>
+</tr>
+<tr>
+<td><code>AMMClawback</code></td>
+<td>v2.3.0</td>
+<td>✅ Active</td>
+<td>2025-01-30</td>
+</tr>
+<tr>
+<td><code>DeepFreeze</code></td>
+<td>v2.4.0</td>
+<td>✅ Active</td>
+<td>2025-05-04</td>
+</tr>
+<tr>
+<td><code>PermissionedDEX</code></td>
+<td>v2.5.0</td>
+<td>✅ Active</td>
+<td>2026-02-18</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>AMM</code> use case (XLS-30):</strong> Adds a geometric-mean automated market maker
+(<code>AMMCreate</code>, <code>AMMDeposit</code>, <code>AMMWithdraw</code>, <code>AMMVote</code>, <code>AMMBid</code>, <code>AMMDelete</code>).
+The pool invariant is <code>LPTokenBalance ≤ sqrt(asset1 × asset2)</code>, which produces
+constant-product-like pricing for marginal swaps. Each AMM is a protocol-owned
+account holding two asset reserves. LP tokens are minted as Trust Line tokens
+against the AMM account. The continuous auction slot (<code>AMMBid</code>) lets one LP
+trade at a discount for a time window.</p>
+<p><strong><code>AMMClawback</code> use case:</strong> Allows issuers with clawback rights to claw back
+Trust Line tokens that are currently held inside an AMM pool. Required for
+regulatory compliance by issuers who hold <code>lsfAllowTrustLineClawback</code>.</p>
+<p><strong><code>DeepFreeze</code> use case (XLS-77):</strong> Adds a "deep freeze" state to trust
+lines — stronger than the existing individual freeze. A deeply-frozen trust
+line cannot receive <em>or</em> send the token, and cannot be used in payments or AMM
+deposits, even by the holder. Targets issuers who need to enforce a full lock
+rather than a directional freeze.</p>
+<p><strong><code>PermissionedDEX</code> use case (XLS-81):</strong> Allows creating Permissioned
+DEXes — restricted order books where only accounts that belong to a
+<code>PermissionedDomain</code> can place or accept offers. Enables compliant on-chain
+trading environments for regulated securities.</p>
+<h4 id="price-oracles">Price Oracles</h4>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Introduced</th>
+<th>Mainnet Status</th>
+<th>Activated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PriceOracle</code></td>
+<td>v2.2.0</td>
+<td>✅ Active</td>
+<td>2024-11-02</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>PriceOracle</code> use case (XLS-47):</strong> Adds the <code>Oracle</code> ledger entry type and
+<code>OracleSet</code>/<code>OracleDelete</code> transactions. Authorized oracle providers publish
+price data for asset pairs (e.g., XRP/USD) directly on-ledger. Consumers read
+the data with <code>get_aggregate_price</code> and must validate the <code>LastUpdateTime</code>
+against an acceptable staleness threshold. Designed for DeFi applications that
+need on-chain price references without requiring a third-party oracle bridge.</p>
+<h4 id="identity-and-compliance">Identity and Compliance</h4>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Introduced</th>
+<th>Mainnet Status</th>
+<th>Activated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DID</code></td>
+<td>v2.0.0</td>
+<td>✅ Active</td>
+<td>2024-10-30</td>
+</tr>
+<tr>
+<td><code>Credentials</code></td>
+<td>v2.3.0</td>
+<td>✅ Active</td>
+<td>2025-09-04</td>
+</tr>
+<tr>
+<td><code>PermissionedDomains</code></td>
+<td>v2.4.0</td>
+<td>✅ Active</td>
+<td>2026-02-04</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>DID</code> use case (XLS-40):</strong> Anchors a W3C Decentralized Identifier document
+on-ledger (<code>DIDSet</code>/<code>DIDDelete</code>). The <code>DID</code> ledger entry stores a URI
+pointing to the DID document and an optional document hash for integrity.
+Enables self-sovereign identity attestations and Verifiable Credential anchors
+without a central registry.</p>
+<p><strong><code>Credentials</code> use case (XLS-70):</strong> Adds <code>Credential</code> ledger entries — a
+verifiable credential issued by one account to another (<code>CredentialCreate</code>,
+<code>CredentialAccept</code>, <code>CredentialDelete</code>). Credentials can be required for
+<code>DepositPreauth</code> and, through the now-active <code>PermissionedDomains</code>, for
+access-gated features like <code>PermissionedDEX</code>; <code>LendingProtocol</code> will use the
+same mechanism once it activates. An accepted credential
+is stored on the subject's account; the issuer can revoke it by deleting it.</p>
+<p><strong><code>PermissionedDomains</code> use case (XLS-80):</strong> Creates <code>PermissionedDomain</code>
+ledger entries that reference a set of <code>Credentials</code>. Accounts must hold a
+valid credential from the domain's accepted issuers to participate in
+domain-restricted operations (PermissionedDEX, LendingProtocol). The domain
+owner manages the credential issuer list via <code>PermissionedDomainSet</code>.</p>
+<h4 id="cross-chain-bridges">Cross-Chain Bridges</h4>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Introduced</th>
+<th>Mainnet Status</th>
+<th>Activated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>XChainBridge</code></td>
+<td>v2.0.0</td>
+<td>🗳️ Voting</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>XChainBridge</code> use case (XLS-38):</strong> Adds a cross-chain bridge protocol
+allowing asset transfers between the XRPL Mainnet and sidechains. A <code>Bridge</code>
+ledger object defines the locking-chain and issuing-chain accounts. Witness
+servers attest to cross-chain events. Eight new transaction types
+(<code>XChainCreateBridge</code>, <code>XChainCommit</code>, <code>XChainClaim</code>, etc.) orchestrate the
+transfer. Note: <code>fixXChainRewardRounding</code> must also be enabled for correct
+reward distribution when both <code>XChainBridge</code> and <code>fixUniversalNumber</code> are
+active.</p>
+<h4 id="lending-protocol-and-vaults">Lending Protocol and Vaults</h4>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Introduced</th>
+<th>Mainnet Status</th>
+<th>Activated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SingleAssetVault</code></td>
+<td>v3.1.0</td>
+<td>🗳️ Voting</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>LendingProtocol</code></td>
+<td>v3.1.0</td>
+<td>🗳️ Voting</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>LendingProtocolV1_1</code></td>
+<td>v3.3.0</td>
+<td>🔧 Dev</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>SingleAssetVault</code> use case (XLS-65):</strong> Introduces <code>Vault</code> ledger objects —
+pools where multiple depositors aggregate a single asset. Vault depositors
+receive share tokens representing their proportional ownership. New
+transactions: <code>VaultCreate</code>, <code>VaultSet</code>, <code>VaultDelete</code>, <code>VaultDeposit</code>,
+<code>VaultWithdraw</code>, <code>VaultClawback</code>. The primary building block for the
+<code>LendingProtocol</code>. New RPC: <code>vault_info</code> (available from v3.1.0).</p>
+<p><strong><code>LendingProtocol</code> use case (XLS-66):</strong> Enables fixed-term, uncollateralized
+loans drawn from <code>SingleAssetVault</code> pools. Borrowers are assessed off-chain
+(KYC/underwriting); the on-chain protocol handles disbursement and repayment.
+Loans require the borrower to hold a valid <code>Credential</code> from a domain accepted
+by the vault. New transactions: <code>LoanSet</code>, <code>LoanDelete</code>, <code>LoanManage</code>,
+<code>LoanPay</code>. New entity: <code>LoanBroker</code> (manages loan book, sets terms).</p>
+<p><strong><code>LendingProtocolV1_1</code> note:</strong> Currently <code>Supported::No</code> — still in
+development. Represents the next iteration of the lending protocol. Not
+votable in xrpld 3.3; available only on private test networks.</p>
+<h4 id="permission-delegation">Permission Delegation</h4>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Introduced</th>
+<th>Mainnet Status</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PermissionDelegation</code></td>
+<td>v2.5.0</td>
+<td>⚠️ Obsolete (v2.6.1)</td>
+<td>Bug: disabled</td>
+</tr>
+<tr>
+<td><code>PermissionDelegationV1_1</code></td>
+<td>v3.x</td>
+<td>🗳️ Voting</td>
+<td>Replacement</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>PermissionDelegationV1_1</code> use case (XLS-75):</strong> Allows an account
+(delegator) to authorize another account (delegate) to sign specific
+transaction types on its behalf using a <code>DelegateSet</code> transaction. The
+<code>Delegate</code> ledger entry records the permissions granted (e.g., allow <code>Payment</code>
+and <code>OfferCreate</code> but not <code>AccountSet</code>). Transactions signed by the delegate
+include the delegator's account in a <code>Delegate</code> field. Enables operational
+separation: a hot wallet signs routine transactions; a cold wallet holds the
+account without daily signing risk.</p>
+<p><strong>Historical note:</strong> The original <code>PermissionDelegation</code> amendment (v2.5.0)
+was disabled in v2.6.1 due to a bug. It is listed as <code>Obsolete</code> in the source.
+Do not rely on it. <code>PermissionDelegationV1_1</code> is the correct implementation.</p>
+<h4 id="batch-transactions">Batch Transactions</h4>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Introduced</th>
+<th>Mainnet Status</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Batch</code> (original)</td>
+<td>v2.5.0</td>
+<td>⚠️ Obsolete (v3.1.1)</td>
+<td>Security bug</td>
+</tr>
+<tr>
+<td><code>BatchV1_1</code></td>
+<td>v3.3.0</td>
+<td>🗳️ Voting</td>
+<td>Replacement</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>BatchV1_1</code> use case:</strong> Allows submitting up to 8 inner transactions
+atomically in a single outer <code>Batch</code> transaction. The outer transaction is
+signed by the fee payer; inner transactions can be signed by different accounts
+(<code>tfAllSigners</code> mode) or just the outer signer (<code>tfOuterSigner</code> mode). All
+inner transactions succeed or all fail — true atomicity. Enables: atomic
+multi-asset swaps, token issuance + trust line setup in one round-trip,
+multi-step DeFi operations without partial-execution risk.</p>
+<p><strong>Historical note:</strong> The original <code>Batch</code> amendment (v2.5.0) was obsoleted
+in v3.1.1 due to the <code>fixBatchInnerSigs</code> security issue. <code>BatchV1_1</code> is the
+correct implementation. Any reference to the original <code>Batch</code> amendment ID
+should be treated as dead.</p>
+<h4 id="confidential-transfers">Confidential Transfers</h4>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Introduced</th>
+<th>Mainnet Status</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ConfidentialTransfer</code></td>
+<td>v3.3.0</td>
+<td>🗳️ Voting</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>ConfidentialTransfer</code> use case:</strong> Adds encrypted MPT transfers using
+zero-knowledge proofs. New transactions: <code>ConfidentialMPTConvert</code> (converts
+public MPT balance into a confidential balance), <code>ConfidentialMPTSend</code>
+(transfers between confidential balances), <code>ConfidentialMPTConvertBack</code>
+(returns to public balance), <code>ConfidentialMPTMergeInbox</code> (merges received
+confidential transfers into one's balance), <code>ConfidentialMPTClawback</code>
+(issuer clawback of confidential balances). Enables privacy-preserving
+stablecoin and token transfers on-ledger. Requires <code>MPTokensV1</code>.</p>
+<p>The confidential balance is stored as an encrypted ciphertext. Only the holder
+and the issuer (for clawback) can decrypt amounts. Validators verify
+correctness via ZK proofs without seeing values. Designed for regulated
+financial institutions needing transaction confidentiality.</p>
+<h4 id="sponsorship">Sponsorship</h4>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Introduced</th>
+<th>Mainnet Status</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Sponsor</code></td>
+<td>v3.3.0</td>
+<td>🔧 Dev</td>
+<td>In development</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>Sponsor</code> use case (XLS-68, in development):</strong> Allows sponsors (companies,
+issuers) to cover transaction fees and reserve requirements for end users.
+Two new transactions: <code>SponsorshipSet</code> (sponsor pre-authorizes covering costs
+for a sponsee) and <code>SponsorshipTransfer</code> (executes the sponsored transfer).
+The sponsee retains full key control; the sponsor pays. Lowers onboarding
+friction: users can receive and send tokens without holding XRP for fees or
+reserves. Currently <code>Supported::No</code> — not votable in xrpld 3.3.</p>
+<h2 id="example-flow-checking-amendment-readiness-before-building">Example flow: checking amendment readiness before building</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Check mainnet status:   GET /server_info → look at &quot;amendments&quot; array
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>2. Check voting progress:  GET /feature → inspect &quot;vote&quot; and &quot;threshold&quot;
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>3. Test on Devnet:         Deploy with amendment enabled on private chain
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>4. Monitor activation:     Alert when amendment support &gt; 70% for 1 week
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>5. Plan upgrade:           Ensure xrpld ≥ minimum version before activation
+</span></code></pre></div>
+<h2 id="worked-example-activating-an-amendment-on-a-private-network">Worked example: activating an amendment on a private network</h2>
+<p>The public networks make you wait two weeks after an amendment reaches 80%
+support (<code>kDefaultAmendmentMajorityTime = weeks{2}</code> in <code>SystemParameters.h</code>).
+On a <strong>standalone</strong> network you are the sole validator, so you can force an
+amendment through the <em>entire</em> lifecycle — from voting to activation — in
+minutes. This is the definitive way to test that your code behaves correctly
+both before and after a feature turns on.</p>
+<p>The three levers, all confirmed against source:</p>
+<ul>
+<li><strong><code>[amendment_majority_time]</code></strong> — the config stanza (<code>kAmendmentMajorityTime</code>
+  in <code>Constants.h</code>, parsed in <code>Config.cpp</code>) that shortens the majority-hold
+  window. It accepts <code>minutes|hours|days|weeks</code> with a <strong>15-minute minimum</strong>
+  (<code>amendmentMajorityTime &lt; minutes(15)</code> is rejected). Set it low so you do not
+  wait two weeks.</li>
+<li><strong><code>[amendments]</code> / <code>[veto_amendments]</code></strong> — the config lists (<code>kAmendments</code> /
+  <code>kVetoAmendments</code>) of amendment IDs this node up-votes / down-votes.</li>
+<li><strong><code>ledger_accept</code></strong> — the standalone-only RPC that closes and validates the
+  open ledger on demand (handler <code>LedgerAccept.cpp</code>), advancing you toward and
+  across the flag ledger.</li>
+</ul>
+<p><strong>Goal: take a chosen amendment from voting to <code>enabled</code> on a private net.</strong></p>
+<ol>
+<li><strong>Configure the node.</strong> In your standalone <code>xrpld.cfg</code>, add the amendment to
+   the up-vote list and shrink the majority window:</li>
+</ol>
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[amendment_majority_time]</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">15 minutes</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">[amendments]</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="na">&lt;amendment_id&gt;    &lt;AmendmentName&gt;</span>
+</span></code></pre></div>
+<ol>
+<li><strong>Start standalone from a fresh ledger.</strong></li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>xrpld<span class="w"> </span>-a<span class="w"> </span>--start
+</span></code></pre></div>
+<ol>
+<li><strong>Confirm the starting state.</strong> Query the <code>feature</code> RPC — with no argument it
+   returns the full amendment table (<code>doFeature</code> in <code>Feature.cpp</code>). The chosen
+   amendment should show <code>"enabled": false</code> and, initially, no majority.</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>xrpld<span class="w"> </span>feature<span class="w"> </span>&lt;AmendmentName&gt;
+</span></code></pre></div>
+<ol>
+<li><strong>Advance to a flag ledger.</strong> Amendment votes are only tallied on <strong>flag
+   ledgers</strong> (index divisible by 256). Call <code>ledger_accept</code> repeatedly to close
+   ledgers until you cross one; the validator (you) votes yes because the
+   amendment is in <code>[amendments]</code>.</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>xrpld<span class="w"> </span>ledger_accept<span class="w">   </span><span class="c1"># repeat until past a flag ledger</span>
+</span></code></pre></div>
+<ol>
+<li>
+<p><strong>Watch the majority appear.</strong> After the flag ledger, <code>feature &lt;name&gt;</code> will
+   report a <code>majority</code> timestamp — the moment your (100%) support was recorded.
+   The two-week clock is now your <code>15 minutes</code>.</p>
+</li>
+<li>
+<p><strong>Cross the majority window.</strong> Wait out the shortened
+   <code>amendment_majority_time</code>, then advance past the <em>next</em> flag ledger with more
+   <code>ledger_accept</code> calls. The node injects the <code>EnableAmendment</code>
+   (<code>ttAMENDMENT</code>) pseudo-transaction, and the amendment flips to
+   <code>"enabled": true</code>.</p>
+</li>
+<li>
+<p><strong>Verify activation both ways.</strong> <code>server_info</code> now lists the amendment in its
+   active set, and transactions that previously returned <code>temDISABLED</code> now
+   apply. Run your test suite against this node to confirm the enabled-path
+   behavior.</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>Non-obvious insight:</strong> you can also <em>veto</em> interactively without editing the
+config, using the admin <code>feature</code> RPC: <code>feature &lt;name&gt; vetoed=true</code> calls
+<code>table.veto(...)</code> and <code>vetoed=false</code> calls <code>unVeto(...)</code> (<code>Feature.cpp</code>,
+admin-only). This lets you flip a single node's vote mid-session — useful for
+simulating a validator that changes its mind — but the durable, reproducible
+way to seed votes is the <code>[amendments]</code>/<code>[veto_amendments]</code> config lists.</p>
+<p><strong>Watch out:</strong> the 15-minute floor is real. Setting <code>amendment_majority_time</code>
+below it makes <code>xrpld</code> refuse to start. If you want <em>instant</em> activation for a
+pure enabled-vs-disabled behavioral test (and do not care about exercising the
+voting mechanism itself), the simpler path is to run a network where the
+amendment is already active and focus the test on transaction behavior.</p>
+</blockquote>
+<h2 id="security-considerations">Security considerations</h2>
+<ul>
+<li><strong>Do not gate production flows on an unactivated amendment.</strong> A feature open
+  for voting may not activate for months — or may stall indefinitely.</li>
+<li><strong>Obsolete amendments are a dead end.</strong> Code referencing <code>PermissionDelegation</code>
+  or the original <code>Batch</code> amendment IDs will never execute on mainnet.</li>
+<li><strong><code>Supported::No</code> features are devnet-only.</strong> <code>MPTokensV2</code>,
+  <code>LendingProtocolV1_1</code>, and <code>Sponsor</code> are not votable in any released xrpld
+  version and must not appear in mainnet architecture plans.</li>
+<li><strong>Amendment-blocking is silent without monitoring.</strong> A node becomes
+  amendment-blocked without crashing. Monitor <code>amendment_blocked</code> in
+  <code>server_info</code> on every production node.</li>
+</ul>
+<h2 id="common-mistakes">Common mistakes</h2>
+<ul>
+<li><strong>Building on a feature before it activates.</strong> Check <code>server_info.amendments</code>
+  — not documentation — to confirm an amendment is live on the chain you are
+  connecting to.</li>
+<li><strong>Confusing Devnet with Mainnet activation.</strong> Devnet runs with many
+  amendments force-enabled. Code tested on Devnet may rely on amendments that
+  are still voting on Mainnet.</li>
+<li><strong>Treating obsolete amendments as live.</strong> The original <code>Batch</code> and
+  <code>PermissionDelegation</code> hashes will never appear in a future mainnet Amendments
+  ledger entry; they exist only in the source's obsolete list.</li>
+<li><strong>Not pinning minimum xrpld version.</strong> Infrastructure that allows any xrpld
+  version may connect to a node that does not support a required amendment.
+  Always enforce a minimum version compatible with your feature set.</li>
+<li><strong>Using <code>MPTokensV2</code> in production architecture.</strong> It is <code>Supported::No</code> in
+  xrpld 3.3 — the server cannot vote for it and does not enable it on mainnet.</li>
+</ul>
+<h2 id="production-checklist">Production checklist</h2>
+<ul>
+<li>[ ] Verified each required feature is ✅ Active on the target network (not
+      just Devnet) before any production launch.</li>
+<li>[ ] Pinned minimum xrpld version for all nodes supporting required features.</li>
+<li>[ ] Monitoring <code>server_info.amendment_blocked</code> on all production nodes.</li>
+<li>[ ] Alerting configured when any feature the system relies on reaches &gt;70%
+      validator support (early warning of imminent activation).</li>
+<li>[ ] Upgrade runbook documented: which xrpld version to deploy before each
+      upcoming feature activates.</li>
+<li>[ ] Test suite validates behavior with the amendment disabled <em>and</em> enabled
+      (use private chain with amendment toggle).</li>
+<li>[ ] No production code references obsolete amendment IDs (<code>Batch</code>,
+      <code>PermissionDelegation</code>).</li>
+<li>[ ] Architecture review completed for any feature currently in <code>🔧 Dev</code>
+      status that the roadmap depends on.</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://xrpl.org/resources/known-amendments">XRPL Known Amendments</a> — live status and voting percentages</li>
+<li><a href="https://xrpscan.com/amendments">XRPScan Amendments</a> — live Mainnet activation status and dates</li>
+<li><a href="https://xrpl.org/docs/concepts/networks-and-servers/amendments">XRPL Amendment Concepts</a> — lifecycle mechanics</li>
+<li><code>rippled/include/xrpl/protocol/detail/features.macro</code> — canonical source of truth for xrpld version support</li>
+<li><code>rippled/API-CHANGELOG.md</code> — per-version RPC changes introduced by each feature</li>
+<li><code>rippled/src/xrpld/rpc/handlers/server_info/Feature.cpp</code> — the <code>feature</code> RPC (<code>doFeature</code>), including the admin-only <code>vetoed</code> toggle</li>
+<li><code>rippled/src/xrpld/rpc/handlers/admin/server_control/LedgerAccept.cpp</code> — the standalone-only <code>ledger_accept</code> RPC</li>
+<li><code>rippled/include/xrpl/protocol/SystemParameters.h</code> — <code>kDefaultAmendmentMajorityTime = weeks{2}</code></li>
+<li><code>rippled/include/xrpl/config/Constants.h</code> + <code>rippled/src/xrpld/core/detail/Config.cpp</code> — the <code>[amendments]</code>, <code>[veto_amendments]</code>, and <code>[amendment_majority_time]</code> config stanzas (15-minute minimum)</li>
+<li><code>rippled/src/xrpld/app/main/Main.cpp</code> — the <code>--standalone,-a</code> and <code>--start</code> command-line options</li>
+<li>XLS-33 (MPTokensV1), XLS-40 (DID), XLS-46 (DynamicNFT), XLS-47 (PriceOracle), XLS-65 (SingleAssetVault)</li>
+<li>XLS-66 (LendingProtocol), XLS-68 (Sponsor), XLS-70 (Credentials), XLS-75 (PermissionDelegationV1_1)</li>
+<li>XLS-80 (PermissionedDomains), XLS-81 (PermissionedDEX), XLS-82 (MPTokensV2)</li>
+<li>XLS-30 (AMM), XLS-38 (XChainBridge), XLS-85 (TokenEscrow)</li>
+</ul>
+<h2 id="what-i-learned">What I learned</h2>
+<ul>
+<li><strong>Amendments are governance encoded as protocol, not tooling.</strong> The two-week
+  majority hold (<code>kDefaultAmendmentMajorityTime = weeks{2}</code>) is a deliberate
+  social buffer: it gives operators time to upgrade before a rule changes, which
+  is the whole point of on-ledger amendments versus disruptive hard forks.</li>
+<li><strong>The activation clock is configurable, but only on your own network.</strong>
+  <code>[amendment_majority_time]</code> lets a private net compress two weeks into 15
+  minutes — the minimum the code enforces. You cannot shorten it on Mainnet;
+  there the buffer is a feature, not an inconvenience.</li>
+<li><strong>Votes only count on flag ledgers.</strong> Nothing about an amendment's status
+  changes between flag ledgers (indices divisible by 256). In standalone this is
+  concrete: you <code>ledger_accept</code> your way to a flag ledger before a vote is even
+  tallied, which makes the otherwise-invisible cadence tangible.</li>
+<li><strong>"Not activated" fails loudly and early.</strong> Submitting a transaction for a
+  disabled amendment returns <code>temDISABLED</code> — a malformed-class code rejected
+  <em>before</em> it can claim a fee. So building against an unactivated feature fails
+  safe (free, off-ledger) rather than silently succeeding, which is why testing
+  the disabled path is as important as testing the enabled one.</li>
+<li><strong>Standalone mode is the only place you can watch the full lifecycle.</strong> On a
+  public network you observe activation; in standalone you <em>drive</em> it — vote,
+  cross the flag ledger, wait out the (shortened) window, and see the
+  <code>EnableAmendment</code> pseudo-transaction flip the feature on.</li>
+</ul>
+<h2 id="design-guidance-what-to-build-against-now">Design guidance: what to build against now</h2>
+<p>Use this table before committing your architecture to any amendment-gated feature.
+The signal to watch: when <code>Supported::No</code> flips to <code>Supported::Yes</code> in
+<code>features.macro</code>, the API is frozen — safe to design against. Monitor using:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;server_info&quot;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="err">→</span><span class="w"> </span><span class="err">resul</span><span class="kc">t</span><span class="err">.i</span><span class="kc">nf</span><span class="err">o.ame</span><span class="kc">n</span><span class="err">dme</span><span class="kc">nt</span><span class="err">_blocked</span><span class="w">   </span><span class="err">(</span><span class="kc">true</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="kc">n</span><span class="err">ode</span><span class="w"> </span><span class="kc">nee</span><span class="err">ds</span><span class="w"> </span><span class="err">upgrade)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="err">→</span><span class="w"> </span><span class="err">resul</span><span class="kc">t</span><span class="err">.i</span><span class="kc">nf</span><span class="err">o.</span><span class="kc">features</span><span class="w">            </span><span class="err">(lis</span><span class="kc">t</span><span class="w"> </span><span class="err">o</span><span class="kc">f</span><span class="w"> </span><span class="err">e</span><span class="kc">na</span><span class="err">bled</span><span class="w"> </span><span class="kc">features</span><span class="w"> </span><span class="err">o</span><span class="kc">n</span><span class="w"> </span><span class="kc">t</span><span class="err">he</span><span class="w"> </span><span class="kc">net</span><span class="err">work)</span>
+</span></code></pre></div>
+<p>Or check the amendment status on <a href="https://xrpl.org/resources/known-amendments">xrpl.org/resources/known-amendments</a>.</p>
+<h3 id="design-now-voting-phase-api-is-frozen">✅ Design now (voting phase — API is frozen)</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Key capability</th>
+<th>Minimum version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BatchV1_1</code></td>
+<td>Atomic multi-transaction batch (up to 8 inner txs)</td>
+<td>xrpld 3.3</td>
+</tr>
+<tr>
+<td><code>ConfidentialTransfer</code></td>
+<td>ZK-proof confidential MPT balances and transfers</td>
+<td>xrpld 3.3</td>
+</tr>
+<tr>
+<td><code>DynamicMPT</code></td>
+<td>Post-creation capability enablement via <code>sfMutableFlags</code></td>
+<td>xrpld 3.4</td>
+</tr>
+<tr>
+<td><code>PermissionDelegationV1_1</code></td>
+<td>Hot/cold signing delegation (<code>DelegateSet</code>)</td>
+<td>xrpld 3.x</td>
+</tr>
+<tr>
+<td><code>SingleAssetVault</code></td>
+<td>Single-asset vault with LP shares</td>
+<td>xrpld 3.1</td>
+</tr>
+<tr>
+<td><code>LendingProtocol</code></td>
+<td>On-chain lending/borrowing (requires <code>SingleAssetVault</code> + <code>Credentials</code>)</td>
+<td>xrpld 3.1</td>
+</tr>
+</tbody>
+</table>
+<p>For these, the API is frozen in the voting phase. Build now; ship when they activate.</p>
+<h3 id="design-with-caution">⚠️ Design with caution</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Why</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Sponsor</code></td>
+<td>Marked <code>Supported::Yes</code> in 3.4 but still flagged "in development" in docs</td>
+<td>Monitor; design the interface abstraction but don't ship production code yet</td>
+</tr>
+</tbody>
+</table>
+<h3 id="do-not-design-against-devnet-only-api-not-stable">❌ Do not design against (devnet-only, API not stable)</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Why</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MPTokensV2</code></td>
+<td><code>Supported::No</code> — DEX/AMM integration for MPTs, private devnet only</td>
+<td>Wait for <code>Supported::Yes</code> flip</td>
+</tr>
+<tr>
+<td><code>LendingProtocolV1_1</code></td>
+<td><code>Supported::No</code> — next iteration of LendingProtocol, private test networks only</td>
+<td>Wait for <code>Supported::Yes</code> flip</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-to-detect-when-an-amendment-becomes-safe-to-design-against">How to detect when an amendment becomes safe to design against</h3>
+<ol>
+<li>Watch the <code>features.macro</code> entry in xrpld release notes for <code>Supported::No</code> → <code>Supported::Yes</code>.</li>
+<li>Monitor the <code>majority</code> timestamp in <code>server_info.features</code> for amendments open for voting.
+   When <code>majority</code> appears, the 2-week countdown to activation has begun.</li>
+<li>Subscribe to <code>ledger</code> stream; watch for <code>EnableAmendment</code> pseudo-transactions in ledger metadata.</li>
+</ol>
+<h2 id="open-questions">Open questions</h2>
+<ul>
+<li>How does <code>PermissionedDomains</code> interact with existing <code>DepositPreauth</code> and
+  <code>RequireAuth</code> flags on issuer accounts?</li>
+<li>What ZK proof scheme does <code>ConfidentialTransfer</code> use, and what are the
+  computational constraints on the verifier side?</li>
+<li>How should a <code>LendingProtocol</code> borrower interact with off-chain
+  underwriting — what is the expected on-chain/off-chain data boundary?</li>
+</ul>
+<hr />
+<p><strong>← Back to <a href="../">Chapter 6 — Features and Amendments</a></strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

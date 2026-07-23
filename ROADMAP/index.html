@@ -1,0 +1,2579 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jakinyele.github.io/xrpl-playbook/ROADMAP/">
+      
+      
+        <link rel="prev" href="../playbook/CHEATSHEET/">
+      
+      
+        <link rel="next" href="../open-questions/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Roadmap - XRPL Playbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#roadmap" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="XRPL Playbook" class="md-header__button md-logo" aria-label="XRPL Playbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            XRPL Playbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Roadmap
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jakinyele/awesome-xrpl-playbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jakinyele/awesome-xrpl-playbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../playbook/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About this Playbook
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../playbook/ch00-coming-from-other-chains/" class="md-tabs__link">
+          
+  
+  
+  Road to Mastery
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../playbook/GLOSSARY/" class="md-tabs__link">
+          
+  
+  
+  Appendices
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../examples/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Examples
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="XRPL Playbook" class="md-nav__button md-logo" aria-label="XRPL Playbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    XRPL Playbook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jakinyele/awesome-xrpl-playbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jakinyele/awesome-xrpl-playbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About this Playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Road to Mastery
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Road to Mastery
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coming from Other Chains
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Coming from Other Chains
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch00-coming-from-other-chains/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch00-coming-from-other-chains/concept-mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch00-coming-from-other-chains/rpc-method-mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RPC Method Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch00-coming-from-other-chains/indexing-and-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indexing & History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch00-coming-from-other-chains/subscriptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subscriptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch01-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch01-foundations/mental-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mental Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch01-foundations/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch01-foundations/payments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issuing Value
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Issuing Value
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch02-issuing-value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch02-issuing-value/issuer-controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issuer Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch02-issuing-value/stablecoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stablecoins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch02-issuing-value/tokenization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tokenization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markets & Liquidity
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Markets & Liquidity
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch03-markets-and-liquidity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch03-markets-and-liquidity/defi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DeFi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch03-markets-and-liquidity/dex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DEX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch03-markets-and-liquidity/amm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch03-markets-and-liquidity/oracles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oracles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardening
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardening
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch04-hardening/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch04-hardening/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch04-hardening/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch04-hardening/custody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custody
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Architectures
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference Architectures
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch05-reference-architectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch05-reference-architectures/reference-architectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Architectures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features & Amendments
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features & Amendments
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch06-features-and-amendments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/ch06-features-and-amendments/features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playbook/CHEATSHEET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Sheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#guiding-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guiding principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-0-coming-from-other-chains-ch00-coming-from-other-chains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 0 — Coming from other chains → ch00-coming-from-other-chains
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-foundations-ch01-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 — Foundations → ch01-foundations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-issuing-value-ch02-issuing-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 — Issuing value → ch02-issuing-value
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-markets-and-liquidity-ch03-markets-and-liquidity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 — Markets and liquidity → ch03-markets-and-liquidity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-hardening-ch04-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4 — Hardening → ch04-hardening
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-5-putting-it-together-ch05-reference-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5 — Putting it together → ch05-reference-architectures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-6-features-and-amendments-ch06-features-and-amendments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 6 — Features and Amendments → ch06-features-and-amendments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ongoing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ongoing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legend
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#guiding-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guiding principles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-0-coming-from-other-chains-ch00-coming-from-other-chains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 0 — Coming from other chains → ch00-coming-from-other-chains
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-foundations-ch01-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1 — Foundations → ch01-foundations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-issuing-value-ch02-issuing-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2 — Issuing value → ch02-issuing-value
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-markets-and-liquidity-ch03-markets-and-liquidity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3 — Markets and liquidity → ch03-markets-and-liquidity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-hardening-ch04-hardening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4 — Hardening → ch04-hardening
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-5-putting-it-together-ch05-reference-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5 — Putting it together → ch05-reference-architectures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-6-features-and-amendments-ch06-features-and-amendments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 6 — Features and Amendments → ch06-features-and-amendments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ongoing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ongoing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legend
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="roadmap">Roadmap</h1>
+<p>This roadmap describes the planned evolution of the <strong>XRPL Playbook</strong>. It is a
+living document — priorities will shift as the XRP Ledger and its ecosystem
+evolve. See <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> if you'd like to help.</p>
+<h2 id="guiding-principles">Guiding principles</h2>
+<ul>
+<li><strong>Production-first.</strong> Every chapter targets real, deployable systems — not
+  toy examples.</li>
+<li><strong>Decisions over recipes.</strong> Explain the trade-offs so readers can make their
+  own informed choices.</li>
+<li><strong>Safety by default.</strong> Security, compliance, and operational concerns are
+  treated as first-class, not afterthoughts.</li>
+<li><strong>Current and accurate.</strong> Content tracks the live protocol and is revised as
+  amendments ship.</li>
+</ul>
+<h2 id="phase-0-coming-from-other-chains-ch00-coming-from-other-chains">Phase 0 — Coming from other chains → <a href="playbook/ch00-coming-from-other-chains/"><code>ch00-coming-from-other-chains</code></a></h2>
+<ul>
+<li>[x] Chapter-level <a href="../playbook/ch00-coming-from-other-chains/"><code>README</code></a>
+      — an optional on-ramp for engineers arriving from EVM, Solana, or Bitcoin;
+      the four mappings that matter most (no smart contracts → native primitives;
+      failure is usually free and off-ledger; state costs a refundable reserve;
+      fees burn), and pointers into the chapter each topic is covered in depth.</li>
+<li>[x] <strong>Concept Mapping</strong> (<a href="../playbook/ch00-coming-from-other-chains/concept-mapping/"><code>ch00-coming-from-other-chains/concept-mapping</code></a>)
+      — side-by-side translation tables (account/execution model; tokens &amp;
+      value; failure, finality &amp; programmability) with a <strong>Watch out</strong> note on
+      every lossy analogy. XRPL-side claims source-anchored to <code>rippled/</code>:
+      account-based <code>AccountRoot</code>/<code>sfSequence</code> and <code>ltTICKET</code>; <code>tec</code>-vs-EVM-revert
+      semantics ("claim fee to use the sequence number", <code>TER.h</code>); trust lines
+      (<code>ltRIPPLE_STATE</code>) vs ERC-20; native <code>ltOFFER</code>/<code>ltAMM</code>/<code>ltMPTOKEN*</code>/
+      <code>ltNFTOKEN_PAGE</code> objects vs deployed contracts; amendments vs contract
+      upgrades. Cross-linked to ch01–ch06.</li>
+<li>[x] <strong>RPC Method Mapping</strong> (<a href="../playbook/ch00-coming-from-other-chains/rpc-method-mapping/"><code>ch00-coming-from-other-chains/rpc-method-mapping</code></a>)
+      — the day-one API lookup mapping EVM/Solana JSON-RPC calls to XRPL command
+      equivalents (<code>eth_getBalance</code>→<code>account_info</code>/<code>account_lines</code>,
+      <code>eth_call</code>→<code>ledger_entry</code>/<code>ripple_path_find</code>,
+      <code>eth_sendRawTransaction</code>→<code>submit</code>, <code>eth_getTransactionReceipt</code>→<code>tx</code>,
+      <code>eth_estimateGas</code>→<code>fee</code>), each pinned to the canonical command dispatch
+      table (<code>src/xrpld/rpc/detail/Handler.cpp</code>) with <strong>Watch out</strong> notes.</li>
+<li>[x] <strong>Indexing (History &amp; State)</strong> (<a href="../playbook/ch00-coming-from-other-chains/indexing-and-history/"><code>ch00-coming-from-other-chains/indexing-and-history</code></a>)
+      — the TheGraph/Etherscan/<code>eth_getLogs</code> replacement: <code>account_tx</code>
+      pagination (<code>ledger_index_min</code>/<code>max</code> <code>-1</code> sentinels, <code>forward</code>, <code>binary</code>,
+      the opaque <code>{ledger, seq}</code> <code>marker</code>, the 10/200/400 limit envelope from
+      <code>Tuning.h</code>), the Clio read-replica vs validating-node split, <strong>and</strong> state
+      indexing via <code>ledger_data</code> (type filtering, hex-key <code>marker</code>,
+      <code>kBinaryPageLength = 2048</code> / <code>kJsonPageLength = 256</code> from <code>Tuning.h</code>,
+      source-anchored to <code>LedgerData.cpp</code>). Dual comparison tables: mental-model
+      contrast (query unit, scope, use case) and parameter-level reference
+      (pagination cursor type, limit, forward).</li>
+<li>[x] <strong>Subscriptions &amp; the Event Model</strong> (<a href="../playbook/ch00-coming-from-other-chains/subscriptions/"><code>ch00-coming-from-other-chains/subscriptions</code></a>)
+      — the logs/topics/webhooks replacement: the <code>subscribe</code> <code>streams</code>,
+      <code>accounts</code>/<code>accounts_proposed</code>, and <code>books</code> feeds, with the exact message
+      <code>type</code> each publisher emits (<code>ledgerClosed</code>, <code>transaction</code>,
+      <code>validationReceived</code>, …) from <code>NetworkOPs.cpp</code>, and the
+      <code>validated</code>-gated finality + reconnect/backfill pattern.</li>
+</ul>
+<h2 id="phase-1-foundations-ch01-foundations">Phase 1 — Foundations → <a href="playbook/ch01-foundations/"><code>ch01-foundations</code></a></h2>
+<ul>
+<li>[x] Repository scaffolding, contribution guidelines, and section overviews.</li>
+<li>[x] Top-level <a href="../playbook/"><code>playbook/README.md</code></a> with chapter map,
+      structure motivation, and reading order.</li>
+<li>[x] Chapter-level <a href="../playbook/ch01-foundations/"><code>README</code></a> with scope,
+      reading order, exit criteria, and Testnet/Devnet guidance.</li>
+<li>[x] <strong>Getting Started</strong>
+      (<a href="../playbook/ch01-foundations/getting-started/"><code>ch01-foundations/getting-started</code></a>)
+      — the executable on-ramp: connect a client (<code>xrpl.js</code> / <code>xrpl-py</code>), fund a
+      Testnet account via faucet, and run the connect → fund → autofill → sign →
+      submit → confirm reliable-submission loop (JS and Python), plus running a
+      local standalone <code>xrpld</code> node. Source-anchored to <code>Main.cpp</code>
+      (<code>--standalone,-a</code>, <code>--start</code>, <code>--ledger</code>, <code>--quorum</code>) and the
+      <code>ledger_accept</code> RPC (<code>LedgerAccept.cpp</code>); SDK APIs verified against current
+      <code>xrpl.js</code> / <code>xrpl-py</code> docs. Wired into the ch01 README and reading order.</li>
+<li>[x] <strong>Mental models</strong> — all 11 template sections written:</li>
+<li>[x] Ledger as a replicated state machine; accounts, reserves, trust lines,
+        fees, and deterministic finality.</li>
+<li>[x] XRP vs. issued currency counterparty risk; rippling mechanism explained.</li>
+<li>[x] Ledger sequence vs. account sequence distinction.</li>
+<li>[x] Transaction result code taxonomy (<code>tes</code>/<code>tec</code> vs <code>ter</code>/<code>tef</code>/<code>tel</code>);
+        <code>tec</code> semantics clarified (fee charged/sequence consumed, but operation
+        failed).</li>
+<li>[x] Ledger close cycle: 4-phase avalanche thresholds (50/65/70/95) with
+        80% <code>minConsensusPct</code> floor.</li>
+<li>[x] Full state tree object reference (AccountRoot, RippleState, Offer,
+        Escrow, PayChannel, Check, NFTokenPage, NFTokenOffer, AMM,
+        MPToken, MPTokenIssuance, Ticket, SignerList, Oracle, DID, Credential).</li>
+<li>[x] Reserve math table; <code>NoRipple</code> misconfiguration; dynamic fee fetching.</li>
+<li>[x] Transaction lifecycle flow diagram (construction → consensus →
+        validation → observation).</li>
+<li>[x] Security: offline signing, multi-signing, key rotation runbook,
+        <code>lsfDisableMaster</code> lockout risk.</li>
+<li>[x] Production checklist (10 items).</li>
+<li>[x] Open questions: UNL divergence <strong>now confirmed against source</strong> (VLs,
+        quorum floor, nUNL — see Consensus internals below); remaining
+        hypotheses cover SHAMap performance, reserve vote propagation,
+        multi-account reserve modeling, and key rotation lockout.</li>
+<li>[x] Source-verified: CTID (Concise Transaction ID, XLS-15d) note added —
+        encodes <code>(ledgerSeq, TransactionIndex, networkID)</code>, reinforcing
+        canonical ordering and cross-network disambiguation.</li>
+<li>[x] Blockchain-concepts primer (safety vs. liveness, settlement/finality,
+        consensus models) reframed as XRPL design principles, each anchored to
+        <code>xrpld</code> source (<code>ConsensusParms.h</code>, <code>SystemParameters.h</code>,
+        <code>InvariantCheck.h</code>, <code>TER.h</code>, <code>Protocol.cpp</code> <code>isFlagLedger</code>).</li>
+<li>[x] Storage model — SHAMap 16-way radix Merkle tree (<code>kBranchFactor = 16</code>),
+        content-addressed NodeStore backends (NuDB, RocksDB), <code>HashPrefix</code>.</li>
+<li>[x] Account memory model — <code>STObject</code>/<code>SField</code> canonical ordering,
+        <code>AccountRoot</code> as <code>STLedgerEntry</code>, keylet derivation
+        (<code>sha512Half</code>), AccountID <code>RIPEMD160(SHA256(pubkey))</code> ("Ripesha").</li>
+<li>[x] Transaction engine internals — the <code>preflight</code> (stateless) →
+        <code>preclaim</code> (read-only) → <code>doApply</code> (mutating) pipeline over the
+        <code>Transactor</code> base class, mapped to why only <code>tes</code>/<code>tec</code> reach a
+        validated ledger and why invariant failures downgrade to a fee-only
+        claim. Source-anchored to <code>Transactor.h</code>/<code>ApplyContext.h</code>,
+        <code>applySteps.cpp</code>, <code>Transactor.cpp</code>, and the <code>ReadView</code>→<code>OpenView</code>→
+        <code>ApplyView</code> hierarchy.</li>
+<li>[x] Fixed-precision amounts (<code>STAmount</code>) — XRP as integer drops
+        (<code>kDropsPerXrp</code>, <code>kMaxNativeN</code>) vs IOU mantissa/exponent
+        (<code>kMinValue = 10¹⁵</code>, <code>kMaxValue = 10¹⁶−1</code>, <code>kMinOffset = −96</code>,
+        <code>kMaxOffset = +80</code>, ~15–16 significant digits), canonicalization for
+        exact equality, and explicit deterministic rounding
+        (<code>mulRound</code>/<code>divRound</code>). Source-anchored to <code>STAmount.h</code>/<code>.cpp</code>,
+        <code>IOUAmount.h</code>, <code>XRPAmount.h</code>.</li>
+<li>[x] Consensus internals (UNL / Validator Lists / Negative UNL) — promoted
+        from hypothesis to source-anchored: signed VLs from publishers
+        (<code>ValidatorList</code>), the effective-vs-original quorum formula
+        <code>max(ceil(0.8×eff), ceil(0.6×orig))</code> (<code>calculateQuorum</code>), and the nUNL
+        liveness mechanism (water marks 128/205, 25% max-listed, <code>ttUNL_MODIFY</code>
+        on flag ledgers, <code>ltNEGATIVE_UNL</code>). The corresponding Open-question
+        hypothesis was upgraded to "Confirmed against source."</li>
+<li>[x] <strong>Payments</strong> — all 11 template sections written:</li>
+<li>[x] All payment primitives: direct, cross-currency, partial, channels,
+        escrow, and Checks.</li>
+<li>[x] Payment channel full lifecycle (create → sign claims → claim → close).</li>
+<li>[x] Escrow: time-based and condition-based variants.</li>
+<li>[x] <code>ripple_path_find</code> (streaming) vs. <code>find_path</code> (one-shot) distinction.</li>
+<li>[x] <code>tfPartialPayment</code>, <code>tfLimitQuality</code>, <code>tfNoRippleDirect</code> flags.</li>
+<li>[x] Direct XRP payment baseline example with drops, <code>DestinationTag</code>, and
+        dynamic fee; cross-currency USD → EUR example with pathfinding and
+        metadata; failure metadata example (<code>tecUNFUNDED_PAYMENT</code>).</li>
+<li>[x] Reliable submission loop pseudocode.</li>
+<li>[x] Security: <code>RequireDestTag</code>, concurrent sequence race, channel
+        settlement-refusal risk.</li>
+<li>[x] Common mistakes (9 items); production checklist (12 items).</li>
+<li>[x] Open question hypotheses: XRPL vs. traditional rails, atomic settlement
+        mechanics, full failure mode taxonomy with recovery paths, x402 protocol,
+        RLUSD's three roles, payment channel throughput vs. settlement risk.</li>
+<li>[x] Source-verified: open-ledger fee escalation (quadratic fee-level
+        formula, adaptive limit), transaction queue lifecycle (queued ≠ failed,
+        per-account limit, replace-by-fee, expiry), fee guidance updated to
+        <code>max(load_factor, load_factor_fee_escalation)</code>.</li>
+</ul>
+<h2 id="phase-2-issuing-value-ch02-issuing-value">Phase 2 — Issuing value → <a href="playbook/ch02-issuing-value/"><code>ch02-issuing-value</code></a></h2>
+<ul>
+<li>[x] Chapter-level <a href="../playbook/ch02-issuing-value/"><code>README</code></a> with domain mapping and exit criteria.</li>
+<li>[x] <strong>Issuer Controls</strong> (<a href="../playbook/ch02-issuing-value/issuer-controls/"><code>ch02-issuing-value/issuer-controls</code></a>)
+      — account-level flags (<code>RequireAuth</code>, <code>GlobalFreeze</code>, <code>NoFreeze</code>, <code>Clawback</code>, <code>DefaultRipple</code>, <code>TransferRate</code>); object-level enforcement (trust line vs MPT); the <code>tecOWNERS</code> constraint.</li>
+<li>[x] <strong>Stablecoins</strong> (<a href="../playbook/ch02-issuing-value/stablecoins/"><code>ch02-issuing-value/stablecoins</code></a>)
+      — issuance models, account topology, minting/redemption flows, and reserve attestation.</li>
+<li>[x] <strong>Tokenization</strong> (<a href="../playbook/ch02-issuing-value/tokenization/"><code>ch02-issuing-value/tokenization</code></a>)
+      — token primitive selection (Issued Currency vs MPT vs NFT), RWAs, lifecycle management, and metadata strategies.</li>
+<li>[x] Open questions answered (source-anchored): MPT-vs-issued-currency
+        selection (holder-side object model, policy-as-first-class,
+        liquidity/maturity trade-off); DID/verifiable-credential integration via
+        permissioned domains (<code>ltDID</code>, <code>ltCREDENTIAL</code>, <code>ltPERMISSIONED_DOMAIN</code>);
+        end-to-end RWA lifecycle (identity → domain → credentials → issuance →
+        distribution → secondary market → redemption/retirement). Verified
+        against <code>MPTokenIssuanceCreate.cpp</code>, <code>MPTokenAuthorize.cpp</code>,
+        <code>MPTokenIssuanceDestroy.cpp</code>, <code>OfferCreate.cpp</code>,
+        <code>CredentialCreate.cpp</code>/<code>CredentialAccept.cpp</code>, and the
+        <code>DID</code>/<code>Credential</code>/<code>PermissionedDomain</code> ledger-entry headers.</li>
+<li>[x] Example flow: full stablecoin lifecycle from configuration to redemption.</li>
+<li>[x] Example flow: permissioned, transferable MPT — create (capability flags
+      fixed at issuance) → holder opt-in → issuer authorize → primary issuance
+      → restricted secondary transfer → lock/clawback. Source-verified against
+      <code>MPTokenIssuanceCreate.cpp</code>, <code>MPTokenAuthorize.cpp</code>,
+      <code>MPTokenIssuanceSet.cpp</code>, <code>TxFlags.h</code>, <code>LedgerFormats.h</code>, <code>Protocol.h</code>.</li>
+<li>[x] Example flow: MPT <code>sfMutableFlags</code> mutation lifecycle (DynamicMPT) —
+      two-phase mutability model, one-way enablement constraint, permanently
+      immutable fields; source-anchored to <code>MPTokenIssuanceCreate.cpp</code>,
+      <code>MPTokenIssuanceSet.cpp</code>, <code>TxFlags.h</code>, <code>LedgerFormats.h</code>.</li>
+</ul>
+<h2 id="phase-3-markets-and-liquidity-ch03-markets-and-liquidity">Phase 3 — Markets and liquidity → <a href="playbook/ch03-markets-and-liquidity/"><code>ch03-markets-and-liquidity</code></a></h2>
+<ul>
+<li>[x] Chapter-level <a href="../playbook/ch03-markets-and-liquidity/"><code>README</code></a> with domain mapping and exit criteria.</li>
+<li>[x] <strong>DeFi</strong> (<a href="../playbook/ch03-markets-and-liquidity/defi/"><code>ch03-markets-and-liquidity/defi</code></a>)
+      — the native DEX, AMM mechanics, liquidity provision, routing, and on-ledger oracles.</li>
+<li>[x] Accuracy pass against <code>xrpld</code> source: geometric-mean LP invariant
+        (<code>ammLPTokens</code> → <code>root2(asset1 * asset2)</code>), swap/deposit math
+        (Equations 3/4/7/8 in <code>AMMHelpers.cpp</code>), trading-fee ceiling corrected
+        (<code>kTradingFeeThreshold</code> = 1000 = 1%, units 1/100000, no protocol
+        default — <code>0.3%</code> is a convention), auction-slot constants (24h,
+        20 intervals, 1/10 discount, 4 auth accounts), LP-tokens-as-trust-line
+        IOUs, and Example-flow swap formula marked illustrative. Added a
+        source-file reference block (<code>AMMCore.h</code>, <code>AMMHelpers.cpp</code>, <code>AMM.h</code>,
+        <code>Oracle.h</code>, <code>Vault.h</code>/<code>Loan.h</code>/<code>LoanBroker.h</code>, <code>features.macro</code>).</li>
+<li>[x] Open questions answered (source-anchored): DEX-vs-AMM execution models
+        and how pathfinding composes them via synthetic AMM offers
+        (<code>AMMOffer</code>/<code>AMMLiquidity</code> in <code>tx/paths</code>, auto-bridging in
+        <code>BookStep.cpp</code>); vaults/lending leveraging liquidity (<code>ltVAULT</code>
+        MPT shares, <code>ltLOAN</code>/<code>ltLOAN_BROKER</code>, voting status); liquidation and
+        price stability as application-level compositions over oracles
+        (<code>ltORACLE</code>, <code>get_aggregate_price</code>) and AMM/DEX/vault primitives.</li>
+<li>[x] Cross-references showing how payments compose with DeFi liquidity —
+      bidirectional links between <a href="../playbook/ch01-foundations/payments/"><code>ch01-foundations/payments</code></a>
+      and <a href="../playbook/ch03-markets-and-liquidity/defi/"><code>ch03-markets-and-liquidity/defi</code></a>:
+      the payments Architecture + atomic-settlement hypothesis link out to the
+      DeFi liquidity mechanics; the DeFi Mental model + DEX-vs-AMM answer link
+      back to the payments Architecture and cross-currency worked example.</li>
+</ul>
+<h2 id="phase-4-hardening-ch04-hardening">Phase 4 — Hardening → <a href="playbook/ch04-hardening/"><code>ch04-hardening</code></a></h2>
+<ul>
+<li>[x] <strong>Security</strong> (<a href="../playbook/ch04-hardening/security/"><code>ch04-hardening/security</code></a>)
+      — signing authority layers (master key, regular key, signer list);
+      issuing/cold vs. hot/operational account topology; key ceremony;
+      <code>DepositAuth</code>, <code>DisallowIncoming</code>, Tickets; 8-item production checklist.</li>
+<li>[x] <strong>Operations</strong> (<a href="../playbook/ch04-hardening/operations/"><code>ch04-hardening/operations</code></a>)
+      — amendment lifecycle (≥80% validator approval for two weeks,
+      irreversible, amendment-blocking); SHAMapStore online delete (dual
+      rotating DBs, <code>online_delete</code> / <code>advisory_delete</code> config); node
+      topology and read-path redundancy; 8-item production checklist and
+      references; cross-linked from Security.</li>
+<li>[x] Example flows written and source-anchored: Security key-rotation runbook
+      (detect → multi-sign <code>SetRegularKey</code> via signer list → verify → old key
+      revoked-by-replacement), grounded in <code>SetRegularKey.cpp</code> (<code>temBAD_REGKEY</code>,
+      <code>tecNO_ALTERNATIVE_KEY</code>, <code>lsfPasswordSpent</code>) and <code>AccountSet.cpp</code>
+      (<code>asfDisableMaster</code> guard); Operations amendment-upgrade runbook (monitor
+      <code>feature</code> RPC <code>majority</code> timestamp → upgrade before the two-week deadline
+      → verify <code>server_info</code> omits <code>amendment_blocked</code>), grounded in
+      <code>SystemParameters.h</code> (<code>kDefaultAmendmentMajorityTime = weeks{2}</code>,
+      <code>kAmendmentMajorityCalcThreshold = 80/100</code>), <code>AmendmentTable.cpp</code>,
+      <code>Feature.cpp</code>, and <code>NetworkOPs.cpp</code>. Both files' What-I-learned and
+      Open-questions sections filled; no <code>🚧</code> placeholders remain in ch04.</li>
+<li>[x] Security and operations checklists cross-referenced bidirectionally: each
+      earlier-chapter Production checklist (ch01 payments; ch02 issuer-controls,
+      stablecoins, tokenization; ch03 defi) links to the ch04 security and
+      operations checklists, and both ch04 checklists link back to all five.</li>
+<li>[x] <strong>Custody</strong> (<a href="../playbook/ch04-hardening/custody/"><code>ch04-hardening/custody</code></a>)
+      — new 11-section sub-chapter: 3-tier signing stack (transaction builder →
+      codec gate → offline signer/HSM); <code>server_definitions</code> deep dive (all
+      response sections: <code>TYPES</code>, <code>FIELDS</code>, <code>TRANSACTION_FORMATS</code>,
+      <code>LEDGER_ENTRY_FORMATS</code>, <code>TRANSACTION_RESULTS</code>, <code>TRANSACTION_FLAGS</code>,
+      <code>LEDGER_ENTRY_FLAGS</code>, <code>ACCOUNT_SET_FLAGS</code>, <code>hash</code>); codec-pinning workflow
+      (setup: fetch once, cache hash; per-session: send cached hash, proceed only
+      on match); offline transaction construction (field ordering by <code>fieldCode</code>,
+      signing prefix <code>0x53545800</code>); amendment lifecycle for custody (hash-change
+      detection → block signing → upgrade drill on Devnet → resume); security
+      considerations (codec injection, library pinning, HSM attestation, key
+      material isolation); 8-item production checklist. Source-anchored to
+      <code>ServerDefinitions.cpp</code> (hash = <code>sha512Half(canonical_json)</code>),
+      <code>HashPrefix.h</code> (<code>0x53545800</code>), <code>SecretKey.cpp</code> (RFC 6979 + low-S canonical
+      signatures).</li>
+<li>[x] Chapter-level <a href="../playbook/ch04-hardening/"><code>README</code></a> — landing
+      index for Security, Operations, and Custody sub-chapters with reading order
+      and exit criteria.</li>
+<li>[x] <code>server_definitions</code> entry added to <a href="../playbook/GLOSSARY/"><code>GLOSSARY.md</code></a>
+      — definition, codec-version-pin role, SHA512Half hash, and cross-link to
+      custody sub-chapter.</li>
+</ul>
+<h2 id="phase-5-putting-it-together-ch05-reference-architectures">Phase 5 — Putting it together → <a href="playbook/ch05-reference-architectures/"><code>ch05-reference-architectures</code></a></h2>
+<ul>
+<li>[x] <strong>Reference architectures</strong> (<a href="../playbook/ch05-reference-architectures/reference-architectures/"><code>ch05-reference-architectures/reference-architectures</code></a>)
+      — five full architectures written and source-anchored: cross-border
+      payment provider, stablecoin issuer, RWA tokenization, exchange/custody,
+      and DeFi treasury. Each names its account topology, the primitives it
+      composes (with <code>rippled/</code> citations), and a runbook.</li>
+<li>[x] End-to-end walkthrough (USD → EUR cross-border payment: fiat deposit →
+      cross-currency <code>Payment</code> with <code>tfPartialPayment</code>/<code>delivered_amount</code> →
+      payout → failure paths → reconciliation), account topologies per
+      architecture, and per-architecture runbooks. What-I-learned and
+      Open-questions sections filled; no <code>🚧</code> placeholders remain in ch05.
+      Cross-linked to ch01 payments, ch02 stablecoins/tokenization, ch03 defi,
+      and ch04 security. Source citations verified against <code>rippled/</code>
+      (<code>Payment.cpp</code>, <code>TxFlags.h</code>, <code>jss.h</code>, <code>AccountSet.cpp</code>, <code>Clawback.cpp</code>,
+      <code>TER.h</code>, MPT transactors, <code>ledger_entries.macro</code>, <code>TicketCreate.cpp</code>,
+      <code>SignerListSet.cpp</code>, <code>AMMHelpers.cpp</code>, <code>AMMCore.h</code>, <code>OracleSet.cpp</code>).</li>
+<li>[x] Architecture §4 Exchange/Custody expanded with <code>server_definitions</code> codec
+      gate, full 4-stage withdrawal signing flow (builder → codec gate → signer →
+      submit), multi-sig co-signer coordination under codec pinning, and
+      cross-link to ch04 Custody.</li>
+<li>[x] Chapter-level <a href="../playbook/ch05-reference-architectures/"><code>README</code></a>
+      — landing index for the Reference Architectures sub-chapter with reading
+      order, prerequisites, and exit criteria.</li>
+</ul>
+<h2 id="phase-6-features-and-amendments-ch06-features-and-amendments">Phase 6 — Features and Amendments → <a href="playbook/ch06-features-and-amendments/"><code>ch06-features-and-amendments</code></a></h2>
+<ul>
+<li>[x] <strong>Feature Reference</strong> (<a href="../playbook/ch06-features-and-amendments/features/"><code>ch06-features-and-amendments/features</code></a>)
+      — version compatibility matrix (xrpld 1.10–3.3); features grouped by
+      domain with use cases; active, voting, in-development, and obsolete status.</li>
+<li>[x] Core payments &amp; fees (<code>XRPFees</code>)</li>
+<li>[x] Escrow &amp; channels (active; <code>TokenEscrow</code> active since v2.5.0, 2026-02-12)</li>
+<li>[x] NFTs (<code>DynamicNFT</code>, <code>NFTokenMintOffer</code>)</li>
+<li>[x] Fungible tokens (<code>MPTokensV1</code>, <code>AMMClawback</code>; <code>DynamicMPT</code>, <code>MPTokensV2</code> in dev)</li>
+<li>[x] DeFi / markets (<code>AMM</code>; <code>DeepFreeze</code> active v2.4.0, 2025-05-04;
+        <code>PermissionedDEX</code> active 2026-02-18)</li>
+<li>[x] Price oracles (<code>PriceOracle</code>)</li>
+<li>[x] Identity &amp; compliance (<code>DID</code>, <code>Credentials</code>;
+        <code>PermissionedDomains</code> active v2.4.0, 2026-02-04)</li>
+<li>[x] Cross-chain (<code>XChainBridge</code>)</li>
+<li>[x] Lending &amp; vaults (<code>SingleAssetVault</code>, <code>LendingProtocol</code>, <code>LendingProtocolV1_1</code> in dev)</li>
+<li>[x] Permission delegation (<code>PermissionDelegationV1_1</code>; original obsoleted in v2.6.1)</li>
+<li>[x] Batch transactions (<code>BatchV1_1</code>; original obsoleted in v3.1.1)</li>
+<li>[x] Confidential transfers (<code>ConfidentialTransfer</code>)</li>
+<li>[x] Sponsorship (<code>Sponsor</code> in dev)</li>
+<li>[x] Amendment status corrected against xrpscan data (TokenEscrow, DeepFreeze,
+      PermissionedDEX, PermissionedDomains now Active; introduced-version and
+      activation-date fixes for DisallowIncoming, fixAMMv1_2, fixFillOrKill,
+      ExpandedSignerList, TicketBatch, and others).</li>
+<li>[x] "Retired" amendment concept documented — <code>XRPL_RETIRE_FEATURE</code> means
+      active ≥ 2 years with gating code removed (permanent, never disabled),
+      orthogonal to Mainnet activation; prominent callout + status-key entry
+      to prevent the common "retired = off" misreading.</li>
+<li>[x] <strong>History of amendments</strong> section written and source-anchored
+      (<a href="../playbook/ch06-features-and-amendments/features/#history-of-amendments"><code>ch06 features</code></a>)
+      — origins/rationale (protocol evolution <em>without disruptive hard forks</em>;
+      introduced in <code>rippled</code> 0.31.0, 2016; validators, not a company, decide
+      activation); the on-ledger mechanism (<code>EnableAmendment</code> <code>ttAMENDMENT</code>
+      pseudo-transaction, <code>Change::applyAmendment()</code>, <code>sfMajorities</code>/
+      <code>sfAmendments</code>, <code>tfGotMajority</code>/<code>tfLostMajority</code>, <code>keylet::amendments()</code>);
+      the amendment-blocking safety valve (<code>setAmendmentBlocked()</code>); and
+      milestones/lessons (<code>FeeEscalation</code> first-activated 2016-05-05, <code>MultiSign</code>,
+      <code>Flow</code>, <code>AMM</code>; obsoletion-by-successor for <code>Batch</code>/<code>PermissionDelegation</code>).</li>
+<li>[x] Worked example added: <strong>activating an amendment on a private network</strong> —
+      configure <code>[amendments]</code> + a shortened <code>[amendment_majority_time]</code>
+      (15-minute minimum) in a standalone <code>xrpld -a --start</code>, tally the vote by
+      advancing to a flag ledger with <code>ledger_accept</code>, watch the <code>majority</code>
+      timestamp via the <code>feature</code> RPC, cross the shortened window, and observe
+      the <code>EnableAmendment</code> (<code>ttAMENDMENT</code>) pseudo-transaction flip the feature
+      to <code>enabled</code>. Also documents the admin <code>feature &lt;name&gt; vetoed=true/false</code>
+      interactive toggle. The remaining <code>🚧</code> <strong>What I learned</strong> placeholder is
+      filled; no placeholders remain anywhere in the playbook. Source-anchored to
+      <code>SystemParameters.h</code> (<code>kDefaultAmendmentMajorityTime = weeks{2}</code>),
+      <code>Constants.h</code>/<code>Config.cpp</code> (config stanzas + 15-min floor), <code>Feature.cpp</code>
+      (<code>doFeature</code>, <code>veto</code>/<code>unVeto</code>), <code>LedgerAccept.cpp</code>, and <code>Main.cpp</code>.</li>
+</ul>
+<h2 id="ongoing">Ongoing</h2>
+<ul>
+<li>[x] Protocol terminology updated to current naming (<code>xrpld</code> replacing
+      deprecated <code>rippled</code> references).</li>
+<li>[x] Source-code accuracy audit completed against <code>xrpld</code> source:
+      consensus thresholds (50/65/70/95), canonical transaction ordering,
+      SHAMap 16-way radix structure, AMM geometric-mean invariant,
+      fee-error taxonomy, fee escalation, TxQ limits, CTID, amendments,
+      and online delete mechanics.</li>
+<li>[x] Extended accuracy audit: transaction invariants (<code>InvariantCheck.h</code>),
+      genesis supply bounds (<code>kInitialXrp</code>), amendment 80%/2-week window and
+      flag-ledger interval (<code>isFlagLedger</code>, <code>kFlagLedgerInterval = 256</code>),
+      MPT capability-flag and authorization semantics (<code>MPTokenIssuanceCreate</code>,
+      <code>MPTokenAuthorize</code>, <code>MPTokenIssuanceSet</code>).</li>
+<li>[ ] Keep content aligned with shipped XRPL amendments.</li>
+<li>[x] Add runnable examples: <code>examples/</code> directory with 5 JS+Python script
+      pairs targeting Testnet (connect/fund, reliable submission, IOU issuance,
+      AMM deposit, offline signing with codec pinning).</li>
+<li>[x] Global <a href="../playbook/GLOSSARY/"><code>GLOSSARY.md</code></a> added: the
+      <code>tes</code>/<code>tec</code>/<code>ter</code>/<code>tef</code>/<code>tem</code>/<code>tel</code> result-code prefix table (with the
+      reaches-a-validated-ledger / fee-charged columns) and the
+      <code>tf</code>/<code>asf</code>/<code>lsf</code>/<code>sf</code>/<code>lt</code>/<code>tt</code> flag/field/type prefix conventions, plus a
+      core-terms table. Anchored to <code>TER.h</code>, <code>TxFlags.h</code>, <code>LedgerFormats.h</code>,
+      <code>sfields.macro</code>, <code>ledger_entries.macro</code>, <code>transactions.macro</code>; linked from
+      <code>playbook/README.md</code>. Cross-links between sections continue to be added as
+      new content lands.</li>
+</ul>
+<h2 id="legend">Legend</h2>
+<ul>
+<li>[ ] Planned / in progress</li>
+<li>[x] Complete</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

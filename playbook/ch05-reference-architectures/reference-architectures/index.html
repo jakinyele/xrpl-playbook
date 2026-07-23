@@ -1,0 +1,2746 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jakinyele.github.io/xrpl-playbook/playbook/ch05-reference-architectures/reference-architectures/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../ch06-features-and-amendments/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Reference Architectures - XRPL Playbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reference-architectures" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="XRPL Playbook" class="md-header__button md-logo" aria-label="XRPL Playbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            XRPL Playbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reference Architectures
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jakinyele/awesome-xrpl-playbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jakinyele/awesome-xrpl-playbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About this Playbook
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../ch00-coming-from-other-chains/" class="md-tabs__link">
+          
+  
+  
+  Road to Mastery
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../GLOSSARY/" class="md-tabs__link">
+          
+  
+  
+  Appendices
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../examples/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Examples
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="XRPL Playbook" class="md-nav__button md-logo" aria-label="XRPL Playbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    XRPL Playbook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jakinyele/awesome-xrpl-playbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jakinyele/awesome-xrpl-playbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About this Playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Road to Mastery
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Road to Mastery
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coming from Other Chains
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Coming from Other Chains
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/concept-mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/rpc-method-mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RPC Method Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/indexing-and-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indexing & History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/subscriptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subscriptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01-foundations/mental-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mental Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01-foundations/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01-foundations/payments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issuing Value
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Issuing Value
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02-issuing-value/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02-issuing-value/issuer-controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issuer Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02-issuing-value/stablecoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stablecoins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch02-issuing-value/tokenization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tokenization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markets & Liquidity
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Markets & Liquidity
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/defi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DeFi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/dex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DEX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/amm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/oracles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oracles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardening
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardening
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04-hardening/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04-hardening/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04-hardening/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04-hardening/custody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custody
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Architectures
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference Architectures
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Architectures
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Architectures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-this-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why does this matter?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mental model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#account-topology-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account topology at a glance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cross-border-payment-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Cross-border payment provider
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-stablecoin-issuer-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Stablecoin issuer platform
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-rwa-tokenization-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. RWA tokenization platform
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-exchange-custody-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Exchange / custody integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-defi-powered-treasury" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. DeFi-powered treasury
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#end-to-end-cross-border-payment-usd-eur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        End-to-end cross-border payment (USD → EUR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common mistakes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-i-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What I learned
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features & Amendments
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features & Amendments
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch06-features-and-amendments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch06-features-and-amendments/features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CHEATSHEET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Sheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ROADMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-this-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why does this matter?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mental model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#account-topology-at-a-glance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account topology at a glance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cross-border-payment-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Cross-border payment provider
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-stablecoin-issuer-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Stablecoin issuer platform
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-rwa-tokenization-platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. RWA tokenization platform
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-exchange-custody-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Exchange / custody integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-defi-powered-treasury" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. DeFi-powered treasury
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#end-to-end-cross-border-payment-usd-eur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        End-to-end cross-border payment (USD → EUR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common mistakes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-i-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What I learned
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="reference-architectures">Reference Architectures</h1>
+<h2 id="why-does-this-matter">Why does this matter?</h2>
+<p>Individual XRPL primitives are powerful in isolation; their value compounds
+when composed correctly into a complete system. Reference architectures make
+the composition explicit — account topologies, data flows, failure modes, and
+operational runbooks that production systems require. Studying them prevents
+architects from discovering edge cases in production.</p>
+<h2 id="mental-model">Mental model</h2>
+<p>Every XRPL application can be decomposed into three concerns:</p>
+<ol>
+<li><strong>Account topology</strong> — which accounts exist, what roles they play, and
+   what signing authority each carries.</li>
+<li><strong>Transaction flows</strong> — the sequence of on-ledger operations that
+   implement a business function, and how they fail and recover.</li>
+<li><strong>Off-ledger integration</strong> — how the application connects to traditional
+   systems (databases, fiat rails, compliance tools) while keeping the
+   validated ledger as the source of truth.</li>
+</ol>
+<h2 id="account-topology-at-a-glance">Account topology at a glance</h2>
+<p>The diagram below shows the canonical separation of concerns that every
+production XRPL system should express. The exact shape changes per
+architecture, but the <strong>cold/hot/operational split</strong> is universal.</p>
+<pre class="mermaid"><code>graph TD
+    subgraph Offline ["🔒 Offline / Air-gapped"]
+        Cold["Cold Issuer Account\n(master key only)\nSets policy flags;\nnever signs routine ops"]
+    end
+
+    subgraph Online ["🌐 Online / Operational"]
+        Hot["Hot / Distribution Account\n(regular key or SignerList)\nDay-to-day sends &amp; authorization"]
+        Ops["Operational Account\n(regular key, master disabled)\nSubmits payments;\nuses DestinationTag for routing"]
+    end
+
+    subgraph Users ["👥 Counterparties / Customers"]
+        Holder["Holder Accounts\n(trust line to issuer)"]
+        Sender["External Senders"]
+        Recv["Beneficiaries"]
+    end
+
+    Cold -- "TrustSet authorize / Clawback\n(signed offline)" --&gt; Holder
+    Cold -. "delegates signing\n(RegularKey / SignerList)" .-&gt; Hot
+    Hot -- "Payment (issue / redeem)" --&gt; Holder
+    Ops -- "cross-currency Payment" --&gt; Recv
+    Sender --&gt; Ops</code></pre>
+<h2 id="architecture">Architecture</h2>
+<p>Five reference architectures follow. Each one names its <strong>account topology</strong>,
+the <strong>primitives it composes</strong> (with the <code>xrpld</code> source that defines them), and
+a <strong>runbook</strong> for the operations that matter. Paths are relative to the vendored
+<code>rippled/</code> tree; the software is <code>xrpld</code> in prose.</p>
+<h3 id="1-cross-border-payment-provider">1. Cross-border payment provider</h3>
+<p>Move value from a sender in one currency to a beneficiary in another, settling
+on-ledger via cross-currency payments.</p>
+<p><strong>Account topology.</strong> A funded <em>operational</em> account (day-to-day signing via a
+regular key, master disabled) submits payments; per-customer routing uses
+<code>DestinationTag</code> rather than one account per customer.</p>
+<p><strong>Primitives.</strong>
+- Cross-currency <code>Payment</code> — <code>src/libxrpl/tx/transactors/payment/Payment.cpp</code>.
+  Pathfinding routes across DEX order books and AMM pools (see
+  <a href="../../ch03-markets-and-liquidity/defi/">ch03 DeFi</a>).
+- <code>tfPartialPayment</code> (<code>0x00020000</code>, <code>include/xrpl/protocol/TxFlags.h:105</code>) — let
+  the delivered amount fall short rather than fail on a thin path; <strong>always read
+  the metadata <code>delivered_amount</code></strong> (<code>include/xrpl/protocol/jss.h:216</code>), never
+  the sent <code>Amount</code>.
+- <code>LastLedgerSequence</code> on every submission for deterministic expiry; retry logic
+  per <a href="../../ch01-foundations/payments/">ch01 Payments</a>.</p>
+<p><strong>Runbook.</strong> Ingest fiat → construct the cross-currency <code>Payment</code> with a bounded
+<code>SendMax</code> and a <code>LastLedgerSequence</code> a few ledgers out → submit and poll the
+validated ledger → on success read <code>delivered_amount</code> for the payout leg → on
+<code>tecPATH_DRY</code>/<code>tecPATH_PARTIAL</code> alert and re-quote. Reconcile fiat in/out against
+validated deliveries on a schedule.</p>
+<h3 id="2-stablecoin-issuer-platform">2. Stablecoin issuer platform</h3>
+<p>Issue a fiat-backed IOU with reserve attestation and regulatory controls.</p>
+<p><strong>Account topology.</strong> A <em>cold</em> issuing account (master key, kept offline) sets
+issuer policy; a <em>hot</em> distribution account (regular key / signer list) does
+day-to-day sends. This mirrors <a href="../../ch02-issuing-value/stablecoins/">ch02 Stablecoins</a>.</p>
+<p><strong>Primitives.</strong>
+- Issuer flags via <code>AccountSet</code> — <code>asfRequireAuth</code>, <code>asfDefaultRipple</code>,
+  <code>asfNoFreeze</code>, <code>asfGlobalFreeze</code>, <code>asfAllowTrustLineClawback</code>
+  (<code>include/xrpl/protocol/TxFlags.h</code>; guards in
+  <code>src/libxrpl/tx/transactors/account/AccountSet.cpp</code>). <code>asfRequireAuth</code> and
+  <code>asfAllowTrustLineClawback</code> require <strong>zero owner objects</strong> first (<code>tecOWNERS</code>,
+  <code>include/xrpl/protocol/TER.h</code>).
+- <code>TrustSet</code> / <code>RippleState</code> for balances; <code>TransferRate</code> for the transfer fee.
+- <code>Clawback</code> — <code>src/libxrpl/tx/transactors/token/Clawback.cpp</code>. <strong>The <code>sfAmount</code>
+  issuer field is the <em>holder's</em> account, not the issuer</strong> — the single most
+  error-prone detail in the whole flow.</p>
+<p><strong>Runbook.</strong> Ceremony: on the cold account set <code>asfRequireAuth</code> (before any
+trust lines) and, if required, <code>asfAllowTrustLineClawback</code> and/or <code>asfNoFreeze</code>;
+disable the master only after a regular key/signer list exists (see
+<a href="../../ch04-hardening/security/">ch04 Security</a>). Steady state:
+authorize holder trust lines → issue from hot account → reconcile on-ledger
+supply against reserves → freeze/claw back per policy.</p>
+<h3 id="3-rwa-tokenization-platform">3. RWA tokenization platform</h3>
+<p>Represent a real-world asset as a permissioned token with identity-gated access
+and a defined lifecycle.</p>
+<p><strong>Account topology.</strong> An issuer account owns the MPT issuance; a domain owner
+account owns a permissioned domain that gates who may hold or trade.</p>
+<p><strong>Primitives.</strong>
+- MPT lifecycle — <code>MPTokenIssuanceCreate</code> (capability flags <code>tfMPTRequireAuth</code>,
+  <code>tfMPTCanTransfer</code>, <code>tfMPTCanLock</code>, <code>tfMPTCanClawback</code>, <code>tfMPTCanEscrow</code>,
+  <code>tfMPTCanTrade</code>), <code>MPTokenAuthorize</code> (auth handshake; <code>tecNO_AUTH</code> /
+  <code>tecNO_PERMISSION</code>), <code>MPTokenIssuanceSet</code> (lock/unlock; <code>DynamicMPT</code>
+  conditional mutability), <code>MPTokenIssuanceDestroy</code> (<code>tecHAS_OBLIGATIONS</code> while
+  <code>sfOutstandingAmount</code>/<code>sfLockedAmount</code> ≠ 0; <code>tecNO_PERMISSION</code> if not issuer)
+  — <code>src/libxrpl/tx/transactors/token/</code>. See
+  <a href="../../ch02-issuing-value/tokenization/">ch02 Tokenization</a>.
+- Identity primitives — <code>ltDID</code>, <code>ltCREDENTIAL</code>, <code>ltPERMISSIONED_DOMAIN</code>
+  (<code>include/xrpl/protocol/detail/ledger_entries.macro</code>); access is gated by
+  binding the issuance's <code>DomainID</code> (which requires <code>tfMPTRequireAuth</code>), not by
+  putting identity inside the token.</p>
+<p><strong>Runbook.</strong> Establish issuer identity (<code>DIDSet</code>) → create the permissioned
+domain listing accepted credentials → issuers/verifiers issue credentials
+(<code>CredentialCreate</code> → <code>CredentialAccept</code>) → <code>MPTokenIssuanceCreate</code> with
+<code>DomainID</code> → holders opt in and are authorized → distribute → (secondary trading
+scoped to the domain) → at maturity redeem to zero, then
+<code>MPTokenIssuanceDestroy</code>. The <em>ordering</em> is an application pattern; the protocol
+enforces only the individual gates.</p>
+<h3 id="4-exchange-custody-integration">4. Exchange / custody integration</h3>
+<p>Detect deposits, segregate hot/cold funds, and process withdrawals safely.</p>
+<p><strong>Account topology.</strong> A <em>deposit</em> account per venue (shared, keyed by
+<code>DestinationTag</code>), a <em>hot</em> withdrawal account (minimal balance, swept), and a
+<em>cold</em> reserve account (multi-sig, offline).</p>
+<p><strong>Primitives.</strong>
+- <code>asfDepositAuth</code> (<code>include/xrpl/protocol/TxFlags.h:431</code>) and the
+  <code>asfDisallowIncoming*</code> family to constrain who/what can pay an account.
+- Hot/cold separation via regular keys and signer lists
+  (<code>src/libxrpl/tx/transactors/account/SignerListSet.cpp</code>) — see
+  <a href="../../ch04-hardening/security/">ch04 Security</a>.
+- <code>TicketCreate</code> (<code>src/libxrpl/tx/transactors/system/TicketCreate.cpp</code>) to
+  pre-allocate sequence slots for out-of-order / parallel withdrawal signing.
+  Tickets decouple sequence assignment from signing order, which is essential
+  when the cold signer is offline and multiple withdrawals must be queued.</p>
+<p><strong>Withdrawal signing flow.</strong></p>
+<p>Every withdrawal passes through three stages before broadcast:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Transaction builder (online)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   └─ Construct tx JSON: Amount, Destination, DestinationTag, Fee (from
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>      server_info), Sequence or Ticket, LastLedgerSequence
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>2. Codec gate (online, boundary)
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   └─ Call: server_definitions { hash: &lt;cached_hash&gt; }
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>      Match  → forward tx JSON to signer
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>      Mismatch → HALT: amendment shipped, refresh codec before proceeding
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>      See [ch04 Custody](../../ch04-hardening/custody/README.md#codec-pinning-workflow)
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>3. Signer (hot key / cold signer-list quorum, offline)
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>   └─ Serialize fields in fieldCode order using cached server_definitions
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>   └─ Sign SHA512Half(0x53545800 || serialized_bytes) with private key
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>   └─ Return signed tx_blob
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>4. Submit (online)
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>   └─ submit RPC with tx_blob
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>   └─ Poll validated ledger for tx hash; credit only on tesSUCCESS/tec in
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>      validated ledger
+</span></code></pre></div>
+<p>Below the withdrawal threshold: hot account signs via regular key (online HSM).
+Above the threshold: cold account signer-list quorum required (M-of-N,
+each co-signer runs the same codec gate independently before signing).</p>
+<p><strong>Runbook.</strong> Credit deposits only after they appear in a <em>validated</em> ledger and
+match an expected <code>DestinationTag</code>; sweep the hot account to cold on a threshold;
+sign withdrawals from the hot account (regular key) or, above a limit, require
+the cold signer-list quorum; reconcile balances against the internal ledger
+continuously.</p>
+<h3 id="5-defi-powered-treasury">5. DeFi-powered treasury</h3>
+<p>Deploy idle treasury assets into on-ledger liquidity with oracle-driven,
+rules-based rebalancing.</p>
+<p><strong>Account topology.</strong> A treasury account (multi-sig) holds positions; automation
+signs via a scoped regular key with tight monitoring.</p>
+<p><strong>Primitives.</strong>
+- AMM — <code>AMMCreate</code>/<code>AMMDeposit</code>/<code>AMMWithdraw</code>/<code>AMMBid</code>/<code>AMMVote</code>
+  (<code>src/libxrpl/tx/transactors/dex/</code>). Invariant
+  <code>sqrt(asset1 * asset2) &gt;= LPTokensBalance</code>
+  (<code>src/libxrpl/ledger/helpers/AMMHelpers.cpp:47</code>). Trading-fee ceiling
+  <code>kTradingFeeThreshold = 1000</code> (<strong>1%</strong>) in units of <code>1/100000</code>
+  (<code>kAuctionSlotFeeScaleFactor = 100000</code>), auction slot <code>kTotalTimeSlotSecs =
+  86400</code> split into <code>kAuctionSlotTimeIntervals = 20</code>, <code>kVoteMaxSlots = 8</code>
+  (<code>include/xrpl/protocol/AMMCore.h</code>). See
+  <a href="../../ch03-markets-and-liquidity/defi/">ch03 DeFi</a>.
+- <code>PriceOracle</code> — <code>OracleSet</code> (<code>src/libxrpl/tx/transactors/oracle/OracleSet.cpp</code>)
+  for freshness-checked prices driving rebalancing decisions.
+- <code>OfferCreate</code> (<code>src/libxrpl/tx/transactors/dex/OfferCreate.cpp</code>) for
+  order-book execution alongside AMM.</p>
+<p><strong>Runbook.</strong> Read oracle price and check freshness → compute target allocation →
+rebalance via <code>AMMDeposit</code>/<code>AMMWithdraw</code> or <code>OfferCreate</code> with slippage bounds →
+monitor LP position for impermanent loss against thresholds → record every
+action against the validated ledger for audit.</p>
+<h2 id="example-flow">Example flow</h2>
+<h3 id="end-to-end-cross-border-payment-usd-eur">End-to-end cross-border payment (USD → EUR)</h3>
+<p>This traces the cross-border architecture (§1) from a customer's fiat deposit to
+the beneficiary payout, showing where each on-ledger primitive and each failure
+path fits.</p>
+<ol>
+<li><strong>Fiat deposit (off-ledger).</strong> The customer wires USD to the provider's bank.
+   The provider records an internal credit but treats nothing as settled until
+   the on-ledger leg validates.</li>
+<li><strong>Construct the payment.</strong> Build a cross-currency <code>Payment</code>
+   (<code>src/libxrpl/tx/transactors/payment/Payment.cpp</code>) from the operational
+   account: <code>Destination</code> = the payout account, a <code>DestinationTag</code> identifying
+   the beneficiary, a bounded <code>SendMax</code> in the source asset, the target
+   <code>Amount</code> in the destination asset, and a <code>LastLedgerSequence</code> a few ledgers
+   ahead for deterministic expiry. Set <code>tfPartialPayment</code> (<code>0x00020000</code>,
+   <code>include/xrpl/protocol/TxFlags.h:105</code>) only if a short delivery is
+   acceptable and priced accordingly.</li>
+<li><strong>Submit and observe.</strong> Pathfinding routes across DEX order books and AMM
+   pools (see <a href="../../ch03-markets-and-liquidity/defi/">ch03 DeFi</a>).
+   Submit, then poll the <strong>validated</strong> ledger — not the current one — for the
+   transaction result.</li>
+<li><strong>Read what was actually delivered.</strong> On success, read the metadata field
+   <code>delivered_amount</code> (<code>include/xrpl/protocol/jss.h:216</code>), <em>never</em> the requested
+   <code>Amount</code>. With <code>tfPartialPayment</code>, the two can differ; crediting the requested
+   amount instead of the delivered amount is the classic exploit.</li>
+<li><strong>Payout (off-ledger).</strong> Release EUR to the beneficiary only after the
+   on-ledger delivery is validated and <code>delivered_amount</code> is confirmed.</li>
+<li><strong>Failure paths.</strong> <code>tecPATH_DRY</code> / <code>tecPATH_PARTIAL</code> mean liquidity was
+   insufficient — alert, surface a human-readable error, and re-quote rather
+   than blindly retrying. If <code>LastLedgerSequence</code> passes with no result, the
+   transaction expired safely and can be rebuilt at a fresh sequence (idempotent
+   by hash — see <a href="../../ch01-foundations/payments/">ch01 Payments</a>).</li>
+<li><strong>Reconcile.</strong> On a schedule, reconcile fiat in/out against validated
+   <code>delivered_amount</code> totals; any gap is an alert, not a rounding note.</li>
+</ol>
+<p><strong>Why the validated ledger is the pivot:</strong> every "settled" decision in this flow
+hangs on a <em>validated</em> result and the <em>metadata</em> delivered amount. Trusting the
+submitted amount, the current (unvalidated) ledger, or an off-ledger assumption
+is where cross-border integrations lose money.</p>
+<h2 id="security-considerations">Security considerations</h2>
+<ul>
+<li>Each architecture includes a threat model: which accounts can be
+  compromised, what the blast radius is, and how to recover.</li>
+<li>Monitoring and alerting must cover both on-ledger events (account
+  activity, balance changes) and off-ledger state (reconciliation gaps,
+  reserve shortfalls).</li>
+<li>All operational accounts follow the security model in
+  <a href="../../ch04-hardening/security/">Security</a>.</li>
+</ul>
+<h2 id="common-mistakes">Common mistakes</h2>
+<ul>
+<li><strong>Missing reconciliation.</strong> Treating on-ledger state as always consistent
+  with off-ledger databases without a reconciliation process leads to
+  silent discrepancies that compound over time.</li>
+<li><strong>No monitoring on operational accounts.</strong> The ledger is live 24/7;
+  unmonitored accounts are undefended accounts.</li>
+<li><strong>Single-account topologies.</strong> Combining issuer, hot wallet, and
+  operational roles in one account maximizes blast radius.</li>
+<li><strong>Untested recovery procedures.</strong> Failure recovery paths that have never
+  been executed will fail when they are needed most.</li>
+</ul>
+<h2 id="production-checklist">Production checklist</h2>
+<ul>
+<li>[ ] Account topology diagram is documented and reflects live state.</li>
+<li>[ ] Each account's role, signing authority, and reserve requirements are
+      documented.</li>
+<li>[ ] Transaction flows include explicit failure handling and retry logic.</li>
+<li>[ ] Reconciliation runs on a defined schedule with alerting on gaps.</li>
+<li>[ ] On-ledger monitoring covers all operational accounts.</li>
+<li>[ ] Recovery procedures are documented and have been drilled.</li>
+<li>[ ] Off-ledger systems treat the validated ledger as the source of truth.</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://xrpl.org/docs/use-cases">XRPL Use Cases</a></li>
+<li><a href="https://xrpl.org/docs/use-cases/payments/cross-border-payments">Cross-Border Payments</a></li>
+</ul>
+<p><strong><code>xrpld</code> source referenced in this section</strong> (paths relative to the vendored
+<code>rippled/</code> tree — the on-disk directory retains the historical name):</p>
+<ul>
+<li>Cross-currency <code>Payment</code>, <code>tfPartialPayment</code>, <code>delivered_amount</code> —
+  <code>src/libxrpl/tx/transactors/payment/Payment.cpp</code>,
+  <code>include/xrpl/protocol/TxFlags.h</code>, <code>include/xrpl/protocol/jss.h</code>.</li>
+<li>Issuer flags and clawback (<code>sfAmount</code> issuer = holder), <code>tecOWNERS</code> —
+  <code>src/libxrpl/tx/transactors/account/AccountSet.cpp</code>,
+  <code>src/libxrpl/tx/transactors/token/Clawback.cpp</code>,
+  <code>include/xrpl/protocol/TER.h</code>.</li>
+<li>MPT lifecycle (<code>tecHAS_OBLIGATIONS</code>, <code>tecNO_AUTH</code>, <code>tecNO_PERMISSION</code>) and
+  identity objects (<code>ltDID</code>, <code>ltCREDENTIAL</code>, <code>ltPERMISSIONED_DOMAIN</code>) —
+  <code>src/libxrpl/tx/transactors/token/</code>,
+  <code>include/xrpl/protocol/detail/ledger_entries.macro</code>.</li>
+<li>Deposit/withdrawal controls and tickets — <code>asfDepositAuth</code>
+  (<code>include/xrpl/protocol/TxFlags.h</code>),
+  <code>src/libxrpl/tx/transactors/system/TicketCreate.cpp</code>,
+  <code>src/libxrpl/tx/transactors/account/SignerListSet.cpp</code>.</li>
+<li>AMM invariant and constants, oracle, offers —
+  <code>src/libxrpl/ledger/helpers/AMMHelpers.cpp</code>,
+  <code>include/xrpl/protocol/AMMCore.h</code>,
+  <code>src/libxrpl/tx/transactors/oracle/OracleSet.cpp</code>,
+  <code>src/libxrpl/tx/transactors/dex/</code>.</li>
+</ul>
+<h2 id="what-i-learned">What I learned</h2>
+<ul>
+<li><strong>Reference architectures are compositions, not new primitives.</strong> Every one of
+  the five reuses transactors and flags documented in ch01–ch04; the value is in
+  the <em>account topology</em> and <em>ordering</em>, not in any single on-ledger feature.</li>
+<li><strong>The validated ledger is the only source of truth, in all five.</strong> Deposit
+  crediting, payout release, reserve reconciliation, and treasury audit all hang
+  on a <em>validated</em> result and, for payments, the <em>metadata</em> <code>delivered_amount</code>.
+  The recurring failure mode is trusting a submitted amount or an unvalidated
+  ledger.</li>
+<li><strong>Account topology is a security decision.</strong> Splitting issuer/hot/cold and
+  cold/hot/deposit roles bounds blast radius; the protocol's disable-master and
+  signer-list guards (ch04) are what make those splits safe to operate.</li>
+<li><strong>The protocol enforces gates, not sequences.</strong> Order-of-operations in the RWA
+  and stablecoin runbooks (identity → domain → issuance, or ceremony ordering)
+  is an application-level discipline; the ledger enforces only the individual
+  preconditions (<code>tecOWNERS</code>, <code>tecNO_ALTERNATIVE_KEY</code>, <code>tecHAS_OBLIGATIONS</code>).</li>
+</ul>
+<h2 id="open-questions">Open questions</h2>
+<p><strong>When should a design use separate accounts versus <code>DestinationTag</code>s on one
+account?</strong></p>
+<blockquote>
+<p><strong>Educated guess (operational trade-off, not protocol-enforced):</strong> use a
+single account with <code>DestinationTag</code>s when the sub-entities share a trust and
+compliance boundary (e.g. many customers of one custodian) — it minimizes
+reserve cost and key management. Use separate accounts when roles differ in
+<em>signing authority</em> or <em>blast radius</em> (issuer vs. hot vs. cold), where the
+point is isolation, not accounting. The protocol supports both; the deciding
+factor is who must be able to sign and what a compromise would cost.</p>
+</blockquote>
+<p><strong>How much of a production system's correctness can the ledger guarantee?</strong></p>
+<blockquote>
+<p><strong>Confirmed against source (on-ledger half) + educated guess (off-ledger
+half):</strong> the ledger guarantees the on-ledger invariants each transactor
+enforces — authorization, obligations, key availability, AMM balance. It
+cannot guarantee that off-ledger fiat, reserves, or databases agree with
+on-ledger state; that is what reconciliation exists to catch. Every one of the
+five architectures therefore pairs an on-ledger flow with an off-ledger
+reconciliation loop, and the boundary between them is where production bugs
+concentrate.</p>
+</blockquote>
+<hr />
+<p><strong>← Back to <a href="../">Chapter 5 — Reference Architectures</a></strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

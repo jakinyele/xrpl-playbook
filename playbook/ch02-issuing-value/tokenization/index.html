@@ -1,0 +1,2803 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jakinyele.github.io/xrpl-playbook/playbook/ch02-issuing-value/tokenization/">
+      
+      
+        <link rel="prev" href="../stablecoins/">
+      
+      
+        <link rel="next" href="../../ch03-markets-and-liquidity/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Tokenization - XRPL Playbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tokenization" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="XRPL Playbook" class="md-header__button md-logo" aria-label="XRPL Playbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            XRPL Playbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tokenization
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jakinyele/awesome-xrpl-playbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jakinyele/awesome-xrpl-playbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About this Playbook
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../ch00-coming-from-other-chains/" class="md-tabs__link">
+          
+  
+  
+  Road to Mastery
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../GLOSSARY/" class="md-tabs__link">
+          
+  
+  
+  Appendices
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../examples/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Examples
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="XRPL Playbook" class="md-nav__button md-logo" aria-label="XRPL Playbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    XRPL Playbook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jakinyele/awesome-xrpl-playbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jakinyele/awesome-xrpl-playbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About this Playbook
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Road to Mastery
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Road to Mastery
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Coming from Other Chains
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Coming from Other Chains
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/concept-mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concept Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/rpc-method-mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RPC Method Mapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/indexing-and-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Indexing & History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch00-coming-from-other-chains/subscriptions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subscriptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foundations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01-foundations/mental-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mental Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01-foundations/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch01-foundations/payments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issuing Value
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Issuing Value
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../issuer-controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issuer Controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stablecoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stablecoins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tokenization
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tokenization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-this-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why does this matter?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mental model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issuing-a-permissioned-transferable-mpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issuing a permissioned, transferable MPT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamicmpt-lifecycle-deferring-policy-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DynamicMPT lifecycle — deferring policy decisions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DynamicMPT lifecycle — deferring policy decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-creation-with-mutability-pre-declarations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Creation with mutability pre-declarations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-enabling-a-pre-declared-capability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Enabling a pre-declared capability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-constraints-source-verified" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key constraints (source-verified)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common mistakes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-i-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What I learned
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markets & Liquidity
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Markets & Liquidity
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/defi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DeFi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/dex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DEX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/amm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch03-markets-and-liquidity/oracles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oracles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardening
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardening
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04-hardening/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04-hardening/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04-hardening/operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch04-hardening/custody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custody
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Architectures
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference Architectures
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch05-reference-architectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch05-reference-architectures/reference-architectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Architectures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features & Amendments
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features & Amendments
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch06-features-and-amendments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ch06-features-and-amendments/features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GLOSSARY/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CHEATSHEET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cheat Sheet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ROADMAP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-this-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why does this matter?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mental model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issuing-a-permissioned-transferable-mpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issuing a permissioned, transferable MPT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamicmpt-lifecycle-deferring-policy-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DynamicMPT lifecycle — deferring policy decisions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DynamicMPT lifecycle — deferring policy decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-creation-with-mutability-pre-declarations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Creation with mutability pre-declarations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-enabling-a-pre-declared-capability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Enabling a pre-declared capability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-constraints-source-verified" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key constraints (source-verified)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common mistakes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-i-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What I learned
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="tokenization">Tokenization</h1>
+<h2 id="why-does-this-matter">Why does this matter?</h2>
+<p>Tokenizing a real-world asset is not just minting a token — it is encoding
+an asset's legal rights, transfer restrictions, and lifecycle events into a
+programmable ledger object. The choice of primitive (issued currency, MPT,
+or NFT) has permanent consequences for the asset's behavior, compliance
+posture, and secondary market liquidity. Choose wrong and you'll be
+redeeming and re-issuing under pressure.</p>
+<h2 id="mental-model">Mental model</h2>
+<p>Choose the smallest primitive that fully satisfies the asset's requirements:</p>
+<ul>
+<li><strong>Issued currencies</strong> — fungible, highly liquid, deep DEX/AMM integration.
+  Best for high-volume homogeneous assets (stablecoins, commodities).</li>
+<li><strong>Multi-Purpose Tokens (MPTs)</strong> — fungible tokens with richer on-ledger
+  metadata and lifecycle controls; lower reserve overhead than trust lines
+  at scale. Best for regulated securities and structured products.</li>
+<li><strong>NFTs (XLS-20)</strong> — non-fungible; each token is unique. Best for assets
+  where individual provenance matters (real estate, art, loans).</li>
+</ul>
+<p>The key question is <strong>fungibility</strong>: are all units of this asset
+economically interchangeable? If yes, use MPT or issued currency. If no,
+use NFT.</p>
+<h2 id="architecture">Architecture</h2>
+<ul>
+<li><strong>Asset onboarding</strong> — off-ledger legal wrapper, on-ledger token
+  configuration, metadata anchoring.</li>
+<li><strong>Holder management</strong> — authorized trust lines (issued currency / MPT)
+  or transfer restrictions (NFT) tied to KYC/AML verification.</li>
+<li><strong>Lifecycle events</strong> — corporate actions (dividends, splits), maturity,
+  redemption, and burning.</li>
+<li><strong>Metadata</strong> — on-ledger URI plus off-ledger verifiable document;
+  integrity anchored via content hash in the token <code>URI</code> field.</li>
+</ul>
+<h2 id="example-flow">Example flow</h2>
+<h3 id="issuing-a-permissioned-transferable-mpt">Issuing a permissioned, transferable MPT</h3>
+<p>This traces a regulated (allowlisted) Multi-Purpose Token from configuration
+through holder onboarding to a restricted secondary transfer. On a classic
+(pre-<code>DynamicMPT</code>) issuance the capability flags are <strong>fixed at creation</strong> —
+you cannot add <code>Clawback</code>, <code>Transfer</code>, or <code>RequireAuth</code> to an existing issuance
+(contrast the account-level flags in
+<a href="../issuer-controls/">Issuer Controls</a>), so the design decision is
+made once, up front. The <code>DynamicMPT</code> amendment relaxes this <em>only</em> for
+capabilities you explicitly pre-declare mutable at creation via <code>MutableFlags</code>
+(see the note at the end of this flow).</p>
+<ol>
+<li><strong>Create the issuance.</strong> The issuer submits <code>MPTokenIssuanceCreate</code> with the
+   capability flags baked in:</li>
+<li><code>tfMPTRequireAuth</code> — every holder must be explicitly authorized before
+     they can receive units (the allowlist gate).</li>
+<li><code>tfMPTCanTransfer</code> — permits holder-to-holder (secondary) transfers.
+     Without it, units can only move to and from the issuer.</li>
+<li><code>tfMPTCanClawback</code> / <code>tfMPTCanLock</code> — reserve the right to repossess or
+     freeze balances for compliance.</li>
+</ol>
+<p>Optional configuration set here: <code>MaximumAmount</code> (hard supply cap,
+   ≤ <code>kMaxMpTokenAmount</code> = 2⁶³−1), <code>AssetScale</code> (decimal places), <code>TransferFee</code>
+   (≤ <code>kMaxTransferFee</code> = 50000, i.e. 50%, and only valid when <code>tfMPTCanTransfer</code>
+   is set), and <code>MPTokenMetadata</code> (≤ <code>kMaxMpTokenMetadataLength</code> = 1024 bytes).
+   <code>MaximumAmount</code> and <code>AssetScale</code> are <strong>permanently immutable</strong>; <code>TransferFee</code>
+   and <code>MPTokenMetadata</code> are immutable too <em>unless</em> you opt into mutability at
+   creation with the matching <code>MutableFlags</code> bit (<code>DynamicMPT</code>). The transaction
+   returns a deterministic <code>MPTokenIssuanceID</code> derived from the issuer account
+   and sequence — the stable handle every later step references.</p>
+<ol>
+<li>
+<p><strong>Holder opts in.</strong> The prospective holder submits <code>MPTokenAuthorize</code>
+   naming the <code>MPTokenIssuanceID</code> (and <strong>no</strong> <code>Holder</code> field). This creates the
+   holder's <code>MPToken</code> object with a zero balance. The issuer <em>cannot</em> create
+   this object on the holder's behalf — the holder must opt in first
+   (<code>preclaim</code> in <code>MPTokenAuthorize.cpp</code> requires the <code>MPToken</code> to exist before
+   the issuer can authorize it). An issuer also cannot authorize itself:
+   holding your own issuance returns <code>tecNO_PERMISSION</code>.</p>
+</li>
+<li>
+<p><strong>Issuer authorizes the holder.</strong> Because <code>lsfMPTRequireAuth</code> is set, the
+   issuer submits <code>MPTokenAuthorize</code> <em>with</em> the <code>Holder</code> field to flip the
+   holder's <code>lsfMPTAuthorized</code> flag. Skipping the on-ledger <code>RequireAuth</code> flag
+   makes this step a no-op — the transaction returns <code>tecNO_AUTH</code>, so an
+   allowlist you never enabled provides no enforcement.</p>
+</li>
+<li>
+<p><strong>Primary issuance.</strong> The issuer sends units to the authorized holder via
+   <code>Payment</code>. This raises <code>sfOutstandingAmount</code> on the issuance (the MPT
+   analogue of total supply), capped by <code>MaximumAmount</code> if one was set.</p>
+</li>
+<li>
+<p><strong>Restricted secondary transfer.</strong> Holder A pays Holder B. This succeeds
+   only because <code>tfMPTCanTransfer</code> was set at creation <strong>and</strong> Holder B is
+   already authorized. If a <code>TransferFee</code> was configured, it is deducted here —
+   analogous to <code>TransferRate</code> on an issued currency, but encoded on the
+   issuance object rather than the account.</p>
+</li>
+<li>
+<p><strong>Compliance action (optional).</strong> To halt a specific holder, the issuer
+   submits <code>MPTokenIssuanceSet</code> with <code>tfMPTLock</code> (requires <code>lsfMPTCanLock</code>),
+   setting <code>lsfMPTLocked</code> on that holder's <code>MPToken</code>; <code>tfMPTUnlock</code> reverses it.
+   To repossess, the issuer submits a <code>Clawback</code> naming the <code>Holder</code> (requires
+   <code>lsfMPTCanClawback</code>), reducing the holder's balance and <code>sfOutstandingAmount</code>
+   together.</p>
+</li>
+</ol>
+<p><strong>The through-line:</strong> on an MPT, <em>policy is decided at creation and enforced
+per-holder thereafter</em>. There is no <code>AccountSet</code>-style free retrofit: a
+capability is available later only if it (or the right to enable it) was
+declared at creation. Concretely, with <code>DynamicMPT</code> an issuer may pre-authorize
+future changes by setting <code>MutableFlags</code> bits (<code>tmfMPTCanEnableCanTransfer</code>,
+<code>tmfMPTCanMutateTransferFee</code>, <code>tmfMPTCanMutateMetadata</code>, etc.); a later
+<code>MPTokenIssuanceSet</code> can then flip only those pre-blessed capabilities. Anything
+not pre-declared mutable — and <code>MaximumAmount</code>/<code>AssetScale</code> in all cases — is
+permanently fixed.</p>
+<h3 id="dynamicmpt-lifecycle-deferring-policy-decisions">DynamicMPT lifecycle — deferring policy decisions</h3>
+<p>The <code>DynamicMPT</code> amendment (voting as of xrpld 3.4; <code>Supported::Yes,
+DefaultNo</code> in <code>features.macro</code>) enables issuers to <strong>defer</strong> specific policy
+decisions by pre-declaring capabilities as mutable at creation time.
+This is controlled, opt-in evolution — not a free-form retrofit.</p>
+<p><strong>Amendment gate:</strong> requires <code>featureDynamicMPT</code> active on the network;
+any <code>MPTokenIssuanceCreate</code> with <code>sfMutableFlags</code> returns <code>temDISABLED</code>
+without it.</p>
+<p>Source: <code>rippled/src/libxrpl/tx/transactors/token/MPTokenIssuanceCreate.cpp</code> (line 38)</p>
+<h4 id="phase-1-creation-with-mutability-pre-declarations">Phase 1: Creation with mutability pre-declarations</h4>
+<p>Submit <code>MPTokenIssuanceCreate</code> with <code>sfMutableFlags</code> encoding which
+capabilities the issuer reserves the right to enable later:</p>
+<table>
+<thead>
+<tr>
+<th><code>sfMutableFlags</code> bit</th>
+<th>Allows future enable of</th>
+<th>Ledger flag enabled</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tmfMPTCanEnableCanLock</code></td>
+<td><code>lsfMPTCanLock</code></td>
+<td>Per-holder lock capability</td>
+</tr>
+<tr>
+<td><code>tmfMPTCanEnableRequireAuth</code></td>
+<td><code>lsfMPTRequireAuth</code></td>
+<td>Holder authorization requirement</td>
+</tr>
+<tr>
+<td><code>tmfMPTCanEnableCanEscrow</code></td>
+<td><code>lsfMPTCanEscrow</code></td>
+<td>Escrow support</td>
+</tr>
+<tr>
+<td><code>tmfMPTCanEnableCanTrade</code></td>
+<td><code>lsfMPTCanTrade</code></td>
+<td>DEX trading</td>
+</tr>
+<tr>
+<td><code>tmfMPTCanEnableCanTransfer</code></td>
+<td><code>lsfMPTCanTransfer</code></td>
+<td>Holder-to-holder transfers</td>
+</tr>
+<tr>
+<td><code>tmfMPTCanEnableCanClawback</code></td>
+<td><code>lsfMPTCanClawback</code></td>
+<td>Issuer clawback</td>
+</tr>
+<tr>
+<td><code>tmfMPTCanMutateMetadata</code></td>
+<td>—</td>
+<td>Allows <code>MPTokenMetadata</code> updates</td>
+</tr>
+<tr>
+<td><code>tmfMPTCanMutateTransferFee</code></td>
+<td>—</td>
+<td>Allows <code>TransferFee</code> changes</td>
+</tr>
+</tbody>
+</table>
+<p>Source: <code>rippled/include/xrpl/protocol/TxFlags.h</code> (lines 359–390),
+<code>rippled/include/xrpl/protocol/LedgerFormats.h</code> (lines 183–207).</p>
+<p>Example: an issuer launching a bond token may want to defer the transfer
+capability decision pending regulatory approval:
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;TransactionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MPTokenIssuanceCreate&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;issuer&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">&quot;MaximumAmount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1000000000&quot;</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">&quot;AssetScale&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="nt">&quot;Flags&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="nt">&quot;MutableFlags&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<code>MutableFlags=32</code> is <code>tmfMPTCanEnableCanTransfer</code> — the issuer does <strong>not</strong>
+enable transfers now but reserves the right to do so later.</p>
+<h4 id="phase-2-enabling-a-pre-declared-capability">Phase 2: Enabling a pre-declared capability</h4>
+<p>Once the regulatory green-light arrives, the issuer submits
+<code>MPTokenIssuanceSet</code> with the corresponding <code>sfMutableFlags</code> bit:</p>
+<p><div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;TransactionType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MPTokenIssuanceSet&quot;</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;Account&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;issuer&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;MPTokenIssuanceID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;issuance_id&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&quot;MutableFlags&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<code>MutableFlags=16</code> is <code>tmfMPTSetCanTransfer</code> — this flips <code>lsfMPTCanTransfer</code>
+to enabled. Holders can now transfer among themselves.</p>
+<p>Source: <code>rippled/src/libxrpl/tx/transactors/token/MPTokenIssuanceSet.cpp</code>
+(lines 51–69, <code>kMptMutabilityFlags</code> mapping table).</p>
+<h4 id="key-constraints-source-verified">Key constraints (source-verified)</h4>
+<ol>
+<li>
+<p><strong>One-way enablement.</strong> Once a capability is enabled via <code>MPTokenIssuanceSet</code>,
+   it <strong>cannot be disabled</strong>. The <code>MPTokenIssuanceSet</code> has no "remove capability"
+   path — only <code>tfMPTLock</code>/<code>tfMPTUnlock</code> for per-holder operations.</p>
+</li>
+<li>
+<p><strong>Permanently immutable fields.</strong></p>
+</li>
+<li><code>MaximumAmount</code> — hard cap, set once, never changed.</li>
+<li>
+<p><code>AssetScale</code> — decimal precision, set once, never changed.
+   These are not subject to <code>DynamicMPT</code> mutability regardless of what
+   <code>sfMutableFlags</code> bits are set.</p>
+</li>
+<li>
+<p><strong>Pre-declaration required.</strong> If <code>tmfMPTCanEnableCanTransfer</code> was NOT set
+   in <code>sfMutableFlags</code> at creation, a later <code>MPTokenIssuanceSet</code> with
+   <code>tmfMPTSetCanTransfer</code> returns <code>tecNO_PERMISSION</code>.</p>
+</li>
+<li>
+<p><strong>Confidential balance exclusivity.</strong> If <code>lsfMPTCanHoldConfidentialBalance</code>
+   is enabled, <code>TransferFee &gt; 0</code> cannot coexist (encrypted amounts make fee
+   computation impossible). Source: <code>MPTokenIssuanceSet.cpp</code> line 88.</p>
+</li>
+</ol>
+<h2 id="security-considerations">Security considerations</h2>
+<ul>
+<li>Clawback and freeze posture (see <a href="../issuer-controls/">Issuer Controls</a>)
+  must match the asset's legal offering documents.</li>
+<li>MPT <code>MaximumAmount</code> is set at creation and cannot be changed.</li>
+<li>Authorized minter accounts for NFTs should use multi-signing.</li>
+</ul>
+<h2 id="common-mistakes">Common mistakes</h2>
+<ul>
+<li><strong>Choosing NFTs for fungible assets.</strong> Non-fungible tokens cannot be
+  aggregated or routed through the DEX; fungible assets need fungible
+  primitives.</li>
+<li><strong>Mutable metadata.</strong> Using a centrally-controlled URL as the token URI
+  allows silent modification of the asset record after issuance.</li>
+<li><strong>Missing transfer restrictions.</strong> Regulated assets require on-ledger
+  enforcement — <code>RequireAuth</code> and authorized trust lines — not just
+  off-ledger policy.</li>
+<li><strong>Not modeling MPT reserve costs.</strong> MPT holder entries still consume
+  ledger objects; plan reserve requirements for large holder sets.</li>
+</ul>
+<h2 id="production-checklist">Production checklist</h2>
+<ul>
+<li>[ ] Token primitive chosen based on fungibility and compliance needs.</li>
+<li>[ ] Metadata points to content-addressed or hash-verified storage.</li>
+<li>[ ] Transfer restrictions are enforced on-ledger, not just in policy.</li>
+<li>[ ] Authorized minter accounts use multi-signing.</li>
+<li>[ ] <code>MaximumAmount</code> is capacity-planned before MPT deployment.</li>
+<li>[ ] Lifecycle events (maturity, redemption, clawback) are scripted and
+      tested before issuance.</li>
+<li>[ ] On-ledger token state is reconciled with the off-ledger asset
+      register on a defined schedule.</li>
+</ul>
+<blockquote>
+<p>This checklist covers tokenization. Before production, also complete the
+account-security checklist in
+<a href="../../ch04-hardening/security/#production-checklist"><code>ch04-hardening/security</code></a>
+and the node-operations checklist in
+<a href="../../ch04-hardening/operations/#production-checklist"><code>ch04-hardening/operations</code></a>.</p>
+</blockquote>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://xrpl.org/docs/concepts/tokens/nfts">Non-Fungible Tokens</a></li>
+<li><a href="https://xrpl.org/docs/concepts/tokens/multi-purpose-tokens">Multi-Purpose Tokens (MPTs)</a></li>
+<li><a href="https://xrpl.org/docs/concepts/tokens/fungible-tokens/authorized-trust-lines">Authorized Trust Lines</a></li>
+</ul>
+<p><strong><code>xrpld</code> source referenced in this section</strong> (paths relative to the vendored
+<code>rippled/</code> tree — the on-disk directory retains the historical name):</p>
+<ul>
+<li>MPT capability flags (<code>tfMPTRequireAuth</code>, <code>tfMPTCanTransfer</code>, <code>tfMPTCanLock</code>,
+  <code>tfMPTCanClawback</code>, <code>tfMPTCanEscrow</code>, <code>tfMPTCanTrade</code>) —
+  <code>include/xrpl/protocol/TxFlags.h</code>; ledger-side <code>lsfMPT*</code> counterparts in
+  <code>include/xrpl/protocol/LedgerFormats.h</code>.</li>
+<li>Issuance creation + immutable-at-creation validation (<code>TransferFee</code> requires
+  <code>tfMPTCanTransfer</code>, <code>sfOutstandingAmount</code> init) —
+  <code>src/libxrpl/tx/transactors/token/MPTokenIssuanceCreate.cpp</code>.</li>
+<li>Holder-opts-in-before-issuer-authorizes flow, <code>tecNO_AUTH</code> / <code>tecNO_PERMISSION</code>
+  paths — <code>src/libxrpl/tx/transactors/token/MPTokenAuthorize.cpp</code>.</li>
+<li>Per-holder lock / mutable-flag mechanics —
+  <code>src/libxrpl/tx/transactors/token/MPTokenIssuanceSet.cpp</code>.</li>
+<li>Bounds <code>kMaxMpTokenAmount</code> (2⁶³−1), <code>kMaxTransferFee</code> (50000),
+  <code>kMaxMpTokenMetadataLength</code> (1024) — <code>include/xrpl/protocol/Protocol.h</code>.</li>
+<li>Identity / compliance objects — <code>DID</code> (<code>ltDID</code>; fields <code>DIDDocument</code>, <code>URI</code>,
+  <code>Data</code>), <code>Credential</code> (<code>ltCREDENTIAL</code>; <code>Subject</code>, <code>Issuer</code>, <code>CredentialType</code>,
+  optional <code>Expiration</code>/<code>URI</code>), <code>PermissionedDomain</code> (<code>ltPERMISSIONED_DOMAIN</code>;
+  <code>AcceptedCredentials</code> array) —
+  <code>include/xrpl/protocol_autogen/ledger_entries/{DID,Credential,PermissionedDomain}.h</code>.</li>
+<li>MPT-to-domain binding (<code>DomainID</code> requires <code>tfMPTRequireAuth</code>) —
+  <code>src/libxrpl/tx/transactors/token/MPTokenIssuanceCreate.cpp</code>.</li>
+</ul>
+<h2 id="what-i-learned">What I learned</h2>
+<ul>
+<li><strong>MPT capabilities are decided at creation.</strong> Unlike issued currencies, where
+  account flags (<code>RequireAuth</code>, freeze, clawback) can be toggled on the issuer
+  over its lifetime, an MPT's <code>Transfer</code>/<code>Clawback</code>/<code>Lock</code>/<code>RequireAuth</code>
+  capabilities are set in <code>MPTokenIssuanceCreate</code>. On a classic issuance they
+  are frozen for good; with <code>DynamicMPT</code> an issuer can change only the specific
+  capabilities it pre-declared mutable (via <code>MutableFlags</code>) at creation.
+  <code>MaximumAmount</code> and <code>AssetScale</code> are immutable in every case. The design
+  decision is effectively permanent — plan it before the first transaction.</li>
+<li><strong>Authorization is a two-party handshake.</strong> With <code>RequireAuth</code>, the holder
+  must create their <code>MPToken</code> object <em>first</em> (opt in), and only then can the
+  issuer authorize it. The issuer can never conjure a balance on an account
+  that has not opted in — a meaningful contrast to some allowlist models.</li>
+<li><strong>A capability flag you forgot to set fails silent-ish.</strong> Authorizing a
+  holder on an issuance without <code>RequireAuth</code> returns <code>tecNO_AUTH</code>; a
+  non-transferable MPT simply rejects secondary transfers. The absence of a
+  flag is enforced as a hard <code>tec</code>/<code>tem</code> rejection, not a warning — so an
+  incomplete configuration surfaces as failed transactions, not silent
+  weakening of your controls.</li>
+<li><strong>Supply is <code>sfOutstandingAmount</code>, bounded by <code>MaximumAmount</code>.</strong> There is no
+  separate "mint" primitive: issuing is a <code>Payment</code> from the issuer that raises
+  outstanding amount, and clawback/redemption lowers it. If you cap supply,
+  cap it at creation — <code>MaximumAmount</code> is immutable and bounded by 2⁶³−1.</li>
+</ul>
+<h2 id="open-questions">Open questions</h2>
+<p><strong>When should a developer choose Multi-Purpose Tokens (MPTs) over standard
+issued currencies?</strong></p>
+<blockquote>
+<p>Choose an MPT when you need <strong>per-issuance policy and metadata baked into the
+token itself</strong>, and an issued currency when you need <strong>maximum liquidity and
+the deepest DEX/AMM/pathfinding integration</strong>. The distinction is structural,
+not cosmetic:</p>
+<ul>
+<li><strong>Holder-side reserve and object model.</strong> An issued-currency balance lives
+  in a bidirectional <code>RippleState</code> (trust line) that <em>both</em> parties can be
+  charged an owner reserve for and that carries <code>NoRipple</code>/freeze/limit state
+  on each side. An MPT balance lives in a single <code>MPToken</code> object owned by the
+  holder, pointing at one shared <code>MPTokenIssuance</code>. For issuers with large
+  holder sets, the MPT model is simpler to reason about and the policy lives in
+  one place (the issuance) rather than being negotiated per trust line.</li>
+<li><strong>Policy is first-class on an MPT.</strong> Capabilities (<code>CanTransfer</code>,
+  <code>CanClawback</code>, <code>CanLock</code>, <code>RequireAuth</code>, <code>CanEscrow</code>, <code>CanTrade</code>), an optional
+  hard supply cap (<code>MaximumAmount</code>), <code>AssetScale</code>, on-ledger <code>MPTokenMetadata</code>
+  (≤ 1024 bytes), and a <code>DomainID</code> binding are all attributes of the issuance
+  object. With issued currencies the equivalent controls are spread across
+  account flags (<code>AccountSet</code>) and per-trust-line flags (<code>TrustSet</code>).</li>
+<li><strong>The trade-off is liquidity and maturity.</strong> Issued currencies are the
+  older, universally-supported primitive with the richest tooling and market
+  depth. <code>MPTokensV1</code> is active but the surrounding ecosystem (AMM support via
+  <code>MPTokensV2</code>, dynamic mutation via <code>DynamicMPT</code>) is still maturing. For a
+  stablecoin that must trade everywhere today, issued currency is the safe
+  default; for a regulated security or structured product where controls and
+  compact per-holder state matter more than DEX ubiquity, MPT fits better.</li>
+</ul>
+<p><strong>Confirmed against source</strong> — MPT capability flags and <code>DomainID</code>/<code>MaximumAmount</code>/
+<code>AssetScale</code>/<code>MPTokenMetadata</code> fields in <code>MPTokenIssuanceCreate.cpp</code>; the
+single-<code>MPToken</code>-per-holder model in <code>MPTokenAuthorize.cpp</code>.</p>
+</blockquote>
+<p><strong>How are decentralized identifiers and verifiable credentials integrated into
+the asset lifecycle?</strong></p>
+<blockquote>
+<p>XRPL exposes three native, composable identity primitives, and they attach to
+tokens through <strong>permissioned domains</strong> rather than living inside the token
+object:</p>
+<ul>
+<li><strong><code>DID</code> (<code>ltDID</code>)</strong> — one per account, an on-ledger anchor holding a
+  <code>DIDDocument</code>, <code>URI</code>, and/or <code>Data</code> (all optional). It identifies <em>who an
+  account is</em> (e.g. a KYC'd institution) in a W3C-DID-compatible way, but does
+  not itself gate anything.</li>
+<li><strong><code>Credential</code> (<code>ltCREDENTIAL</code>)</strong> — an attestation <em>by an issuer about a
+  subject</em>: required <code>Subject</code>, <code>Issuer</code>, <code>CredentialType</code>, plus optional
+  <code>Expiration</code> and <code>URI</code>. Created with <code>CredentialCreate</code> and made effective
+  when the subject runs <code>CredentialAccept</code> — a two-party handshake mirroring
+  MPT authorization. This is the verifiable-credential equivalent ("this
+  account has passed accredited-investor KYC").</li>
+<li><strong><code>PermissionedDomain</code> (<code>ltPERMISSIONED_DOMAIN</code>)</strong> — an
+  <code>AcceptedCredentials</code> allowlist (credential type + issuer pairs). It answers
+  "which credentials grant entry to this compliance perimeter?"</li>
+</ul>
+<p>The lifecycle linkage: an issuer creates a domain listing the credential
+types it trusts, then binds a token to it. An MPT issuance carries a
+<code>DomainID</code> (which requires <code>tfMPTRequireAuth</code>), and <code>PermissionedDEX</code> restricts
+order books to domain members. The result is <strong>credential-gated access
+enforced on-ledger</strong>: only accounts holding an accepted, unexpired credential
+can hold or trade the asset — without the issuer manually authorizing each
+holder.</p>
+<p><strong>Confirmed against source</strong> — object fields in
+<code>ledger_entries/{DID,Credential,PermissionedDomain}.h</code>; credential handshake in
+<code>CredentialCreate.cpp</code> / <code>CredentialAccept.cpp</code>; <code>DomainID</code>-requires-<code>RequireAuth</code>
+in <code>MPTokenIssuanceCreate.cpp</code>.</p>
+</blockquote>
+<p><strong>What does the end-to-end lifecycle of a Real-World Asset (RWA) look like
+on-ledger?</strong></p>
+<blockquote>
+<p>A representative regulated-RWA lifecycle, composing the primitives above:</p>
+<ol>
+<li><strong>Identity &amp; compliance setup.</strong> The issuer establishes its own <code>DID</code>, then
+   stands up a <code>PermissionedDomain</code> whose <code>AcceptedCredentials</code> name the
+   KYC/accreditation credential types (and trusted credential issuers) required
+   to hold the asset.</li>
+<li><strong>Investor onboarding.</strong> A credential issuer runs <code>CredentialCreate</code> for the
+   investor; the investor <code>CredentialAccept</code>s it. The investor now satisfies
+   the domain without any bespoke per-investor issuer action.</li>
+<li><strong>Asset issuance.</strong> The issuer runs <code>MPTokenIssuanceCreate</code> with
+   <code>tfMPTRequireAuth</code> + a <code>DomainID</code>, capabilities matching the offering docs
+   (<code>CanTransfer</code>, <code>CanClawback</code>, <code>CanLock</code>), a <code>MaximumAmount</code> cap, and
+   <code>MPTokenMetadata</code> anchoring the legal wrapper (hash of the offering document).</li>
+<li><strong>Primary distribution.</strong> Domain-member investors opt in
+   (<code>MPTokenAuthorize</code>), then receive units by <code>Payment</code>, raising
+   <code>sfOutstandingAmount</code>.</li>
+<li><strong>Secondary market.</strong> Members trade on a <code>PermissionedDEX</code> order book scoped
+   to the domain; a configured <code>TransferFee</code> accrues to the issuer on each
+   transfer.</li>
+<li><strong>Corporate actions &amp; lifecycle events.</strong> Coupons/dividends are paid as
+   separate payments; freezes use <code>MPTokenIssuanceSet</code> (<code>tfMPTLock</code>) per holder;
+   compliance recovery uses <code>Clawback</code>.</li>
+<li><strong>Maturity / redemption / retirement.</strong> Holders return units to the issuer
+   (lowering <code>sfOutstandingAmount</code>); once fully redeemed the issuer can
+   <code>MPTokenIssuanceDestroy</code>, and expired credentials naturally drop investors
+   from the domain.</li>
+</ol>
+<p><strong>Educated guess (not directly encoded in source):</strong> the <em>ordering</em> above
+(identity → domain → credentials → issuance) is a design recommendation, not a
+protocol-enforced sequence. The protocol enforces the individual dependencies
+(a <code>DomainID</code> requires <code>RequireAuth</code>; a domain must exist before it is
+referenced; a holder must opt in before authorization), but composing them
+into this end-to-end flow is an application-level pattern.</p>
+</blockquote>
+<hr />
+<p><strong>← Back to <a href="../">Chapter 2 — Issuing Value</a></strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
